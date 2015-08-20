@@ -1,9 +1,7 @@
 //
 //  DictionaryMaker.m
 //  QuestionThree
-//
-//  Created by Aileen Taboy on 8/17/15.
-//  Copyright (c) 2015 Mike. All rights reserved.
+
 //
 
 #import "DictionaryMaker.h"
