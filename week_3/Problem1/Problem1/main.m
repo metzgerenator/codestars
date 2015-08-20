@@ -20,9 +20,16 @@ int main(int argc, const char * argv[]) {
 
        NSArray *capped =  [capTime arrayCapper:arrayLowerINput];
         
-        for (NSString *e in capped) {
+        
+        
+        for (int x = 0; x < [capped count]; x++) {
+            NSString *e = capped[x];
             NSLog(@"Question 1 answer %@", e);
         }
+//        
+//        for (NSString *e in capped) {
+//            NSLog(@"Question 1 answer %@", e);
+//        }
         
         
         
