@@ -10,6 +10,7 @@
 		270BE67E1B87671600A1BB4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BE67D1B87671600A1BB4B /* main.m */; };
 		270BE6861B87676300A1BB4B /* BNRPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BE6851B87676300A1BB4B /* BNRPerson.m */; };
 		270BE6891B876EB200A1BB4B /* BNREmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BE6881B876EB200A1BB4B /* BNREmployee.m */; };
+		575FBEC11B878E5900FE10D4 /* BNRAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 575FBEC01B878E5900FE10D4 /* BNRAsset.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		270BE6851B87676300A1BB4B /* BNRPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRPerson.m; sourceTree = "<group>"; };
 		270BE6871B876EB200A1BB4B /* BNREmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNREmployee.h; sourceTree = "<group>"; };
 		270BE6881B876EB200A1BB4B /* BNREmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNREmployee.m; sourceTree = "<group>"; };
+		575FBEBF1B878E5900FE10D4 /* BNRAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRAsset.h; sourceTree = "<group>"; };
+		575FBEC01B878E5900FE10D4 /* BNRAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRAsset.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				270BE67D1B87671600A1BB4B /* main.m */,
+				575FBEBF1B878E5900FE10D4 /* BNRAsset.h */,
+				575FBEC01B878E5900FE10D4 /* BNRAsset.m */,
 				270BE6871B876EB200A1BB4B /* BNREmployee.h */,
 				270BE6881B876EB200A1BB4B /* BNREmployee.m */,
 				270BE6841B87676300A1BB4B /* BNRPerson.h */,
@@ -131,6 +136,7 @@
 				270BE6891B876EB200A1BB4B /* BNREmployee.m in Sources */,
 				270BE67E1B87671600A1BB4B /* main.m in Sources */,
 				270BE6861B87676300A1BB4B /* BNRPerson.m in Sources */,
+				575FBEC11B878E5900FE10D4 /* BNRAsset.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +253,7 @@
 				270BE6831B87671600A1BB4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
