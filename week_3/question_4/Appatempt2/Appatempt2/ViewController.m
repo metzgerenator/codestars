@@ -39,7 +39,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NYCActivities = @[@"Get Pizza", @"Walk the Highline", @"Central Park", @"Food Halls"];
+    NYCActivities = @[@"Artichoke Pizza", @"Gotham West Market", @"Central Park", @"The Plaza Food Hall", @"MoMA", @"Grand Central", @"Bryant Park", @"Botanical Garden", @"ShakesPeare in the Park", @"City Kitchen", @"Le District"];
 }
 
 - (void)didReceiveMemoryWarning {
