@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>CFA14E76-06C9-4D44-85AA-83E570A21156</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>CustomTable</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0D6497D558BE230BEC6A9E0B9891798570292A3C</key>
 		<string>https://github.com/metzgerenator/codestars.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>week_4/capter_4_appbook/CustomTable/CustomTable.xcodeproj/project.xcworkspace</string>
+	<string>week_4/capter_4_appbook/CustomTable/CustomTable.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0D6497D558BE230BEC6A9E0B9891798570292A3C</key>

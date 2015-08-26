@@ -6,6 +6,7 @@
 //
 
 #import "CustomTableViewController.h"
+#import "CustomTableViewCell.h"
 
 @interface CustomTableViewController ()
 
@@ -16,6 +17,9 @@
 {
     NSArray *recipeNames;
     NSArray *recipeImages;
+    NSArray *time;
+    BOOL recipeChecked [16];
+
     
 }
 
@@ -30,10 +34,22 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    cell.textLabel.text = [recipeNames objectAtIndex:indexPath.row];
+    CustomTableViewCell *cell = (CustomTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    cell.nameLabel.text = [recipeNames objectAtIndex:indexPath.row];
     cell.imageView.image = [UIImage imageNamed:[recipeImages objectAtIndex:indexPath.row]];
+    cell.prepTimeLabel.text = [time objectAtIndex:indexPath.row];
+    
+    if (recipeChecked[indexPath.row]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    
     
     return cell;
 }
@@ -52,6 +68,15 @@
                      @"instant_noodle_with_egg.jpg", @"noodle_with_bbq_pork.jpg",
                      @"japanese_noodle_with_pork.jpg", @"green_tea.jpg", @"thai_shrimp_cake.jpg",
                      @"angry_birds_cake.jpg", @"ham_and_cheese_panini.jpg"];
+   
+    
+    time = @[@"7 minutes", @"15 minutes", @"20 minutes",
+             @"14 minutes", @"12 minutes", @"11 minutes",
+             @"5 minutes", @"60 minutes", @"30 minutes",
+             @"40 minutes", @"50 minutes",
+             @"20 minutes", @"10 minutes", @"40 minutes",
+             @"50 minutes", @"30 minutes "];
+    
     
     
     
@@ -70,64 +95,40 @@
     return 1;
 }
 
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 1;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *selectedRecipe = [recipeNames objectAtIndex:indexPath.row];
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Row Selected" message:selectedRecipe delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
-    // Configure the cell...
     
-    return cell;
+    //Display Alert Message
+    [messageAlert show];
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (recipeChecked[indexPath.row]) {
+        recipeChecked[indexPath.row] = NO;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        recipeChecked[indexPath.row] = YES;
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+   
+    
+    
+    [tableView deselectRowAtIndexPath:(indexPath) animated:YES];
+    
+    
+  
+    
+    
+    recipeChecked[indexPath.row] = YES;
+    
+//    UITableViewCell *deselect = [tableView cellForRowAtIndexPath:indexPath];
+//    deselect.accessoryType = UITableViewCellAccessoryNone;
+    
+    
+    
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
