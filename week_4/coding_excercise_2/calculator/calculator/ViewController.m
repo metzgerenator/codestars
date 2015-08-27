@@ -30,4 +30,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)numberReader:(UIButton*)button{
+    
+    NSString *buttonHit = [button   currentTitle];
+    NSString *buttonHit2;
+    
+    float buttonNumber = [buttonHit floatValue];
+
+    if (buttonNumber == 0.0) {
+        
+        buttonHit2 = [button currentTitle];
+        
+    } else if ([buttonHit  isEqual: @"x"]) {
+        
+        NSLog(@"%@", buttonHit2);
+    }
+    
+    
+    NSLog(@"%f" , buttonNumber);
+    
+}
+
+
 @end
