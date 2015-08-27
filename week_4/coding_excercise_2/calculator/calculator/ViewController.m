@@ -15,7 +15,7 @@
 @implementation ViewController
 
 {
-    NSDictionary *numberKeys;
+    NSNumber *numberfromAction1;
 }
 
 
@@ -33,18 +33,53 @@
 -(IBAction)numberReader:(UIButton*)button{
     
     NSString *buttonHit = [button   currentTitle];
-    NSString *buttonHit2;
+//    self.readout.text = buttonHit;
+    UILabel *display = self.readout;
+    NSString *currentDisplaytext  = display.text;
     
-    float buttonNumber = [buttonHit floatValue];
+    NSString *combinedString = [currentDisplaytext stringByAppendingString:buttonHit];
+    self.readout.text = combinedString;
+    
+    
+    float buttonNumber = [combinedString floatValue];
+    
+    NSLog(@" this is total number output %f", buttonNumber);
+    
+    
 
-    if (buttonNumber == 0.0) {
+    NSString *notANumber;
+    //  operator value
+    float numberInput1;
+    float numberInput2;
+    float numberInputResult;
+    float multiplication = numberInput1 * numberInput2;
+    float division = numberInput1 / numberInput2;
+    float subtraction = numberInput1 - numberInput2;
+    float addition = numberInput1 + numberInput2;
+    
+
+    //Action for function buttons
+ 
+    
+    if ([buttonHit  isEqual: @"x"]) {
         
-        buttonHit2 = [button currentTitle];
         
-    } else if ([buttonHit  isEqual: @"x"]) {
-        
-        NSLog(@"%@", buttonHit2);
+        NSLog(@" this is x %@", buttonHit);
+
     }
+
+//    if (buttonNumber == 0.0) {
+//        
+//        buttonHit2 = [button currentTitle];
+////        NSLog(@" this is button hit 2 %@", buttonHit2);
+//        
+//    } else if ([buttonHit  isEqual: @"x"]) {
+//        
+//        NSLog(@" this is x %@", buttonHit);
+//    }
+//
+    
+    
     
     
     NSLog(@"%f" , buttonNumber);
