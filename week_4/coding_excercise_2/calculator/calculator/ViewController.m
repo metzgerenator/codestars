@@ -15,7 +15,7 @@
 @implementation ViewController
 
 {
-    NSNumber *numberfromAction1;
+    NSNumber *currentDisplayFromAction1;
 }
 
 
@@ -30,59 +30,78 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)numberReader:(UIButton*)button{
+-(IBAction)clearButton:(UIButton *)clear{
     
+    //instance of current UILable
+    UILabel *displayBeforeClear = self.readout;
+    
+    //convert to string
+    NSString *stringBeforeClear = displayBeforeClear.text;
+    
+    //convert string to float
+    float displayBeforeZero = [stringBeforeClear floatValue];
+    
+    //set value to 0
+    displayBeforeZero = 0;
+    
+    //convert to NSNumber
+    NSNumber *zeroValue = [NSNumber numberWithFloat:displayBeforeZero];
+    
+    //change ivar currentDisplayFromAction1
+    currentDisplayFromAction1 = zeroValue;
+    
+    //make a string that says 0
+    NSString *zeroedDsiplay = @"0";
+    self.readout.text = zeroedDsiplay;
+    
+    NSLog(@" stringBeforeClear %@", zeroValue);
+    
+    
+    
+    
+
+    
+    NSLog(@" current disply from button clear is %@", currentDisplayFromAction1);
+    
+    
+    
+}
+
+
+
+-(IBAction)numberReader:(UIButton*)button{
+    ///take UIButton and convert to string
     NSString *buttonHit = [button   currentTitle];
-//    self.readout.text = buttonHit;
+    
+    //create instance of UILable that is equal to current readout
     UILabel *display = self.readout;
+    
+    //convert UILabel display to NSString for appending operation
     NSString *currentDisplaytext  = display.text;
     
+    //append the next UIButton action to what is currently displayed
     NSString *combinedString = [currentDisplaytext stringByAppendingString:buttonHit];
+    
+    //set display equal to combinedString
     self.readout.text = combinedString;
     
+    //convert combinedString to a Float
+    float totalButtonDisplayNumber = [combinedString floatValue];
     
-    float buttonNumber = [combinedString floatValue];
+    //conveert float to instance of NSNumber
+    NSNumber *numberForVariable = [NSNumber numberWithFloat:totalButtonDisplayNumber];
     
-    NSLog(@" this is total number output %f", buttonNumber);
+    //set ivar to total NSNumber conversion from display
+    currentDisplayFromAction1 = numberForVariable;
     
-    
-
-    NSString *notANumber;
-    //  operator value
-    float numberInput1;
-    float numberInput2;
-    float numberInputResult;
-    float multiplication = numberInput1 * numberInput2;
-    float division = numberInput1 / numberInput2;
-    float subtraction = numberInput1 - numberInput2;
-    float addition = numberInput1 + numberInput2;
-    
-
-    //Action for function buttons
- 
-    
-    if ([buttonHit  isEqual: @"x"]) {
-        
-        
-        NSLog(@" this is x %@", buttonHit);
-
-    }
-
-//    if (buttonNumber == 0.0) {
-//        
-//        buttonHit2 = [button currentTitle];
-////        NSLog(@" this is button hit 2 %@", buttonHit2);
-//        
-//    } else if ([buttonHit  isEqual: @"x"]) {
-//        
-//        NSLog(@" this is x %@", buttonHit);
-//    }
-//
+    //logging total NSNumber that is assigning to ivar
+//    NSLog(@" this is total number output %@", numberForVariable);
+//    
+//    NSLog(@"%f this is the float", totalButtonDisplayNumber);
     
     
     
     
-    NSLog(@"%f" , buttonNumber);
     
 }
 

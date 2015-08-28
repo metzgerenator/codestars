@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>6B295140-0458-42A9-9C85-5372B0DC41A4</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>calculator</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0D6497D558BE230BEC6A9E0B9891798570292A3C</key>
 		<string>https://github.com/metzgerenator/codestars.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>week_4/coding_excercise_2/calculator/calculator.xcodeproj/project.xcworkspace</string>
+	<string>week_4/coding_excercise_2/calculator/calculator.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0D6497D558BE230BEC6A9E0B9891798570292A3C</key>

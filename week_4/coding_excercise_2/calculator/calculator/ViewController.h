@@ -14,6 +14,8 @@
 
 -(IBAction)numberReader:(UIButton*)button;
 
+-(IBAction)clearButton:(UIButton *)clear;
+
 
 
 
