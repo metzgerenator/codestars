@@ -1,10 +1,7 @@
 //
 //  ViewController.m
 //  calculator
-//
-//  Created by Aileen Taboy on 8/26/15.
-//  Copyright (c) 2015 Mike. All rights reserved.
-//
+
 
 #import "ViewController.h"
 
@@ -14,8 +11,16 @@
 
 @implementation ViewController
 
+// check
+
+
 {
-    NSNumber *currentDisplayFromAction1;
+//    NSNumber *currentDisplayFromAction1;
+    NSNumber *number1;
+    NSNumber *number2;
+    NSNumber * total;
+    
+
 }
 
 
@@ -32,78 +37,117 @@
 
 -(IBAction)clearButton:(UIButton *)clear{
     
-    //instance of current UILable
-    UILabel *displayBeforeClear = self.readout;
     
-    //convert to string
-    NSString *stringBeforeClear = displayBeforeClear.text;
-    
-    //convert string to float
-    float displayBeforeZero = [stringBeforeClear floatValue];
-    
-    //set value to 0
-    displayBeforeZero = 0;
-    
-    //convert to NSNumber
-    NSNumber *zeroValue = [NSNumber numberWithFloat:displayBeforeZero];
-    
-    //change ivar currentDisplayFromAction1
-    currentDisplayFromAction1 = zeroValue;
-    
-    //make a string that says 0
-    NSString *zeroedDsiplay = @"0";
-    self.readout.text = zeroedDsiplay;
-    
-    NSLog(@" stringBeforeClear %@", zeroValue);
-    
-    
-    
-    
-
-    
-    NSLog(@" current disply from button clear is %@", currentDisplayFromAction1);
-    
-    
+    self.readout.text = @"0";
+    number1 = nil;
+    number2 = nil;
+    total = nil;
     
 }
 
 
 
 -(IBAction)numberReader:(UIButton*)button{
+    
     ///take UIButton and convert to string
     NSString *buttonHit = [button   currentTitle];
     
-    //create instance of UILable that is equal to current readout
-    UILabel *display = self.readout;
+    NSLog(@" resetting display to %@", buttonHit);
+
+    
+    //check for operands
+    if ([buttonHit isEqual:@"+"])
+    {
+     self.readout.text = @" ";
+        NSLog(@" inputing x now %@", buttonHit);
+
+    }
+    
     
     //convert UILabel display to NSString for appending operation
-    NSString *currentDisplaytext  = display.text;
+    NSString *currentDisplaytext  =self.readout.text;
     
     //append the next UIButton action to what is currently displayed
     NSString *combinedString = [currentDisplaytext stringByAppendingString:buttonHit];
+
     
     //set display equal to combinedString
     self.readout.text = combinedString;
     
-    //convert combinedString to a Float
-    float totalButtonDisplayNumber = [combinedString floatValue];
-    
-    //conveert float to instance of NSNumber
-    NSNumber *numberForVariable = [NSNumber numberWithFloat:totalButtonDisplayNumber];
-    
-    //set ivar to total NSNumber conversion from display
-    currentDisplayFromAction1 = numberForVariable;
-    
-    //logging total NSNumber that is assigning to ivar
-//    NSLog(@" this is total number output %@", numberForVariable);
+//    //convert combinedString to a Float
+//    float totalButtonDisplayNumber = [combinedString floatValue];
 //    
-//    NSLog(@"%f this is the float", totalButtonDisplayNumber);
+//    //conveert float to instance of NSNumber
+//    NSNumber *numberForVariable = [NSNumber numberWithFloat:totalButtonDisplayNumber];
+//    
+//    //set ivar to total NSNumber conversion from display
+//    currentDisplayFromAction1 = numberForVariable;
+
+    
+}
+
+
+-(IBAction)functions:(UIButton *)functionInput{
+    NSString* readOut =  self.readout.text;
+    
+    
+    if (number1 == nil) {
+        NSString *currentDisplay = self.readout.text;
+        
+        float numberInput1 = [currentDisplay floatValue];
+        number1 = [[NSNumber alloc] initWithFloat:numberInput1];
+        NSLog(@"setting number one to %@", number1);
+       float totalInput  = [number1 floatValue] + [number2 floatValue];
+        total = [[NSNumber alloc] initWithFloat:totalInput];
+        NSLog(@"setting total to %@", total);
+//        
+        NSString *newDisplay = [NSString stringWithFormat:@"%.2f", totalInput];
+        self.readout.text = newDisplay;
+        
+       
+        NSLog(@"setting display to %@", newDisplay);
+
+        
+        
+    } else  {
+        //clear screen
+        self.readout.text = @" ";
+        
+        float display = [readOut floatValue];
+        number1 = nil;
+        float newTotal = display + [total floatValue];
+        NSLog(@" the total is now float %f", newTotal);
+        
+        //add display to total
+        // set display to total
+        
+        
+    }
+    
+ 
+
+    
+    
     
     
     
     
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @end
