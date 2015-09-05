@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>descriptions </key>
+	<array>
+		<string>lot&apos;s of desert and cactus </string>
+		<string>The Big Apple </string>
+		<string>The worlds 3rd largest economy.  </string>
+	</array>
+	<key>images </key>
+	<array/>
+	<key>destinations </key>
+	<array>
+		<string>Arizona </string>
+		<string>New York </string>
+		<string>Japan </string>
+	</array>
+</dict>
+</plist>
