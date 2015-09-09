@@ -17,6 +17,8 @@
 		574F8B8D1B9F94A30016AFEC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F8B8C1B9F94A30016AFEC /* DetailViewController.m */; };
 		574F8B901BA08C8E0016AFEC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F8B8F1BA08C8E0016AFEC /* AboutViewController.m */; };
 		574F8B921BA096640016AFEC /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 574F8B911BA096640016AFEC /* about.html */; };
+		574F8B951BA09FC40016AFEC /* BioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F8B941BA09FC40016AFEC /* BioViewController.m */; };
+		574F8B971BA0B5C00016AFEC /* aboutme.html in Resources */ = {isa = PBXBuildFile; fileRef = 574F8B961BA0B5C00016AFEC /* aboutme.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		574F8B8E1BA08C8E0016AFEC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		574F8B8F1BA08C8E0016AFEC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		574F8B911BA096640016AFEC /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = SOURCE_ROOT; };
+		574F8B931BA09FC40016AFEC /* BioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BioViewController.h; sourceTree = "<group>"; };
+		574F8B941BA09FC40016AFEC /* BioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BioViewController.m; sourceTree = "<group>"; };
+		574F8B961BA0B5C00016AFEC /* aboutme.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = aboutme.html; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +98,8 @@
 				574F8B671B9F7AF20016AFEC /* AppDelegate.m */,
 				574F8B8B1B9F94A30016AFEC /* DetailViewController.h */,
 				574F8B8C1B9F94A30016AFEC /* DetailViewController.m */,
+				574F8B931BA09FC40016AFEC /* BioViewController.h */,
+				574F8B941BA09FC40016AFEC /* BioViewController.m */,
 				574F8B8E1BA08C8E0016AFEC /* AboutViewController.h */,
 				574F8B8F1BA08C8E0016AFEC /* AboutViewController.m */,
 				574F8B881B9F7F490016AFEC /* CustomTableTableViewController.h */,
@@ -108,6 +115,7 @@
 		574F8B621B9F7AF20016AFEC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				574F8B961BA0B5C00016AFEC /* aboutme.html */,
 				574F8B911BA096640016AFEC /* about.html */,
 				574F8B631B9F7AF20016AFEC /* Info.plist */,
 				574F8B641B9F7AF20016AFEC /* main.m */,
@@ -216,6 +224,7 @@
 				574F8B6E1B9F7AF20016AFEC /* Main.storyboard in Resources */,
 				574F8B731B9F7AF20016AFEC /* LaunchScreen.xib in Resources */,
 				574F8B701B9F7AF20016AFEC /* Images.xcassets in Resources */,
+				574F8B971BA0B5C00016AFEC /* aboutme.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +247,7 @@
 				574F8B651B9F7AF20016AFEC /* main.m in Sources */,
 				574F8B8A1B9F7F490016AFEC /* CustomTableTableViewController.m in Sources */,
 				574F8B8D1B9F94A30016AFEC /* DetailViewController.m in Sources */,
+				574F8B951BA09FC40016AFEC /* BioViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
