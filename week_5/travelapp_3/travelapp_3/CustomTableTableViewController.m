@@ -19,6 +19,7 @@
     NSArray *destinationImages;
     NSArray *descriptions;
     NSArray *destPictures;
+    NSString *about;
 }
 
 - (void)viewDidLoad {
@@ -33,6 +34,8 @@
                      @"Japan is an island nation in the Pacific Ocean with high-rise-filled cities, imperial palaces, mountainous national parks and thousands of shrines and temples",
                      @"Home to the Empire State Building, Times Square, Statue of Liberty and other iconic sites, New York City is a fast-paced, globally influential center of art, culture, fashion and finance."];
     destPictures = @[@"arizona.jpg", @"japan.jpg",@"newyork.jpg"];
+    
+    
     
     
     

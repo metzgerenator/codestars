@@ -15,6 +15,8 @@
 		574F8B7F1B9F7AF20016AFEC /* travelapp_3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F8B7E1B9F7AF20016AFEC /* travelapp_3Tests.m */; };
 		574F8B8A1B9F7F490016AFEC /* CustomTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F8B891B9F7F490016AFEC /* CustomTableTableViewController.m */; };
 		574F8B8D1B9F94A30016AFEC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F8B8C1B9F94A30016AFEC /* DetailViewController.m */; };
+		574F8B901BA08C8E0016AFEC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F8B8F1BA08C8E0016AFEC /* AboutViewController.m */; };
+		574F8B921BA096640016AFEC /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 574F8B911BA096640016AFEC /* about.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,9 @@
 		574F8B891B9F7F490016AFEC /* CustomTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableTableViewController.m; sourceTree = "<group>"; };
 		574F8B8B1B9F94A30016AFEC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		574F8B8C1B9F94A30016AFEC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		574F8B8E1BA08C8E0016AFEC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		574F8B8F1BA08C8E0016AFEC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		574F8B911BA096640016AFEC /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,8 @@
 				574F8B671B9F7AF20016AFEC /* AppDelegate.m */,
 				574F8B8B1B9F94A30016AFEC /* DetailViewController.h */,
 				574F8B8C1B9F94A30016AFEC /* DetailViewController.m */,
+				574F8B8E1BA08C8E0016AFEC /* AboutViewController.h */,
+				574F8B8F1BA08C8E0016AFEC /* AboutViewController.m */,
 				574F8B881B9F7F490016AFEC /* CustomTableTableViewController.h */,
 				574F8B891B9F7F490016AFEC /* CustomTableTableViewController.m */,
 				574F8B6C1B9F7AF20016AFEC /* Main.storyboard */,
@@ -101,6 +108,7 @@
 		574F8B621B9F7AF20016AFEC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				574F8B911BA096640016AFEC /* about.html */,
 				574F8B631B9F7AF20016AFEC /* Info.plist */,
 				574F8B641B9F7AF20016AFEC /* main.m */,
 			);
@@ -204,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				574F8B921BA096640016AFEC /* about.html in Resources */,
 				574F8B6E1B9F7AF20016AFEC /* Main.storyboard in Resources */,
 				574F8B731B9F7AF20016AFEC /* LaunchScreen.xib in Resources */,
 				574F8B701B9F7AF20016AFEC /* Images.xcassets in Resources */,
@@ -225,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				574F8B681B9F7AF20016AFEC /* AppDelegate.m in Sources */,
+				574F8B901BA08C8E0016AFEC /* AboutViewController.m in Sources */,
 				574F8B651B9F7AF20016AFEC /* main.m in Sources */,
 				574F8B8A1B9F7F490016AFEC /* CustomTableTableViewController.m in Sources */,
 				574F8B8D1B9F94A30016AFEC /* DetailViewController.m in Sources */,
