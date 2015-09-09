@@ -16,7 +16,6 @@
 		27AC3C511B992E4A00FDDC7C /* travel_destinationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AC3C501B992E4A00FDDC7C /* travel_destinationsTests.m */; };
 		27AC3C5B1B992F7C00FDDC7C /* travel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27AC3C5A1B992F7C00FDDC7C /* travel.plist */; };
 		27AC3C5E1B9935F400FDDC7C /* CustomTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AC3C5D1B9935F400FDDC7C /* CustomTableTableViewController.m */; };
-		27AC3C601B99417500FDDC7C /* recipes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27AC3C5F1B99417500FDDC7C /* recipes.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +45,6 @@
 		27AC3C5A1B992F7C00FDDC7C /* travel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = travel.plist; sourceTree = "<group>"; };
 		27AC3C5C1B9935F400FDDC7C /* CustomTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableTableViewController.h; sourceTree = "<group>"; };
 		27AC3C5D1B9935F400FDDC7C /* CustomTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableTableViewController.m; sourceTree = "<group>"; };
-		27AC3C5F1B99417500FDDC7C /* recipes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = recipes.plist; path = ../../../../Desktop/recipes.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +105,6 @@
 			children = (
 				27AC3C351B992E4A00FDDC7C /* Info.plist */,
 				27AC3C361B992E4A00FDDC7C /* main.m */,
-				27AC3C5F1B99417500FDDC7C /* recipes.plist */,
 				27AC3C5A1B992F7C00FDDC7C /* travel.plist */,
 			);
 			name = "Supporting Files";
@@ -211,7 +208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27AC3C401B992E4A00FDDC7C /* Main.storyboard in Resources */,
-				27AC3C601B99417500FDDC7C /* recipes.plist in Resources */,
 				27AC3C451B992E4A00FDDC7C /* LaunchScreen.xib in Resources */,
 				27AC3C5B1B992F7C00FDDC7C /* travel.plist in Resources */,
 				27AC3C421B992E4A00FDDC7C /* Images.xcassets in Resources */,
