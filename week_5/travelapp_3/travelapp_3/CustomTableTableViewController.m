@@ -19,7 +19,6 @@
     NSArray *destinationImages;
     NSArray *descriptions;
     NSArray *destPictures;
-    NSString *about;
 }
 
 - (void)viewDidLoad {
@@ -68,11 +67,8 @@
     
     cell.textLabel.text = [destinations objectAtIndex:indexPath.row];
     
-    
-        cell.imageView.image = [UIImage imageNamed:[destPictures objectAtIndex:indexPath.row]];
-    
-    
-    
+    cell.imageView.image = [UIImage imageNamed:[destPictures objectAtIndex:indexPath.row]];
+  
     return cell;
 }
 
