@@ -1,10 +1,7 @@
 //
 //  BioViewController.m
 //  travelapp_3
-//
-//  Created by Aileen Taboy on 9/9/15.
-//  Copyright (c) 2015 Mike. All rights reserved.
-//
+
 
 #import "BioViewController.h"
 

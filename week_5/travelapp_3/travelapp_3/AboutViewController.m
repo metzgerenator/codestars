@@ -24,10 +24,7 @@
     
     self.homeImage = [UIImage imageNamed:@"home.jpg"];
     
-    self.aboutPicture.image = self.homeImage;
-    
-    
-    
+    self.aboutPicture.image = self.homeImage; 
     
 }
 

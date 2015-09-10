@@ -21,9 +21,6 @@
     self.descriptionLabel.text = self.descriptionName;
     self.destinationPicture.image = self.imagedescription;
     
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

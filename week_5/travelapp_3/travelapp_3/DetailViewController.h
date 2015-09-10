@@ -17,14 +17,7 @@
 @property (nonatomic, strong) NSString *descriptionName;
 
 
-
-
-
 @property (strong, nonatomic) IBOutlet UIImageView *destinationPicture;
 @property (nonatomic, strong) UIImage *imagedescription;
-
-
-
-
 
 @end
