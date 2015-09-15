@@ -17,10 +17,27 @@
 @implementation CustomTableViewController
 {
     NSArray *recipes;
+    NSArray *searchResults;
+    UISearchController *searchController;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    [searchController.searchBar sizeToFit];
+    self.tableView.tableHeaderView = searchController.searchBar;
+    self.definesPresentationContext = YES;
+    
+    searchController.searchResultsUpdater = self;
+    searchController.dimsBackgroundDuringPresentation = NO;
+    
+//    searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+//    [searchController.searchBar sizeToFit];
+//    self.tableView.tableHeadUISearchController *searchController;erView =
+//    searchController.searchBar;
+//    self.definesPresentationContext = YES;
+    
     
     //initialize the recipes array
     Recipe *recipe1 = [Recipe new];
@@ -130,6 +147,17 @@
 
 }
 
+-(void)filterContentForSearchText: (NSString *)searchText {
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains [c] %@", searchText];
+    searchResults = [recipes filteredArrayUsingPredicate:resultPredicate];
+    }
+
+-(void) updateSearchResultsForSearchController:(UISearchController *)searchController {
+    [self filterContentForSearchText:searchController.searchBar.text];
+    [self.tableView reloadData];
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -139,7 +167,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    if (searchController.active) {
+        return searchResults.count;
+    }else {
+        return [recipes count];
+    }
+    
+    
 }
 
 
@@ -153,11 +187,19 @@
     static NSString *cellIdentifier = @"Cell";
     CustomTableViewCell *cell = (CustomTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    if (cell == nil) {
-        cell = [[CustomTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    Recipe *recipe;
+    if (searchController.active) {
+        recipe = [searchResults objectAtIndex:indexPath.row];
+    } else {
+        recipe = [recipes objectAtIndex:indexPath.row];
     }
     
-   Recipe *recipe  = [recipes objectAtIndex:indexPath.row];
+    
+//    if (cell == nil) {
+//        cell = [[CustomTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//    }
+//    
+//   Recipe *recipe  = [recipes objectAtIndex:indexPath.row];
     cell.nameLabel.text = recipe.name;
     cell.thumbnailImageView.image = [UIImage imageNamed:recipe.image];
     cell.prepTimeLabel.text = recipe.preptime;
@@ -171,7 +213,15 @@
     if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         DetailViewController *destViewController = segue.destinationViewController;
-        Recipe *recipe = [recipes objectAtIndex:indexPath.row];
+        
+        Recipe *recipe;
+        if (searchController.active) {
+            recipe = [searchResults objectAtIndex:indexPath.row];
+        } else {
+            recipe = [recipes objectAtIndex:indexPath.row];
+        }
+        
+//        Recipe *recipe = [recipes objectAtIndex:indexPath.row];
         destViewController.recipe = recipe;
     }
 }
