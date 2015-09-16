@@ -167,19 +167,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    if (searchController.active) {
-        return searchResults.count;
-    }else {
-        return [recipes count];
-    }
     
-    
+    return 1; 
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [recipes count];
+    if (searchController.active) {
+        return searchResults.count;
+    } else {
+        return [recipes count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -193,6 +192,7 @@
     } else {
         recipe = [recipes objectAtIndex:indexPath.row];
     }
+    
     
     
 //    if (cell == nil) {
