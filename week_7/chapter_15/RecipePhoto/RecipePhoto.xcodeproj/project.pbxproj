@@ -16,6 +16,7 @@
 		27EF0F8D1BA9A9FB00649C72 /* RecipePhotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EF0F8C1BA9A9FB00649C72 /* RecipePhotoTests.m */; };
 		27EF0F981BA9AD7200649C72 /* RecipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EF0F971BA9AD7200649C72 /* RecipeCollectionViewCell.m */; };
 		27EF0F9B1BA9AF4C00649C72 /* RecipeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EF0F9A1BA9AF4C00649C72 /* RecipeCollectionViewController.m */; };
+		57C4CF091BA9DB8100B34BC7 /* RecipeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C4CF081BA9DB8100B34BC7 /* RecipeCollectionHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		27EF0F971BA9AD7200649C72 /* RecipeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionViewCell.m; sourceTree = "<group>"; };
 		27EF0F991BA9AF4C00649C72 /* RecipeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionViewController.h; sourceTree = "<group>"; };
 		27EF0F9A1BA9AF4C00649C72 /* RecipeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionViewController.m; sourceTree = "<group>"; };
+		57C4CF071BA9DB8100B34BC7 /* RecipeCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionHeaderView.h; sourceTree = "<group>"; };
+		57C4CF081BA9DB8100B34BC7 /* RecipeCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				27EF0F971BA9AD7200649C72 /* RecipeCollectionViewCell.m */,
 				27EF0F991BA9AF4C00649C72 /* RecipeCollectionViewController.h */,
 				27EF0F9A1BA9AF4C00649C72 /* RecipeCollectionViewController.m */,
+				57C4CF071BA9DB8100B34BC7 /* RecipeCollectionHeaderView.h */,
+				57C4CF081BA9DB8100B34BC7 /* RecipeCollectionHeaderView.m */,
 				27EF0F7A1BA9A9FB00649C72 /* Main.storyboard */,
 				27EF0F7D1BA9A9FB00649C72 /* Images.xcassets */,
 				27EF0F7F1BA9A9FB00649C72 /* LaunchScreen.xib */,
@@ -230,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EF0F981BA9AD7200649C72 /* RecipeCollectionViewCell.m in Sources */,
+				57C4CF091BA9DB8100B34BC7 /* RecipeCollectionHeaderView.m in Sources */,
 				27EF0F9B1BA9AF4C00649C72 /* RecipeCollectionViewController.m in Sources */,
 				27EF0F791BA9A9FB00649C72 /* ViewController.m in Sources */,
 				27EF0F761BA9A9FB00649C72 /* AppDelegate.m in Sources */,
@@ -428,6 +434,7 @@
 				27EF0F921BA9A9FB00649C72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27EF0F931BA9A9FB00649C72 /* Build configuration list for PBXNativeTarget "RecipePhotoTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +443,7 @@
 				27EF0F951BA9A9FB00649C72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

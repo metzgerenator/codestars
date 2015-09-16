@@ -8,6 +8,7 @@
 
 #import "RecipeCollectionViewController.h"
 #import "RecipeCollectionViewCell.h"
+#import "RecipeCollectionHeaderView.h"
 
 @interface RecipeCollectionViewController ()
 
@@ -27,11 +28,18 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     //initialize image array
-    recipeImages = @[@"angry_birds_cake.jpg", @"creme_brelee.jpg", @"egg_benedict.jpg",
-                     @"full_breakfast.jpg", @"green_tea.jpg", @"ham_and_cheese_panini.jpg",
-                     @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"instant_noodle_with_egg.jpg",@"japanese_noodle_with_pork.jpg", @"mushroom_risotto.jpg", @"noodle_with_bbq_pork.jpg",
-                     @"starbucks_coffee.jpg", @"thai_shrimp_cake.jpg", @"vegetable_curry.jpg",
-                     @"white_chocolate_donut.jpg"];
+    NSArray *mainDishImage = @[@"egg_benedict.jpg", @"full_breakfast.jpg",
+                               @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg",
+                               @"instant_noodle_with_egg.jpg", @"japanese_noodle_with_pork.jpg",
+                               @"mushroom_risotto.jpg", @"noodle_with_bbq_pork.jpg", @"thai_shrimp_cake.jpg",
+                               @"vegetable_curry.jpg"];
+    NSArray *drinkDessertImages = @[@"angry_birds_cake.jpg", @"creme_brelee.jpg",
+                                    @"green_tea.jpg", @"starbucks_coffee.jpg", @"white_chocolate_donut.jpg"];
+    
+    recipeImages = @[mainDishImage, drinkDessertImages];
+    
+    UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    collectionViewLayout.sectionInset = UIEdgeInsetsMake(20, 0, 20, 0);
     
     
     // Register cell classes - might need to deleat this
@@ -59,24 +67,43 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 #warning Incomplete method implementation -- Return the number of sections
-    return 1;
-}
+    return [recipeImages count];
+ }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 #warning Incomplete method implementation -- Return the number of items in the section
-    return recipeImages.count;
+    return [[recipeImages objectAtIndex:section]count];
+    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     RecipeCollectionViewCell *cell = (RecipeCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    cell.recipeImageView.image = [UIImage imageNamed:[recipeImages objectAtIndex:indexPath.row]];
     cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"photo-frame"]];
+    cell.recipeImageView.image = [UIImage imageNamed:[recipeImages[indexPath.section]objectAtIndex:indexPath.row]];
     
     
     return cell;
+}
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        RecipeCollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        NSString *title = [[NSString alloc] initWithFormat:@"Recipe Group #%ld", indexPath.section +1];
+        headerView.titleLabel.text = title;
+        
+        reusableview = headerView;
+    }
+    
+    if (kind == UICollectionElementKindSectionFooter) {
+        UICollectionReusableView *footerview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
+        reusableview = footerview;
+    }
+    return reusableview;
 }
 
 #pragma mark <UICollectionViewDelegate>
