@@ -10,11 +10,11 @@
 
 @interface RecipeCollectionViewController : UICollectionViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
+
+-(IBAction)ShareButtonTapped:(id)sender;
 
 
 
-//required
-
-// - collectionView:numberOfItemsInSection: - collectionView:cellForItemAtIndexPath:
 
 @end

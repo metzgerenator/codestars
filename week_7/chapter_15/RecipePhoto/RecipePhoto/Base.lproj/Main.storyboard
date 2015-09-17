@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="yGH-lg-ei6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="yGH-lg-ei6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -33,6 +33,7 @@
                                 </view>
                                 <connections>
                                     <outlet property="recipeImageView" destination="2CX-SC-PuB" id="iP0-PZ-Syr"/>
+                                    <segue destination="AMK-Df-ONs" kind="modal" identifier="showRecipePhoto" id="wGK-VL-jSm"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -44,7 +45,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9N-6e-2r9">
-                                    <rect key="frame" x="105" y="14" width="81" height="21"/>
+                                    <rect key="frame" x="105" y="14" width="142" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -68,11 +69,49 @@
                             <outlet property="delegate" destination="tOA-kd-6Mp" id="I47-lS-i43"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Recipe Photo" id="xkA-MS-BO1"/>
+                    <navigationItem key="navigationItem" title="Recipe Photo" id="xkA-MS-BO1">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="5t6-tj-qcY"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="shareButton" destination="5t6-tj-qcY" id="koO-lL-rm3"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhi-WK-G0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="839" y="288"/>
+            <point key="canvasLocation" x="703" y="288"/>
+        </scene>
+        <!--Photo-->
+        <scene sceneID="N32-uG-gSX">
+            <objects>
+                <viewController id="HcP-nm-vff" customClass="RecipeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iqo-by-p0c"/>
+                        <viewControllerLayoutGuide type="bottom" id="OSd-P3-T3s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Je-Bp-8fG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZt-eP-wEb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photo" id="MBs-wQ-H7T">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ZZf-L0-V0f">
+                            <connections>
+                                <action selector="close:" destination="HcP-nm-vff" id="w7p-5O-lhw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="recipeImageView" destination="sZt-eP-wEb" id="msn-O8-ix7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DZ6-xF-YuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1583" y="294"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wii-dX-tXQ">
@@ -91,6 +130,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqb-43-4zN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="307" y="288"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ekQ-eu-Psd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AMK-Df-ONs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dJK-9p-piU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HcP-nm-vff" kind="relationship" relationship="rootViewController" id="9Xr-I0-xdw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B4p-PO-DAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="294"/>
         </scene>
     </scenes>
     <resources>

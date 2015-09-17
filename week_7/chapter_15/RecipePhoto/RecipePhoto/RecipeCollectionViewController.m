@@ -9,6 +9,8 @@
 #import "RecipeCollectionViewController.h"
 #import "RecipeCollectionViewCell.h"
 #import "RecipeCollectionHeaderView.h"
+#import "RecipeViewController.h"
+#import <Social/Social.h>
 
 @interface RecipeCollectionViewController ()
 
@@ -17,12 +19,17 @@
 @implementation RecipeCollectionViewController
 {
     NSArray *recipeImages;
+    BOOL shareEnabled;
+    NSMutableArray *selectedRecipes;
 }
 
 static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    selectedRecipes = [NSMutableArray array];
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -65,6 +72,26 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDataSource>
 
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (shareEnabled) {
+        //Determine the slected items by using the indexPath
+        NSString *selectedRecipe = [recipeImages [indexPath.section]objectAtIndex:indexPath.row];
+        // Add the selected item in to the array
+        [selectedRecipes addObject:selectedRecipe];  
+    }
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (shareEnabled) {
+        NSString *deSelectedRecipe = [recipeImages [indexPath.section]objectAtIndex:indexPath.row];
+        [selectedRecipes removeObject:deSelectedRecipe]; 
+    }
+}
+
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 #warning Incomplete method implementation -- Return the number of sections
     return [recipeImages count];
@@ -83,7 +110,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // Configure the cell
     cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"photo-frame"]];
     cell.recipeImageView.image = [UIImage imageNamed:[recipeImages[indexPath.section]objectAtIndex:indexPath.row]];
-    
+    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame-selected"]];
     
     return cell;
 }
@@ -105,6 +132,60 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     return reusableview;
 }
+
+
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showRecipePhoto"]) {
+        NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
+        UINavigationController *destViewController = segue.destinationViewController;
+        RecipeViewController *recipeViewController = (RecipeViewController *)
+        [destViewController.childViewControllers firstObject];
+        NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
+        recipeViewController.recipeImageName = [recipeImages[indexPath.section]objectAtIndex:indexPath.row];
+        [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+        
+    }
+}
+
+-(IBAction)ShareButtonTapped:(id)sender{
+    if (shareEnabled) {
+        //Post selected photos to Facebook
+        if ([selectedRecipes count] > 0) {
+            if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+                SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+                [controller setInitialText:@"Check out my recipes!"];
+                for (NSString *recipePhoto in selectedRecipes) {
+                    [controller addImage:[UIImage imageNamed:recipePhoto]];
+                }
+                 [self presentViewController:controller animated:YES completion:nil];
+            }
+           
+        }
+        //Deselect all selected items
+        for (NSIndexPath *indexPath in self.collectionView.indexPathsForSelectedItems) {
+            [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+        }
+        //Remove all items from selectedRecipes array
+        [selectedRecipes removeAllObjects];
+        
+        //Change the sharing mode to NO
+        shareEnabled = NO;
+        self.collectionView.allowsMultipleSelection = NO;
+        self.shareButton.title = @"Share";
+        [self.shareButton setStyle:UIBarButtonItemStyleDone];
+    }
+}
+
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if (shareEnabled) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
 
 #pragma mark <UICollectionViewDelegate>
 
