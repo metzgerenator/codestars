@@ -31,13 +31,7 @@
     
     searchController.searchResultsUpdater = self;
     searchController.dimsBackgroundDuringPresentation = NO;
-    
-//    searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-//    [searchController.searchBar sizeToFit];
-//    self.tableView.tableHeadUISearchController *searchController;erView =
-//    searchController.searchBar;
-//    self.definesPresentationContext = YES;
-    
+
     
     //initialize the recipes array
     Recipe *recipe1 = [Recipe new];
