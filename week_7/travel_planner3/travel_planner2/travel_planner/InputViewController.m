@@ -11,16 +11,19 @@
 
 @interface InputViewController ()
 
-@property NSMutableArray *toDoItems;
+//@property NSMutableArray *toDoItems;
 
 @end
 
-@implementation InputViewController
+@implementation InputViewController{
+    NSMutableArray *toDoItems;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.toDoItems = [[NSMutableArray alloc]init];
+    
+    toDoItems = [[NSMutableArray alloc] init];
     [self loadInitialData];
     
     
@@ -47,14 +50,14 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return [self.toDoItems count];  
+    return [toDoItems count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
     
     
-    ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
+    ToDoItem *toDoItem = [toDoItems objectAtIndex:indexPath.row];
     cell.textLabel.text = toDoItem.itemName;
     
     return cell;
@@ -68,6 +71,13 @@
     
     ToDoItem *item1 = [[ToDoItem alloc]init];
     item1.itemName = @"test item 1";
+    
+    [toDoItems addObject:item1];
+    
+    ToDoItem *item2 = [[ToDoItem alloc]init];
+    item2.itemName = @"testing 2";
+    
+    [toDoItems addObject:item2];
     
     
 }

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InputViewController : UIViewController <UITabBarDelegate, UITableViewDataSource>
+@interface InputViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIImageView *categoryPicture;
 @property(nonatomic,strong)UIImage *categoryPictureName;
