@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27D6A1C01BACE02800D5782D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6A1BF1BACE02800D5782D /* main.m */; };
+		27D6A1C31BACE02800D5782D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6A1C21BACE02800D5782D /* AppDelegate.m */; };
+		27D6A1C61BACE02800D5782D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6A1C51BACE02800D5782D /* ViewController.m */; };
+		27D6A1C91BACE02800D5782D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D6A1C71BACE02800D5782D /* Main.storyboard */; };
+		27D6A1CB1BACE02800D5782D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D6A1CA1BACE02800D5782D /* Assets.xcassets */; };
+		27D6A1CE1BACE02800D5782D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D6A1CC1BACE02800D5782D /* LaunchScreen.storyboard */; };
+		27D6A1D91BACE02800D5782D /* travel_plannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6A1D81BACE02800D5782D /* travel_plannerTests.m */; };
+		27D6A1E41BACE02800D5782D /* travel_plannerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6A1E31BACE02800D5782D /* travel_plannerUITests.m */; };
+		27D6A1F91BACED4900D5782D /* CatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6A1F81BACED4900D5782D /* CatCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		27D6A1FC1BACEEA800D5782D /* CategoryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6A1FB1BACEEA800D5782D /* CategoryCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		27D6A2021BAD02DF00D5782D /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6A2011BAD02DF00D5782D /* InputViewController.m */; settings = {ASSET_TAGS = (); }; };
+		27D6A2081BADD34600D5782D /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D6A2071BADD34600D5782D /* ToDoItem.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27D6A1D51BACE02800D5782D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27D6A1B31BACE02800D5782D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27D6A1BA1BACE02800D5782D;
+			remoteInfo = travel_planner;
+		};
+		27D6A1E01BACE02800D5782D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27D6A1B31BACE02800D5782D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27D6A1BA1BACE02800D5782D;
+			remoteInfo = travel_planner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27D6A1BB1BACE02800D5782D /* travel_planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travel_planner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D6A1BF1BACE02800D5782D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27D6A1C11BACE02800D5782D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		27D6A1C21BACE02800D5782D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		27D6A1C41BACE02800D5782D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		27D6A1C51BACE02800D5782D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		27D6A1C81BACE02800D5782D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27D6A1CA1BACE02800D5782D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27D6A1CD1BACE02800D5782D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27D6A1CF1BACE02800D5782D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27D6A1D41BACE02800D5782D /* travel_plannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travel_plannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D6A1D81BACE02800D5782D /* travel_plannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = travel_plannerTests.m; sourceTree = "<group>"; };
+		27D6A1DA1BACE02800D5782D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27D6A1DF1BACE02800D5782D /* travel_plannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travel_plannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D6A1E31BACE02800D5782D /* travel_plannerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = travel_plannerUITests.m; sourceTree = "<group>"; };
+		27D6A1E51BACE02800D5782D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27D6A1F71BACED4900D5782D /* CatCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatCollectionViewCell.h; sourceTree = "<group>"; };
+		27D6A1F81BACED4900D5782D /* CatCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatCollectionViewCell.m; sourceTree = "<group>"; };
+		27D6A1FA1BACEEA800D5782D /* CategoryCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewController.h; sourceTree = "<group>"; };
+		27D6A1FB1BACEEA800D5782D /* CategoryCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewController.m; sourceTree = "<group>"; };
+		27D6A2001BAD02DF00D5782D /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
+		27D6A2011BAD02DF00D5782D /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
+		27D6A2061BADD34600D5782D /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
+		27D6A2071BADD34600D5782D /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27D6A1B81BACE02800D5782D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D6A1D11BACE02800D5782D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D6A1DC1BACE02800D5782D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27D6A1B21BACE02800D5782D = {
+			isa = PBXGroup;
+			children = (
+				27D6A1BD1BACE02800D5782D /* travel_planner */,
+				27D6A1D71BACE02800D5782D /* travel_plannerTests */,
+				27D6A1E21BACE02800D5782D /* travel_plannerUITests */,
+				27D6A1BC1BACE02800D5782D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27D6A1BC1BACE02800D5782D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27D6A1BB1BACE02800D5782D /* travel_planner.app */,
+				27D6A1D41BACE02800D5782D /* travel_plannerTests.xctest */,
+				27D6A1DF1BACE02800D5782D /* travel_plannerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27D6A1BD1BACE02800D5782D /* travel_planner */ = {
+			isa = PBXGroup;
+			children = (
+				27D6A1C11BACE02800D5782D /* AppDelegate.h */,
+				27D6A1C21BACE02800D5782D /* AppDelegate.m */,
+				27D6A1C41BACE02800D5782D /* ViewController.h */,
+				27D6A1C51BACE02800D5782D /* ViewController.m */,
+				27D6A1C71BACE02800D5782D /* Main.storyboard */,
+				27D6A1CA1BACE02800D5782D /* Assets.xcassets */,
+				27D6A1CC1BACE02800D5782D /* LaunchScreen.storyboard */,
+				27D6A1CF1BACE02800D5782D /* Info.plist */,
+				27D6A1BE1BACE02800D5782D /* Supporting Files */,
+				27D6A1F71BACED4900D5782D /* CatCollectionViewCell.h */,
+				27D6A1F81BACED4900D5782D /* CatCollectionViewCell.m */,
+				27D6A1FA1BACEEA800D5782D /* CategoryCollectionViewController.h */,
+				27D6A1FB1BACEEA800D5782D /* CategoryCollectionViewController.m */,
+				27D6A2001BAD02DF00D5782D /* InputViewController.h */,
+				27D6A2011BAD02DF00D5782D /* InputViewController.m */,
+				27D6A2061BADD34600D5782D /* ToDoItem.h */,
+				27D6A2071BADD34600D5782D /* ToDoItem.m */,
+			);
+			path = travel_planner;
+			sourceTree = "<group>";
+		};
+		27D6A1BE1BACE02800D5782D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27D6A1BF1BACE02800D5782D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27D6A1D71BACE02800D5782D /* travel_plannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				27D6A1D81BACE02800D5782D /* travel_plannerTests.m */,
+				27D6A1DA1BACE02800D5782D /* Info.plist */,
+			);
+			path = travel_plannerTests;
+			sourceTree = "<group>";
+		};
+		27D6A1E21BACE02800D5782D /* travel_plannerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				27D6A1E31BACE02800D5782D /* travel_plannerUITests.m */,
+				27D6A1E51BACE02800D5782D /* Info.plist */,
+			);
+			path = travel_plannerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27D6A1BA1BACE02800D5782D /* travel_planner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27D6A1E81BACE02800D5782D /* Build configuration list for PBXNativeTarget "travel_planner" */;
+			buildPhases = (
+				27D6A1B71BACE02800D5782D /* Sources */,
+				27D6A1B81BACE02800D5782D /* Frameworks */,
+				27D6A1B91BACE02800D5782D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = travel_planner;
+			productName = travel_planner;
+			productReference = 27D6A1BB1BACE02800D5782D /* travel_planner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27D6A1D31BACE02800D5782D /* travel_plannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27D6A1EB1BACE02800D5782D /* Build configuration list for PBXNativeTarget "travel_plannerTests" */;
+			buildPhases = (
+				27D6A1D01BACE02800D5782D /* Sources */,
+				27D6A1D11BACE02800D5782D /* Frameworks */,
+				27D6A1D21BACE02800D5782D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27D6A1D61BACE02800D5782D /* PBXTargetDependency */,
+			);
+			name = travel_plannerTests;
+			productName = travel_plannerTests;
+			productReference = 27D6A1D41BACE02800D5782D /* travel_plannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		27D6A1DE1BACE02800D5782D /* travel_plannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27D6A1EE1BACE02800D5782D /* Build configuration list for PBXNativeTarget "travel_plannerUITests" */;
+			buildPhases = (
+				27D6A1DB1BACE02800D5782D /* Sources */,
+				27D6A1DC1BACE02800D5782D /* Frameworks */,
+				27D6A1DD1BACE02800D5782D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27D6A1E11BACE02800D5782D /* PBXTargetDependency */,
+			);
+			name = travel_plannerUITests;
+			productName = travel_plannerUITests;
+			productReference = 27D6A1DF1BACE02800D5782D /* travel_plannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27D6A1B31BACE02800D5782D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Michael Metzger ";
+				TargetAttributes = {
+					27D6A1BA1BACE02800D5782D = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = BP8BUJFQU2;
+					};
+					27D6A1D31BACE02800D5782D = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = BP8BUJFQU2;
+						TestTargetID = 27D6A1BA1BACE02800D5782D;
+					};
+					27D6A1DE1BACE02800D5782D = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = BP8BUJFQU2;
+						TestTargetID = 27D6A1BA1BACE02800D5782D;
+					};
+				};
+			};
+			buildConfigurationList = 27D6A1B61BACE02800D5782D /* Build configuration list for PBXProject "travel_planner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27D6A1B21BACE02800D5782D;
+			productRefGroup = 27D6A1BC1BACE02800D5782D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27D6A1BA1BACE02800D5782D /* travel_planner */,
+				27D6A1D31BACE02800D5782D /* travel_plannerTests */,
+				27D6A1DE1BACE02800D5782D /* travel_plannerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27D6A1B91BACE02800D5782D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D6A1CE1BACE02800D5782D /* LaunchScreen.storyboard in Resources */,
+				27D6A1CB1BACE02800D5782D /* Assets.xcassets in Resources */,
+				27D6A1C91BACE02800D5782D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D6A1D21BACE02800D5782D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D6A1DD1BACE02800D5782D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27D6A1B71BACE02800D5782D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D6A1C61BACE02800D5782D /* ViewController.m in Sources */,
+				27D6A2021BAD02DF00D5782D /* InputViewController.m in Sources */,
+				27D6A2081BADD34600D5782D /* ToDoItem.m in Sources */,
+				27D6A1F91BACED4900D5782D /* CatCollectionViewCell.m in Sources */,
+				27D6A1C31BACE02800D5782D /* AppDelegate.m in Sources */,
+				27D6A1FC1BACEEA800D5782D /* CategoryCollectionViewController.m in Sources */,
+				27D6A1C01BACE02800D5782D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D6A1D01BACE02800D5782D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D6A1D91BACE02800D5782D /* travel_plannerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D6A1DB1BACE02800D5782D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D6A1E41BACE02800D5782D /* travel_plannerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27D6A1D61BACE02800D5782D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27D6A1BA1BACE02800D5782D /* travel_planner */;
+			targetProxy = 27D6A1D51BACE02800D5782D /* PBXContainerItemProxy */;
+		};
+		27D6A1E11BACE02800D5782D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27D6A1BA1BACE02800D5782D /* travel_planner */;
+			targetProxy = 27D6A1E01BACE02800D5782D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		27D6A1C71BACE02800D5782D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27D6A1C81BACE02800D5782D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		27D6A1CC1BACE02800D5782D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27D6A1CD1BACE02800D5782D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27D6A1E61BACE02800D5782D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		27D6A1E71BACE02800D5782D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27D6A1E91BACE02800D5782D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = travel_planner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.metzger.travel-planner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		27D6A1EA1BACE02800D5782D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = travel_planner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.metzger.travel-planner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		27D6A1EC1BACE02800D5782D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = travel_plannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.metzger.travel-plannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/travel_planner.app/travel_planner";
+			};
+			name = Debug;
+		};
+		27D6A1ED1BACE02800D5782D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = travel_plannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.metzger.travel-plannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/travel_planner.app/travel_planner";
+			};
+			name = Release;
+		};
+		27D6A1EF1BACE02800D5782D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = travel_plannerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.metzger.travel-plannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = travel_planner;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		27D6A1F01BACE02800D5782D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = travel_plannerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.metzger.travel-plannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = travel_planner;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27D6A1B61BACE02800D5782D /* Build configuration list for PBXProject "travel_planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D6A1E61BACE02800D5782D /* Debug */,
+				27D6A1E71BACE02800D5782D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27D6A1E81BACE02800D5782D /* Build configuration list for PBXNativeTarget "travel_planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D6A1E91BACE02800D5782D /* Debug */,
+				27D6A1EA1BACE02800D5782D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27D6A1EB1BACE02800D5782D /* Build configuration list for PBXNativeTarget "travel_plannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D6A1EC1BACE02800D5782D /* Debug */,
+				27D6A1ED1BACE02800D5782D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27D6A1EE1BACE02800D5782D /* Build configuration list for PBXNativeTarget "travel_plannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D6A1EF1BACE02800D5782D /* Debug */,
+				27D6A1F01BACE02800D5782D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27D6A1B31BACE02800D5782D /* Project object */;
+}

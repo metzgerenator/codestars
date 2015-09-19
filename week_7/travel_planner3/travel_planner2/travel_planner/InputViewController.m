@@ -7,19 +7,22 @@
 //
 
 #import "InputViewController.h"
+#import "ToDoItem.h"
 
 @interface InputViewController ()
 
+@property NSMutableArray *toDoItems;
+
 @end
 
-@implementation InputViewController{
-    NSMutableArray *toDoList;
-}
+@implementation InputViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    toDoList = [[NSMutableArray alloc]init];
+    self.toDoItems = [[NSMutableArray alloc]init];
+    [self loadInitialData];
+    
     
     
     self.categoryPicture.image = self.categoryPictureName;
@@ -36,25 +39,42 @@
 
 
 
-
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [toDoList count];
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
 }
 
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return [self.toDoItems count];  
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
     
     
-    
-    static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.textLabel.text = [toDoList objectAtIndex:indexPath.row];
-    
+    ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
+    cell.textLabel.text = toDoItem.itemName;
     
     return cell;
 }
+
+
+
+
+
+-(void)loadInitialData {
+    
+    ToDoItem *item1 = [[ToDoItem alloc]init];
+    item1.itemName = @"test item 1";
+    
+    
+}
+
+
+
+
 
 
 
