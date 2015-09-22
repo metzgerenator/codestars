@@ -11,7 +11,8 @@
 
 @interface InputViewController ()
 
-//@property NSMutableArray *toDoItems;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
 
 @end
 
@@ -56,9 +57,14 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
     
-    
     ToDoItem *toDoItem = [toDoItems objectAtIndex:indexPath.row];
     cell.textLabel.text = toDoItem.itemName;
+    
+    if (toDoItem.completed) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;  
+    }
     
     return cell;
 }
@@ -84,8 +90,30 @@
 
 
 
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    ToDoItem *tappedItem = [toDoItems objectAtIndex:indexPath.row];
+    tappedItem.completed = !tappedItem.completed;
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    
+    
+}
 
-
+- (IBAction)savButton:(UITextField*)inputText {
+    
+//    self.toDoItem = [[ToDoItem alloc]init];
+//    self.toDoItem.itemName = self.textField.text;
+//    self.toDoItem.completed = NO;
+    
+    if (self.textField != nil) {
+        NSString *item = self.textField.text;
+        [toDoItems addObject:item];
+        
+        
+    }
+    
+    
+}
 
 
 

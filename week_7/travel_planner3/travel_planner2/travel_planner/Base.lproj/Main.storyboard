@@ -96,20 +96,28 @@
                                     <outlet property="delegate" destination="ExD-jS-gQL" id="XbS-iZ-sLU"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="qt1-Wi-DLR">
+                                <rect key="frame" x="9" y="72" width="54" height="44"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9U-8P-AeF">
+                                <rect key="frame" x="268" y="86" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savButton:" destination="ExD-jS-gQL" eventType="touchUpInside" id="4LQ-Qp-Q5r"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add an Item to the List " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ztR-OR-f7U">
-                                <rect key="frame" x="110" y="102" width="178" height="30"/>
+                                <rect key="frame" x="76" y="86" width="178" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="qt1-Wi-DLR">
-                                <rect key="frame" x="9" y="72" width="76" height="60"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="dZz-68-MFb"/>
                     <connections>
                         <outlet property="categoryPicture" destination="qt1-Wi-DLR" id="4Xm-EX-CEh"/>
+                        <outlet property="textField" destination="ztR-OR-f7U" id="DP7-8A-a1G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCq-2j-hVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ToDoItem.h"
 
 @interface InputViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIImageView *categoryPicture;
 @property(nonatomic,strong)UIImage *categoryPictureName;
+
+
+
+@property ToDoItem *toDoItem;
+
 
 
 //@property (weak, nonatomic) IBOutlet UITextField *inputForList;
