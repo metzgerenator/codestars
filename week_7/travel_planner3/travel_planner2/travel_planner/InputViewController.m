@@ -74,17 +74,17 @@
 
 
 -(void)loadInitialData {
-    
-    ToDoItem *item1 = [[ToDoItem alloc]init];
-    item1.itemName = @"test item 1";
-    
-    [toDoItems addObject:item1];
-    
-    ToDoItem *item2 = [[ToDoItem alloc]init];
-    item2.itemName = @"testing 2";
-    
-    [toDoItems addObject:item2];
-    
+//    
+//    ToDoItem *item1 = [[ToDoItem alloc]init];
+//    item1.itemName = @"test item 1";
+//    
+//    [toDoItems addObject:item1];
+//    
+//    ToDoItem *item2 = [[ToDoItem alloc]init];
+//    item2.itemName = @"testing 2";
+//    
+//    [toDoItems addObject:item2];
+//    
     
 }
 
@@ -99,21 +99,26 @@
     
 }
 
-- (IBAction)savButton:(UITextField*)inputText {
+
+- (IBAction)saveButton:(id)sender {
     
-//    self.toDoItem = [[ToDoItem alloc]init];
-//    self.toDoItem.itemName = self.textField.text;
-//    self.toDoItem.completed = NO;
-    
-    if (self.textField != nil) {
-        NSString *item = self.textField.text;
-        [toDoItems addObject:item];
+    if (self.textField.text.length >0) {
+        self.toDoItem = [[ToDoItem alloc]init];
+        self.toDoItem.itemName = self.textField.text;
+        self.toDoItem.completed = NO;
+        
+        [toDoItems addObject:self.toDoItem.itemName];
+        
         
         
     }
     
-    
 }
+    
+
+  
+    
+    
 
 
 
