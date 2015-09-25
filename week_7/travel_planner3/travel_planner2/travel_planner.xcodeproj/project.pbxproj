@@ -90,6 +90,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		272BE2311BB593AD009D4604 /* checklist */ = {
+			isa = PBXGroup;
+			children = (
+				27D6A2061BADD34600D5782D /* ToDoItem.h */,
+				27D6A2071BADD34600D5782D /* ToDoItem.m */,
+				27D6A2001BAD02DF00D5782D /* InputViewController.h */,
+				27D6A2011BAD02DF00D5782D /* InputViewController.m */,
+			);
+			name = checklist;
+			sourceTree = "<group>";
+		};
 		27D6A1B21BACE02800D5782D = {
 			isa = PBXGroup;
 			children = (
@@ -126,10 +137,7 @@
 				27D6A1F81BACED4900D5782D /* CatCollectionViewCell.m */,
 				27D6A1FA1BACEEA800D5782D /* CategoryCollectionViewController.h */,
 				27D6A1FB1BACEEA800D5782D /* CategoryCollectionViewController.m */,
-				27D6A2001BAD02DF00D5782D /* InputViewController.h */,
-				27D6A2011BAD02DF00D5782D /* InputViewController.m */,
-				27D6A2061BADD34600D5782D /* ToDoItem.h */,
-				27D6A2071BADD34600D5782D /* ToDoItem.m */,
+				272BE2311BB593AD009D4604 /* checklist */,
 			);
 			path = travel_planner;
 			sourceTree = "<group>";

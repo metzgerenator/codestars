@@ -76,11 +76,11 @@
                                         <rect key="frame" x="0.0" y="92" width="270" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hh9-YP-qcO" id="uJf-ab-EOQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="270" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XCe-82-Iij">
-                                                    <rect key="frame" x="15" y="0.0" width="240" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="240" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

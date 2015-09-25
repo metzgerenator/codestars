@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272BE2361BB59532009D4604 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 272BE2351BB59532009D4604 /* CategoryCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		272BE2391BB59561009D4604 /* CategoryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272BE2381BB59561009D4604 /* CategoryCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		57946FB71BB48D740091A38E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57946FB61BB48D740091A38E /* main.m */; };
 		57946FBA1BB48D740091A38E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57946FB91BB48D740091A38E /* AppDelegate.m */; };
 		57946FC01BB48D740091A38E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57946FBE1BB48D740091A38E /* Main.storyboard */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		272BE2341BB59532009D4604 /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
+		272BE2351BB59532009D4604 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		272BE2371BB59561009D4604 /* CategoryCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewController.h; sourceTree = "<group>"; };
+		272BE2381BB59561009D4604 /* CategoryCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewController.m; sourceTree = "<group>"; };
 		57946FB21BB48D740091A38E /* travel_planner3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travel_planner3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57946FB61BB48D740091A38E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57946FB81BB48D740091A38E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +90,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		272BE2321BB59444009D4604 /* Checklist */ = {
+			isa = PBXGroup;
+			children = (
+				57B7F1671BB49948002D8DA1 /* CheckList.h */,
+				57B7F1681BB49948002D8DA1 /* CheckList.m */,
+				57B7F16D1BB49B72002D8DA1 /* AddCheckListItemViewController.h */,
+				57B7F16E1BB49B72002D8DA1 /* AddCheckListItemViewController.m */,
+				57B7F16A1BB499DB002D8DA1 /* CheckListTableViewController.h */,
+				57B7F16B1BB499DB002D8DA1 /* CheckListTableViewController.m */,
+			);
+			name = Checklist;
+			sourceTree = "<group>";
+		};
+		272BE2331BB5946D009D4604 /* Collection_view */ = {
+			isa = PBXGroup;
+			children = (
+				272BE2341BB59532009D4604 /* CategoryCollectionViewCell.h */,
+				272BE2351BB59532009D4604 /* CategoryCollectionViewCell.m */,
+				272BE2371BB59561009D4604 /* CategoryCollectionViewController.h */,
+				272BE2381BB59561009D4604 /* CategoryCollectionViewController.m */,
+			);
+			name = Collection_view;
+			sourceTree = "<group>";
+		};
 		57946FA91BB48D730091A38E = {
 			isa = PBXGroup;
 			children = (
@@ -107,12 +137,8 @@
 		57946FB41BB48D740091A38E /* travel_planner3 */ = {
 			isa = PBXGroup;
 			children = (
-				57B7F1671BB49948002D8DA1 /* CheckList.h */,
-				57B7F1681BB49948002D8DA1 /* CheckList.m */,
-				57B7F16D1BB49B72002D8DA1 /* AddCheckListItemViewController.h */,
-				57B7F16E1BB49B72002D8DA1 /* AddCheckListItemViewController.m */,
-				57B7F16A1BB499DB002D8DA1 /* CheckListTableViewController.h */,
-				57B7F16B1BB499DB002D8DA1 /* CheckListTableViewController.m */,
+				272BE2331BB5946D009D4604 /* Collection_view */,
+				272BE2321BB59444009D4604 /* Checklist */,
 				57946FB81BB48D740091A38E /* AppDelegate.h */,
 				57946FB91BB48D740091A38E /* AppDelegate.m */,
 				57946FBE1BB48D740091A38E /* Main.storyboard */,
@@ -283,6 +309,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				272BE2361BB59532009D4604 /* CategoryCollectionViewCell.m in Sources */,
+				272BE2391BB59561009D4604 /* CategoryCollectionViewController.m in Sources */,
 				57946FBA1BB48D740091A38E /* AppDelegate.m in Sources */,
 				57946FB71BB48D740091A38E /* main.m in Sources */,
 				57B7F16C1BB499DB002D8DA1 /* CheckListTableViewController.m in Sources */,
