@@ -18,27 +18,13 @@
 
 @implementation CheckListTableViewController
 
--(void)loadInitialData {
-    CheckList *item1 = [[CheckList alloc]init];
-    item1.itemName = @"Test One";
-    [self.checkListItems addObject:item1];
-    
-    CheckList *item2 = [[CheckList alloc]init];
-    item1.itemName = @"Test Two";
-    [self.checkListItems addObject:item2];
-    
-    CheckList *item3 = [[CheckList alloc]init];
-    item1.itemName = @"Test Three";
-    [self.checkListItems addObject:item3];
-   
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.checkListItems = [[NSMutableArray alloc]init];
     
-    [self loadInitialData];  
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -100,6 +86,15 @@
     CheckList *tappedItem = [self.checkListItems objectAtIndex:indexPath.row];
     tappedItem.completed = !tappedItem.completed;
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+
+//Delete Function
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.checkListItems removeObjectAtIndex:indexPath.row];
+    
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
 }
 
 
