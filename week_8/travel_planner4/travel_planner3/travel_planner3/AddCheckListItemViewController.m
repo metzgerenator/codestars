@@ -27,6 +27,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (sender != self.saveButton)return;
+    
+    if (self.textField.text.length > 0) {
+        self.checkListItem = [[CheckList alloc]init];
+        self.checkListItem.itemName = self.textField.text;
+        self.checkListItem.completed = NO;
+    }
+}
+
 /*
 #pragma mark - Navigation
 

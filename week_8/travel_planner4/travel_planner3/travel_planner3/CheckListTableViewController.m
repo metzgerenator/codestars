@@ -8,6 +8,7 @@
 
 #import "CheckListTableViewController.h"
 #import "CheckList.h"
+#import "AddCheckListItemViewController.h"
 
 @interface CheckListTableViewController ()
 
@@ -63,6 +64,13 @@
 }
 
 -(IBAction)undwindToList:(UIStoryboardSegue *)segue{
+    AddCheckListItemViewController *source = [segue sourceViewController];
+    CheckList *item = source.checkListItem;
+    if (item != nil) {
+        [self.checkListItems addObject:item];
+        [self.tableView reloadData];
+    }
+
     
 }
 
@@ -78,7 +86,20 @@
     CheckList *checkListItem = [self.checkListItems objectAtIndex:indexPath.row];
     cell.textLabel.text = checkListItem.itemName;
     
+    if (checkListItem.completed) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    CheckList *tappedItem = [self.checkListItems objectAtIndex:indexPath.row];
+    tappedItem.completed = !tappedItem.completed;
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 
