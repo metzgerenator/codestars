@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CheckListTableViewController : UITableViewController
+@interface CheckListTableViewController : UITableViewController <UISearchResultsUpdating>
 
 -(IBAction)undwindToList:(UIStoryboardSegue *)segue;
 

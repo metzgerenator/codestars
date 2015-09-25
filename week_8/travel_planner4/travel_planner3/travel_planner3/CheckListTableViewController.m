@@ -17,10 +17,27 @@
 @end
 
 @implementation CheckListTableViewController
+{
+    UISearchController *searchController;
+    NSArray *searhResults;
+}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //Search function
+    searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    [searchController.searchBar sizeToFit];
+    self.tableView.tableHeaderView  = searchController.searchBar;
+    self.definesPresentationContext = YES;
+    
+    searchController.searchResultsUpdater = self;
+    searchController.dimsBackgroundDuringPresentation = NO;  
+    
+    
+    
+    
     
     self.checkListItems = [[NSMutableArray alloc]init];
     
@@ -46,7 +63,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.checkListItems count];
+    if (searchController.active) {
+        return searhResults.count;
+    } else {
+        return [self.checkListItems count];
+    }
+    
 }
 
 -(IBAction)undwindToList:(UIStoryboardSegue *)segue{
@@ -70,6 +92,14 @@
     // Configure the cell...
     
     CheckList *checkListItem = [self.checkListItems objectAtIndex:indexPath.row];
+    //search logic
+    if (searchController.active) {
+        checkListItem = [searhResults objectAtIndex:indexPath.row];
+    } else {
+        checkListItem = [self.checkListItems objectAtIndex:indexPath.row];
+    }
+    
+    
     cell.textLabel.text = checkListItem.itemName;
     
     if (checkListItem.completed) {
@@ -86,6 +116,18 @@
     CheckList *tappedItem = [self.checkListItems objectAtIndex:indexPath.row];
     tappedItem.completed = !tappedItem.completed;
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+
+//Search Function
+-(void)filterContentForSearchText: (NSString *)searchText{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+    searhResults = [self.checkListItems filteredArrayUsingPredicate:resultPredicate];  
+}
+
+-(void) updateSearchResultsForSearchController:(UISearchController *)searchController {
+    [self filterContentForSearchText:searchController.searchBar.text];
+    [self.tableView reloadData];
 }
 
 
