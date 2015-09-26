@@ -26,6 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    // Initialize search item  
+    self.checkListItems = [[NSMutableArray alloc]init];
+    
+    
     //Search function
     searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     [searchController.searchBar sizeToFit];
@@ -39,7 +44,7 @@
     
     
     
-    self.checkListItems = [[NSMutableArray alloc]init];
+    
     
 
     

@@ -19,6 +19,7 @@
 		57B7F1691BB49948002D8DA1 /* CheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B7F1681BB49948002D8DA1 /* CheckList.m */; settings = {ASSET_TAGS = (); }; };
 		57B7F16C1BB499DB002D8DA1 /* CheckListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B7F16B1BB499DB002D8DA1 /* CheckListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		57B7F16F1BB49B72002D8DA1 /* AddCheckListItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B7F16E1BB49B72002D8DA1 /* AddCheckListItemViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57E00EB81BB73EA5003653F9 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E00EB71BB73EA5003653F9 /* CameraViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		57B7F16B1BB499DB002D8DA1 /* CheckListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckListTableViewController.m; sourceTree = "<group>"; };
 		57B7F16D1BB49B72002D8DA1 /* AddCheckListItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCheckListItemViewController.h; sourceTree = "<group>"; };
 		57B7F16E1BB49B72002D8DA1 /* AddCheckListItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCheckListItemViewController.m; sourceTree = "<group>"; };
+		57E00EB61BB73EA5003653F9 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		57E00EB71BB73EA5003653F9 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,7 @@
 		57946FB41BB48D740091A38E /* travel_planner3 */ = {
 			isa = PBXGroup;
 			children = (
+				57E00EB51BB73E75003653F9 /* Camera */,
 				272BE2331BB5946D009D4604 /* Collection_view */,
 				272BE2321BB59444009D4604 /* Checklist */,
 				57946FB81BB48D740091A38E /* AppDelegate.h */,
@@ -174,6 +178,15 @@
 				57946FDC1BB48D740091A38E /* Info.plist */,
 			);
 			path = travel_planner3UITests;
+			sourceTree = "<group>";
+		};
+		57E00EB51BB73E75003653F9 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				57E00EB61BB73EA5003653F9 /* CameraViewController.h */,
+				57E00EB71BB73EA5003653F9 /* CameraViewController.m */,
+			);
+			name = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				272BE2361BB59532009D4604 /* CategoryCollectionViewCell.m in Sources */,
+				57E00EB81BB73EA5003653F9 /* CameraViewController.m in Sources */,
 				272BE2391BB59561009D4604 /* CategoryCollectionViewController.m in Sources */,
 				57946FBA1BB48D740091A38E /* AppDelegate.m in Sources */,
 				57946FB71BB48D740091A38E /* main.m in Sources */,
