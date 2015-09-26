@@ -91,7 +91,8 @@
     
     // Configure the cell...
     
-    CheckList *checkListItem = [self.checkListItems objectAtIndex:indexPath.row];
+//    CheckList *checkListItem = [self.checkListItems objectAtIndex:indexPath.row];
+    CheckList *checkListItem;  
     //search logic
     if (searchController.active) {
         checkListItem = [searhResults objectAtIndex:indexPath.row];

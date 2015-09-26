@@ -31,6 +31,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="a8p-IC-lEk" id="0Gt-rR-VKR"/>
                             <outlet property="delegate" destination="a8p-IC-lEk" id="Zbm-e1-dQ4"/>
