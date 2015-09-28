@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kRx-xb-TEM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Check List-->
@@ -237,11 +238,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rh0-ot-cAq">
-                                <rect key="frame" x="20" y="96" width="272" height="333"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rh0-ot-cAq">
+                                <rect key="frame" x="-4" y="64" width="328" height="455"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rh0-ot-cAq" firstAttribute="top" secondItem="5HT-Hm-2FO" secondAttribute="bottom" id="Bd4-gI-AbQ"/>
+                            <constraint firstItem="rh0-ot-cAq" firstAttribute="leading" secondItem="qaD-uq-3OO" secondAttribute="leadingMargin" constant="-20" id="Nry-Tz-Z3o"/>
+                            <constraint firstItem="tu8-mt-2wM" firstAttribute="top" secondItem="rh0-ot-cAq" secondAttribute="bottom" id="iLg-ZM-nBH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rh0-ot-cAq" secondAttribute="trailing" constant="-20" id="zLH-hk-gHc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Locations" id="Jwb-ii-pmv"/>
                     <connections>

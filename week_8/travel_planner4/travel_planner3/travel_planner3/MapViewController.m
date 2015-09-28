@@ -39,6 +39,44 @@
     [_mapView setRegion:viewRegion animated:YES];
     
     
+    
+    //Map Cordinates
+    
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    CLLocationCoordinate2D locationOne;
+    locationOne.latitude = 40.760121;
+    locationOne.longitude = -73.965513;
+    point.coordinate = locationOne;
+    point.title = @"Good Food Here";
+    point.subtitle = @"Indian";
+    [self.mapView addAnnotation:point];
+    
+    
+   
+    
+    MKPointAnnotation *point2 = [[MKPointAnnotation alloc] init];
+    CLLocationCoordinate2D locationTwo;
+    locationTwo.latitude = 40.761704;
+    locationTwo.longitude = -73.962673;
+    point2.coordinate = locationTwo;
+    point2.title = @"A Nice Place";
+    point2.subtitle = @"Inhabited by a famous person";
+    [self.mapView addAnnotation:point2];
+    
+    
+    MKPointAnnotation *point3 = [[MKPointAnnotation alloc] init];
+    CLLocationCoordinate2D locationThree;
+    locationThree.latitude = 40.761097;
+    locationThree.longitude = -73.964290;
+    point3.coordinate = locationThree;
+    point3.title = @"Tram";
+    point3.subtitle = @"Manhattan Side to R Island";
+    [self.mapView addAnnotation:point3];
+    
+    
+    
+  
+    
 }
 
 /*
