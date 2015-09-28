@@ -11,6 +11,8 @@
 		272BE2391BB59561009D4604 /* CategoryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272BE2381BB59561009D4604 /* CategoryCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		574744D11BB8D0E000BB7897 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574744D01BB8D0E000BB7897 /* MapKit.framework */; };
 		574744D51BB8D17500BB7897 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574744D41BB8D17500BB7897 /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		576FA1811BB99B43000F76E2 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FA1801BB99B43000F76E2 /* AboutViewController.m */; settings = {ASSET_TAGS = (); }; };
+		576FA1831BB99C3C000F76E2 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 576FA1821BB99C3C000F76E2 /* about.html */; settings = {ASSET_TAGS = (); }; };
 		57946FB71BB48D740091A38E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57946FB61BB48D740091A38E /* main.m */; };
 		57946FBA1BB48D740091A38E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57946FB91BB48D740091A38E /* AppDelegate.m */; };
 		57946FC01BB48D740091A38E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57946FBE1BB48D740091A38E /* Main.storyboard */; };
@@ -49,6 +51,9 @@
 		574744D01BB8D0E000BB7897 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		574744D31BB8D17500BB7897 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		574744D41BB8D17500BB7897 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		576FA17F1BB99B43000F76E2 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		576FA1801BB99B43000F76E2 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		576FA1821BB99C3C000F76E2 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		57946FB21BB48D740091A38E /* travel_planner3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travel_planner3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57946FB61BB48D740091A38E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57946FB81BB48D740091A38E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -132,6 +137,16 @@
 			name = map;
 			sourceTree = "<group>";
 		};
+		576FA17C1BB99AAB000F76E2 /* About_page */ = {
+			isa = PBXGroup;
+			children = (
+				576FA17F1BB99B43000F76E2 /* AboutViewController.h */,
+				576FA1801BB99B43000F76E2 /* AboutViewController.m */,
+				576FA1821BB99C3C000F76E2 /* about.html */,
+			);
+			name = About_page;
+			sourceTree = "<group>";
+		};
 		57946FA91BB48D730091A38E = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +171,7 @@
 		57946FB41BB48D740091A38E /* travel_planner3 */ = {
 			isa = PBXGroup;
 			children = (
+				576FA17C1BB99AAB000F76E2 /* About_page */,
 				574744D21BB8D16200BB7897 /* map */,
 				57E00EB51BB73E75003653F9 /* Camera */,
 				272BE2331BB5946D009D4604 /* Collection_view */,
@@ -317,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				576FA1831BB99C3C000F76E2 /* about.html in Resources */,
 				57946FC51BB48D740091A38E /* LaunchScreen.storyboard in Resources */,
 				57946FC21BB48D740091A38E /* Assets.xcassets in Resources */,
 				57946FC01BB48D740091A38E /* Main.storyboard in Resources */,
@@ -350,6 +367,7 @@
 				574744D51BB8D17500BB7897 /* MapViewController.m in Sources */,
 				57946FBA1BB48D740091A38E /* AppDelegate.m in Sources */,
 				57946FB71BB48D740091A38E /* main.m in Sources */,
+				576FA1811BB99B43000F76E2 /* AboutViewController.m in Sources */,
 				57B7F16C1BB499DB002D8DA1 /* CheckListTableViewController.m in Sources */,
 				57B7F1691BB49948002D8DA1 /* CheckList.m in Sources */,
 				57B7F16F1BB49B72002D8DA1 /* AddCheckListItemViewController.m in Sources */,

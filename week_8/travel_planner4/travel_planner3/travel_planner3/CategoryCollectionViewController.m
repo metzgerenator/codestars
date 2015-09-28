@@ -25,7 +25,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     categoryImages = @[@"house.png", @"backpack.png", @"calendar.png"];
-    categoryLabels = @[@"Lodging", @"Packing?", @"Itenerary"];
+    categoryLabels = @[@"Lodging", @"Packing", @"Itenerary"];
     
     
     // Uncomment the following line to preserve selection between presentations
