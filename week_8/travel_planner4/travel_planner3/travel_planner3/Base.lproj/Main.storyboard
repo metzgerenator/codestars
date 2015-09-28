@@ -225,6 +225,33 @@
             </objects>
             <point key="canvasLocation" x="1391" y="1151"/>
         </scene>
+        <!--Locations-->
+        <scene sceneID="j6z-37-N0O">
+            <objects>
+                <viewController id="THx-jD-mvf" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5HT-Hm-2FO"/>
+                        <viewControllerLayoutGuide type="bottom" id="tu8-mt-2wM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qaD-uq-3OO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rh0-ot-cAq">
+                                <rect key="frame" x="20" y="96" width="272" height="333"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Locations" id="Jwb-ii-pmv"/>
+                    <connections>
+                        <outlet property="mapView" destination="rh0-ot-cAq" id="jPj-7r-Tjf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wMc-qe-T3F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2219" y="1164"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mmh-9Z-BxS">
             <objects>
@@ -237,6 +264,7 @@
                     <connections>
                         <segue destination="BfU-1g-ApL" kind="relationship" relationship="viewControllers" id="nE0-G7-F2l"/>
                         <segue destination="QhP-Qg-tE3" kind="relationship" relationship="viewControllers" id="HyM-hg-L6a"/>
+                        <segue destination="6nv-8Z-cmW" kind="relationship" relationship="viewControllers" id="afr-O6-eeB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfC-jv-zMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,6 +289,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5F-Jl-hxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="971" y="1151"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UTr-70-98q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6nv-8Z-cmW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="Q5p-iY-i6L"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gRC-9P-yoy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="THx-jD-mvf" kind="relationship" relationship="rootViewController" id="mzc-fF-zjt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rRD-Q5-oWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="1164"/>
         </scene>
     </scenes>
     <resources>
