@@ -41,7 +41,7 @@
                                 <connections>
                                     <outlet property="albumImage" destination="Pvf-d9-nmk" id="GG5-bM-1Be"/>
                                     <outlet property="albumName" destination="YZb-zB-nPk" id="TIf-DM-mda"/>
-                                    <segue destination="tG4-Ww-mJt" kind="modal" identifier="ShowAlbumInfo" id="GeA-wg-BXl"/>
+                                    <segue destination="tG4-Ww-mJt" kind="modal" identifier="ShowAlbumInfo" id="opo-OU-F7S"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -87,6 +87,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdY-Kl-Wr2">
+                                <rect key="frame" x="193" y="20" width="107" height="30"/>
+                                <state key="normal" title="Show Me More!"/>
+                                <connections>
+                                    <action selector="backButton:" destination="tG4-Ww-mJt" eventType="touchUpInside" id="gaD-yh-Bxq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -100,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJO-rR-fxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="268"/>
+            <point key="canvasLocation" x="933" y="268"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bgR-iD-w0K">

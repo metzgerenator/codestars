@@ -21,5 +21,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *whyILikeAlbum;
 @property (weak, nonatomic) NSString *whyILikeAlbumString;  
+- (IBAction)backButton:(id)sender;
 
 @end
