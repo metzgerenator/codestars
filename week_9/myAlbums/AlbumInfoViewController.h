@@ -20,7 +20,15 @@
 @property (weak, nonatomic)NSString *albumInfoReleaseDateString;
 
 @property (weak, nonatomic) IBOutlet UITextView *whyILikeAlbum;
-@property (weak, nonatomic) NSString *whyILikeAlbumString;  
+@property (weak, nonatomic) NSString *whyILikeAlbumString;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *albumAuthor;
+@property (weak, nonatomic) NSString *albumAuthorString;  
+
+
+
+
 - (IBAction)backButton:(id)sender;
 
 @end

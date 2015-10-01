@@ -24,7 +24,9 @@
     
     self.albumInfoReleaseDate.text = self.albumInfoReleaseDateString;
     
-    self.whyILikeAlbum.text = self.whyILikeAlbumString;  
+    self.whyILikeAlbum.text = self.whyILikeAlbumString;
+    
+    self.albumAuthor.text = self.albumAuthorString;
     
     
     
