@@ -16,7 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.albumCoverPhotoLarge.image =  [UIImage imageNamed:self.albumCoverPhotoLargeString];
+ 
+    
+    self.albumInfoTitle.text = self.albumInfoTitleString;
+    
+    self.albumInfoReleaseDate.text = self.albumInfoReleaseDateString;
+    
+    self.whyILikeAlbum.text = self.whyILikeAlbumString;  
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

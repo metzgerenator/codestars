@@ -11,36 +11,37 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0mY-v6-gaM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5rv-kq-MBn">
-                            <size key="itemSize" width="149" height="134"/>
+                            <size key="itemSize" width="147" height="132"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="center" reuseIdentifier="Cell" id="hiC-3T-2x1" customClass="AlbumCollectionViewCell">
-                                <rect key="frame" x="0.0" y="64" width="149" height="134"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="TopLeft" reuseIdentifier="Cell" id="hiC-3T-2x1" customClass="AlbumCollectionViewCell">
+                                <rect key="frame" x="0.0" y="64" width="147" height="132"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="149" height="134"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="147" height="132"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AlbumName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZb-zB-nPk">
-                                            <rect key="frame" x="27" y="105" width="94" height="21"/>
+                                        <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pvf-d9-nmk">
+                                            <rect key="frame" x="23" y="8" width="101" height="88"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark Side of the Moon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZb-zB-nPk">
+                                            <rect key="frame" x="5" y="78" width="142" height="68"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pvf-d9-nmk">
-                                            <rect key="frame" x="24" y="14" width="101" height="88"/>
-                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
                                     <outlet property="albumImage" destination="Pvf-d9-nmk" id="GG5-bM-1Be"/>
                                     <outlet property="albumName" destination="YZb-zB-nPk" id="TIf-DM-mda"/>
-                                    <segue destination="tG4-Ww-mJt" kind="push" id="2te-Nd-QkC"/>
+                                    <segue destination="tG4-Ww-mJt" kind="modal" identifier="ShowAlbumInfo" id="GeA-wg-BXl"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -53,7 +54,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ynv-Aa-s7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="268"/>
+            <point key="canvasLocation" x="508" y="268"/>
         </scene>
         <!--Info-->
         <scene sceneID="jIU-5T-HPd">
@@ -66,13 +67,40 @@
                     <view key="view" contentMode="scaleToFill" id="j9a-Q0-8YE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alan" translatesAutoresizingMaskIntoConstraints="NO" id="zuX-DL-rde">
+                                <rect key="frame" x="32" y="81" width="257" height="219"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title " borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbE-iK-iQg">
+                                <rect key="frame" x="20" y="308" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Release Date " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1F-oB-n9Y">
+                                <rect key="frame" x="20" y="346" width="110" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ppg-YC-D1C">
+                                <rect key="frame" x="20" y="378" width="280" height="170"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Info" id="0m2-7X-4wM"/>
+                    <connections>
+                        <outlet property="albumCoverPhotoLarge" destination="zuX-DL-rde" id="YlR-ki-UO2"/>
+                        <outlet property="albumInfoReleaseDate" destination="T1F-oB-n9Y" id="JZK-jx-cJ7"/>
+                        <outlet property="albumInfoTitle" destination="LbE-iK-iQg" id="61L-FZ-ucU"/>
+                        <outlet property="whyILikeAlbum" destination="ppg-YC-D1C" id="Lkg-is-7KW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJO-rR-fxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="268"/>
+            <point key="canvasLocation" x="924" y="268"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bgR-iD-w0K">
@@ -93,4 +121,7 @@
             <point key="canvasLocation" x="108" y="268"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alan" width="305" height="300"/>
+    </resources>
 </document>

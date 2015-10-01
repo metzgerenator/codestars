@@ -7,23 +7,39 @@
 //
 
 #import "AlbumCollectionViewController.h"
+#import "AlbumCollectionViewCell.h"
+#import "AlbumInfoViewController.h"
+
 
 @interface AlbumCollectionViewController ()
 
 @end
 
 @implementation AlbumCollectionViewController
+{
+    NSArray *albumPhotos;
+    NSArray *albumLargePhotos;
+    NSArray *albumDescriptions;
+    NSArray *albumInfoReleaseDates;
+    NSArray *albumInformation;
+}
 
 static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    albumPhotos = @[@"alan.jpg", @"moon.png", @"zepplin.png"];
+    albumDescriptions = @[@"I Robot", @"Dark Side of The Moon", @"Led Zepplin III"];
+    albumInfoReleaseDates = @[@"1969",@"1970",@"1983"];
+    albumInformation = @[@"Great album, bla bla bla bla bla bla",
+                         @"it just sounds good bla blablablablablablablablablablablablablabla",
+                         @"Because it's cool"];
+    
+    
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
 }
@@ -33,33 +49,43 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowAlbumInfo"]) {
+        NSIndexPath *indexPaths = [self.collectionView indexPathsForSelectedItems][0];
+        AlbumInfoViewController *destViewController = segue.destinationViewController;
+        
+        destViewController.albumInfoReleaseDateString = [albumInfoReleaseDates objectAtIndex:indexPaths.row];
+        destViewController.albumCoverPhotoLargeString = [albumPhotos objectAtIndex:indexPaths.row];
+        destViewController.albumInfoTitleString = [albumDescriptions objectAtIndex:indexPaths.row];
+        destViewController.whyILikeAlbumString = [albumInformation objectAtIndex:indexPaths.row];
+    }
 }
-*/
+
+
+
 
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    return [albumPhotos count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    AlbumCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
+    cell.albumImage.image = [UIImage imageNamed:[albumPhotos objectAtIndex:indexPath.row]];
+    cell.albumName.text = [albumDescriptions objectAtIndex:indexPath.row];
     
     return cell;
 }
