@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
         int numberPool[1001];
         int sum = 0;
         
-        for (int x = 0; x <= 1000; x++) {
+        for (int x = 0; x <= 999; x++) {
             if (x % 3 == 0 || x % 5 ==0) {
                 numberPool[x] = x;
                 sum = x + sum;
