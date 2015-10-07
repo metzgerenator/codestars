@@ -2,6 +2,10 @@
 //  main.m
 //  problem_4_draft_2
 //
+//A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+//
+//Find the largest palindrome made from the product of two 3-digit numbers.
+//
 
 //
 
@@ -31,6 +35,10 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         NSMutableArray * palindromicStorage = [[NSMutableArray alloc]init];
+        
+        
+       
+        
         int numberTracker = 999;
         int sum = 0;
         
@@ -63,10 +71,29 @@ int main(int argc, const char * argv[]) {
         
             
         }
+        
+        NSArray *sorted =  [palindromicStorage sortedArrayUsingComparator:^(id obj1, id obj2) {
+            
+            if ([obj1 integerValue] > [obj2 integerValue]) {
+                return (NSComparisonResult)NSOrderedDescending;
+            }
+            
+            if ([obj1 integerValue] < [obj2 integerValue]) {
+                return (NSComparisonResult)NSOrderedAscending;
+            }
+            return (NSComparisonResult)NSOrderedSame;
+        }];
+        
       
-//        for (NSNumber *f in palindromicStorage) {
-//            <#statements#>
-//        }
+        for (NSArray *f in sorted ) {
+            
+//            NSSortDescriptor *order = [[NSSortDescriptor alloc]init];
+//            [order]
+//            
+            NSLog(@"palindrom sorted %@", f);
+            
+            
+        }
         
     }
     return 0;
