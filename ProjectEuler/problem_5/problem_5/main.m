@@ -12,22 +12,21 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        int numberStarter = 1;
-        int numberDivider = 10;
-      
-        while (numberStarter % numberDivider != 0) {
-           
-            numberStarter += 1;
-            numberDivider = 10;
+        int dividerInput [20] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        int answer = 1;
+        
+        for (int x = 0; x < 20; x++) {
+            int checker = answer % dividerInput[x];
+//            NSLog(@"answer is now %d, divider is now %d", answer, dividerInput[x]);
             
-            if (numberStarter % numberDivider == 0) {
-                
-//                numberStarter = numberStarter;
-                numberDivider = numberDivider -1;
-                NSLog(@"numberStarter is now %d numberDivider is now %d", numberStarter, numberDivider);
-                
+            if (checker !=0 ) {
+                answer += 1;
+                x = 0;
+//                NSLog(@"answer is now %d, divider is now %d", answer, dividerInput[x]);
             }
         }
+        
+        NSLog(@"answer is %d", answer);
         
     }
     return 0;
