@@ -20,15 +20,13 @@ int main(int argc, const char * argv[]) {
         int ticker = 1;
 
         
-        for ( ;x < answer; x++) {
+        for ( ;x < (answer); x++) {
             
             int checker = answer % x;
-            
-            
+                        
             
             // clear out non primes
             if (checker == 0) {
-        NSLog(@" answer is %d and x is %d", answer,x);
                 answer += 1;
                 x = 1;
                 
@@ -39,7 +37,6 @@ int main(int argc, const char * argv[]) {
                 ticker += 1;
                 NSLog(@" prime %d is the %d'st prime", answer, ticker);
                 
-                 NSLog(@" answer is %d and x is %d", answer,x);
                 answer += 1;
                 x = 1;
                 
