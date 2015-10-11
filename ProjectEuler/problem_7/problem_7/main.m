@@ -23,7 +23,6 @@ int main(int argc, const char * argv[]) {
         for ( ;x < (answer); x++) {
             
             int checker = answer % x;
-                        
             
             // clear out non primes
             if (checker == 0) {

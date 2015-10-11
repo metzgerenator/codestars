@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		271FC0F91BC71ACF00C195C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FC0F81BC71ACF00C195C9 /* main.m */; };
 		271FC0FC1BC71ACF00C195C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FC0FB1BC71ACF00C195C9 /* AppDelegate.m */; };
-		271FC0FF1BC71ACF00C195C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FC0FE1BC71ACF00C195C9 /* ViewController.m */; };
 		271FC1021BC71ACF00C195C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271FC1001BC71ACF00C195C9 /* Main.storyboard */; };
 		271FC1041BC71ACF00C195C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271FC1031BC71ACF00C195C9 /* Assets.xcassets */; };
 		271FC1071BC71ACF00C195C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271FC1051BC71ACF00C195C9 /* LaunchScreen.storyboard */; };
 		271FC1121BC71ACF00C195C9 /* RssReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FC1111BC71ACF00C195C9 /* RssReaderTests.m */; };
 		271FC11D1BC71ACF00C195C9 /* RssReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FC11C1BC71ACF00C195C9 /* RssReaderUITests.m */; };
 		271FC12C1BC71C4200C195C9 /* RssReaderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FC12B1BC71C4200C195C9 /* RssReaderTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		572AB43A1BC9BE68000E775A /* WebPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572AB4391BC9BE68000E775A /* WebPageViewController.m */; settings = {ASSET_TAGS = (); }; };
+		572AB43D1BC9C51C000E775A /* RssItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 572AB43C1BC9C51C000E775A /* RssItem.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,6 @@
 		271FC0F81BC71ACF00C195C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		271FC0FA1BC71ACF00C195C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		271FC0FB1BC71ACF00C195C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		271FC0FD1BC71ACF00C195C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		271FC0FE1BC71ACF00C195C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		271FC1011BC71ACF00C195C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		271FC1031BC71ACF00C195C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		271FC1061BC71ACF00C195C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +53,10 @@
 		271FC11E1BC71ACF00C195C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		271FC12A1BC71C4200C195C9 /* RssReaderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssReaderTableViewController.h; sourceTree = "<group>"; };
 		271FC12B1BC71C4200C195C9 /* RssReaderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssReaderTableViewController.m; sourceTree = "<group>"; };
+		572AB4381BC9BE68000E775A /* WebPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPageViewController.h; sourceTree = "<group>"; };
+		572AB4391BC9BE68000E775A /* WebPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPageViewController.m; sourceTree = "<group>"; };
+		572AB43B1BC9C51C000E775A /* RssItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssItem.h; sourceTree = "<group>"; };
+		572AB43C1BC9C51C000E775A /* RssItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +109,6 @@
 			children = (
 				271FC0FA1BC71ACF00C195C9 /* AppDelegate.h */,
 				271FC0FB1BC71ACF00C195C9 /* AppDelegate.m */,
-				271FC0FD1BC71ACF00C195C9 /* ViewController.h */,
-				271FC0FE1BC71ACF00C195C9 /* ViewController.m */,
 				271FC1001BC71ACF00C195C9 /* Main.storyboard */,
 				271FC1031BC71ACF00C195C9 /* Assets.xcassets */,
 				271FC1051BC71ACF00C195C9 /* LaunchScreen.storyboard */,
@@ -115,6 +116,10 @@
 				271FC0F71BC71ACF00C195C9 /* Supporting Files */,
 				271FC12A1BC71C4200C195C9 /* RssReaderTableViewController.h */,
 				271FC12B1BC71C4200C195C9 /* RssReaderTableViewController.m */,
+				572AB4381BC9BE68000E775A /* WebPageViewController.h */,
+				572AB4391BC9BE68000E775A /* WebPageViewController.m */,
+				572AB43B1BC9C51C000E775A /* RssItem.h */,
+				572AB43C1BC9C51C000E775A /* RssItem.m */,
 			);
 			path = RssReader;
 			sourceTree = "<group>";
@@ -275,7 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				271FC0FF1BC71ACF00C195C9 /* ViewController.m in Sources */,
+				572AB43A1BC9BE68000E775A /* WebPageViewController.m in Sources */,
+				572AB43D1BC9C51C000E775A /* RssItem.m in Sources */,
 				271FC0FC1BC71ACF00C195C9 /* AppDelegate.m in Sources */,
 				271FC0F91BC71ACF00C195C9 /* main.m in Sources */,
 				271FC12C1BC71C4200C195C9 /* RssReaderTableViewController.m in Sources */,
@@ -502,6 +508,7 @@
 				271FC1231BC71ACF00C195C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		271FC1241BC71ACF00C195C9 /* Build configuration list for PBXNativeTarget "RssReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +517,7 @@
 				271FC1261BC71ACF00C195C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		271FC1271BC71ACF00C195C9 /* Build configuration list for PBXNativeTarget "RssReaderUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +526,7 @@
 				271FC1291BC71ACF00C195C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

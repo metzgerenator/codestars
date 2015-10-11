@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RssReaderTableViewController : UITableViewController
+@interface RssReaderTableViewController : UITableViewController <NSXMLParserDelegate>
 
 @end
