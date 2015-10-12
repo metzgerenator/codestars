@@ -90,17 +90,16 @@
 
 
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        RecipeDetailViewController *destViewController = segue.destinationViewController;
-//
-////        Recipe *recipe = [recipes objectAtIndex:indexPath.row];
-////        
-////        PFObject *recipePFObject = [self objectAtIndexPath:indexPath];
-////        destViewController.recipe = recipePFObject;
-//    }
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        RecipeDetailViewController *destViewController = segue.destinationViewController;
+
+        
+        PFObject *recipePFObject = [self objectAtIndexPath:indexPath];
+        destViewController.recipe = recipePFObject;
+    }
+}
 
 
 @end

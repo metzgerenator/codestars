@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import <ParseUI/PFImageView.h>
 #import "Recipe.h"
 
 @interface RecipeDetailViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *recipeImageView;
+@property (weak, nonatomic) IBOutlet PFImageView *recipeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *prepTimeLabel;
 @property (weak, nonatomic) IBOutlet UITextView *ingredientsTextView;
 
-@property (nonatomic, strong) Recipe *recipe;
+@property (nonatomic, strong) PFObject *recipe;
 
 @end

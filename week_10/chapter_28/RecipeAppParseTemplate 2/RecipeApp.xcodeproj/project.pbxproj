@@ -25,6 +25,7 @@
 		572AB43F1BCADE76000E775A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 572AB43E1BCADE76000E775A /* libsqlite3.0.tbd */; };
 		572AB4411BCADE87000E775A /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 572AB4401BCADE87000E775A /* libz.1.1.3.tbd */; };
 		572AB4431BCADE9D000E775A /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 572AB4421BCADE9D000E775A /* libstdc++.6.tbd */; };
+		572AB4461BCB4006000E775A /* NewRecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572AB4451BCB4006000E775A /* NewRecipeTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F41C80A218531640002AE0A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41C80A118531640002AE0A3 /* Foundation.framework */; };
 		F41C80A418531640002AE0A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41C80A318531640002AE0A3 /* CoreGraphics.framework */; };
 		F41C80A618531640002AE0A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41C80A518531640002AE0A3 /* UIKit.framework */; };
@@ -95,6 +96,8 @@
 		572AB43E1BCADE76000E775A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		572AB4401BCADE87000E775A /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		572AB4421BCADE9D000E775A /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		572AB4441BCB4006000E775A /* NewRecipeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRecipeTableViewController.h; sourceTree = "<group>"; };
+		572AB4451BCB4006000E775A /* NewRecipeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRecipeTableViewController.m; sourceTree = "<group>"; };
 		F41C809E18531640002AE0A3 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41C80A118531640002AE0A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F41C80A318531640002AE0A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -250,6 +253,8 @@
 				F41C80F718577EB8002AE0A3 /* RecipeTableCell.m */,
 				F49F790D186882700036E03F /* RecipeDetailViewController.h */,
 				F49F790E186882700036E03F /* RecipeDetailViewController.m */,
+				572AB4441BCB4006000E775A /* NewRecipeTableViewController.h */,
+				572AB4451BCB4006000E775A /* NewRecipeTableViewController.m */,
 				F49F7910186937070036E03F /* AboutViewController.h */,
 				F49F7911186937070036E03F /* AboutViewController.m */,
 				F49F791D186AC9FD0036E03F /* Recipe.h */,
@@ -438,6 +443,7 @@
 			files = (
 				F49F7912186937070036E03F /* AboutViewController.m in Sources */,
 				F49F791F186AC9FD0036E03F /* Recipe.m in Sources */,
+				572AB4461BCB4006000E775A /* NewRecipeTableViewController.m in Sources */,
 				F41C80B218531640002AE0A3 /* RecipeAppDelegate.m in Sources */,
 				F41C80B818531640002AE0A3 /* RecipeTableViewController.m in Sources */,
 				F41C80AE18531640002AE0A3 /* main.m in Sources */,
