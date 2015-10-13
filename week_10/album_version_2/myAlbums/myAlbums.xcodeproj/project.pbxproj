@@ -19,6 +19,8 @@
 		27F4AF871BBC8558006E851B /* AlbumInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4AF861BBC8558006E851B /* AlbumInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
 		574E6DFA1BCC513F001FE4F7 /* genresTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E6DF91BCC513F001FE4F7 /* genresTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		574E6DFD1BCC6608001FE4F7 /* GenresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E6DFC1BCC6608001FE4F7 /* GenresViewController.m */; settings = {ASSET_TAGS = (); }; };
+		574E6E001BCC8048001FE4F7 /* GreatestArtistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E6DFF1BCC8048001FE4F7 /* GreatestArtistViewController.m */; settings = {ASSET_TAGS = (); }; };
+		574E6E031BCC86BC001FE4F7 /* MoreInfoOnArtistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574E6E021BCC86BC001FE4F7 /* MoreInfoOnArtistViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		574E6DF91BCC513F001FE4F7 /* genresTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = genresTableViewController.m; sourceTree = "<group>"; };
 		574E6DFB1BCC6608001FE4F7 /* GenresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenresViewController.h; sourceTree = "<group>"; };
 		574E6DFC1BCC6608001FE4F7 /* GenresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenresViewController.m; sourceTree = "<group>"; };
+		574E6DFE1BCC8048001FE4F7 /* GreatestArtistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreatestArtistViewController.h; sourceTree = "<group>"; };
+		574E6DFF1BCC8048001FE4F7 /* GreatestArtistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreatestArtistViewController.m; sourceTree = "<group>"; };
+		574E6E011BCC86BC001FE4F7 /* MoreInfoOnArtistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreInfoOnArtistViewController.h; sourceTree = "<group>"; };
+		574E6E021BCC86BC001FE4F7 /* MoreInfoOnArtistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreInfoOnArtistViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,10 @@
 				574E6DF91BCC513F001FE4F7 /* genresTableViewController.m */,
 				574E6DFB1BCC6608001FE4F7 /* GenresViewController.h */,
 				574E6DFC1BCC6608001FE4F7 /* GenresViewController.m */,
+				574E6DFE1BCC8048001FE4F7 /* GreatestArtistViewController.h */,
+				574E6DFF1BCC8048001FE4F7 /* GreatestArtistViewController.m */,
+				574E6E011BCC86BC001FE4F7 /* MoreInfoOnArtistViewController.h */,
+				574E6E021BCC86BC001FE4F7 /* MoreInfoOnArtistViewController.m */,
 			);
 			path = myAlbums;
 			sourceTree = "<group>";
@@ -296,6 +306,8 @@
 				27F4AF4E1BBC7DBD006E851B /* main.m in Sources */,
 				574E6DFD1BCC6608001FE4F7 /* GenresViewController.m in Sources */,
 				27F4AF811BBC7E9B006E851B /* AlbumCollectionViewController.m in Sources */,
+				574E6E001BCC8048001FE4F7 /* GreatestArtistViewController.m in Sources */,
+				574E6E031BCC86BC001FE4F7 /* MoreInfoOnArtistViewController.m in Sources */,
 				574E6DFA1BCC513F001FE4F7 /* genresTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
