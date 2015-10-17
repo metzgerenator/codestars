@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2766F0601BD2A4A300758CE8 /* AddToPackingListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2766F05F1BD2A4A300758CE8 /* AddToPackingListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5704F8DA1BD1A827002C8DC0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F8D91BD1A827002C8DC0 /* main.m */; };
 		5704F8DD1BD1A827002C8DC0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F8DC1BD1A827002C8DC0 /* AppDelegate.m */; };
 		5704F8E31BD1A827002C8DC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5704F8E11BD1A827002C8DC0 /* Main.storyboard */; };
@@ -58,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2766F05E1BD2A4A300758CE8 /* AddToPackingListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddToPackingListTableViewController.h; path = ../AddToPackingListTableViewController.h; sourceTree = "<group>"; };
+		2766F05F1BD2A4A300758CE8 /* AddToPackingListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddToPackingListTableViewController.m; path = ../AddToPackingListTableViewController.m; sourceTree = "<group>"; };
 		5704F8D51BD1A827002C8DC0 /* Travel Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5704F8D91BD1A827002C8DC0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5704F8DB1BD1A827002C8DC0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				5704F90C1BD1C2D8002C8DC0 /* PackingListTableViewController.m */,
 				5704F93F1BD1EA2D002C8DC0 /* PackingListTableViewCell.h */,
 				5704F9401BD1EA2D002C8DC0 /* PackingListTableViewCell.m */,
+				2766F05E1BD2A4A300758CE8 /* AddToPackingListTableViewController.h */,
+				2766F05F1BD2A4A300758CE8 /* AddToPackingListTableViewController.m */,
 			);
 			name = PackingList;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 				5704F8DD1BD1A827002C8DC0 /* AppDelegate.m in Sources */,
 				5704F90D1BD1C2D8002C8DC0 /* PackingListTableViewController.m in Sources */,
 				5704F8DA1BD1A827002C8DC0 /* main.m in Sources */,
+				2766F0601BD2A4A300758CE8 /* AddToPackingListTableViewController.m in Sources */,
 				5704F93C1BD1D01D002C8DC0 /* SignupViewController.m in Sources */,
 				5704F9411BD1EA2D002C8DC0 /* PackingListTableViewCell.m in Sources */,
 			);

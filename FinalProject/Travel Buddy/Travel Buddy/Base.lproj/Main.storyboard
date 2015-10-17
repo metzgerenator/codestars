@@ -62,11 +62,11 @@
             </objects>
             <point key="canvasLocation" x="499" y="169"/>
         </scene>
-        <!--Add Item Table View Controller-->
+        <!--Add Item-->
         <scene sceneID="SmY-m8-fmt">
             <objects>
-                <tableViewController id="sLM-Mt-gJY" customClass="AddItemTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="217" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q35-RT-wpt">
+                <tableViewController id="sLM-Mt-gJY" customClass="AddToPackingListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="217" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q35-RT-wpt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,17 +77,23 @@
                                         <rect key="frame" x="0.0" y="64" width="320" height="217"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pmF-wj-Yaw" id="z7l-SH-O0w">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="216.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="217"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Iw-8Z-D07" customClass="PFImageView">
                                                     <rect key="frame" x="40" y="8" width="240" height="128"/>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-tY-f2d">
-                                                    <rect key="frame" x="58" y="155" width="205" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Item Here " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-tY-f2d">
+                                                    <rect key="frame" x="80" y="155" width="205" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7Z-og-jNv">
+                                                    <rect key="frame" x="8" y="159" width="69" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -99,9 +105,18 @@
                             <outlet property="delegate" destination="sLM-Mt-gJY" id="Ftt-7q-D6z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="DKH-Nb-PGF">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="ibG-pR-izk"/>
+                    <navigationItem key="navigationItem" title="Add Item" id="DKH-Nb-PGF">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="ibG-pR-izk">
+                            <connections>
+                                <action selector="saveItemButton:" destination="sLM-Mt-gJY" id="8C4-6S-xuD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addItemField" destination="7Ag-tY-f2d" id="Edf-E6-1CO"/>
+                        <outlet property="itemPicture" destination="0Iw-8Z-D07" id="MFE-Mt-IrF"/>
+                        <outlet property="placeHolderLabel" destination="N7Z-og-jNv" id="B6y-yO-Fup"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxf-eh-OT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
