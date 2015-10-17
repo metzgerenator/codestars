@@ -80,8 +80,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="216.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Iw-8Z-D07">
-                                                    <rect key="frame" x="40" y="11" width="240" height="128"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Iw-8Z-D07" customClass="PFImageView">
+                                                    <rect key="frame" x="40" y="8" width="240" height="128"/>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-tY-f2d">
                                                     <rect key="frame" x="58" y="155" width="205" height="30"/>
@@ -102,10 +102,6 @@
                     <navigationItem key="navigationItem" id="DKH-Nb-PGF">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="ibG-pR-izk"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="itemInputField" destination="7Ag-tY-f2d" id="trk-GN-5sM"/>
-                        <outlet property="pictureOutlet" destination="0Iw-8Z-D07" id="X1R-xR-5M4"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxf-eh-OT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

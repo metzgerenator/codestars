@@ -38,7 +38,6 @@
 		5704F9391BD1D005002C8DC0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F9381BD1D005002C8DC0 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5704F93C1BD1D01D002C8DC0 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F93B1BD1D01D002C8DC0 /* SignupViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5704F9411BD1EA2D002C8DC0 /* PackingListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F9401BD1EA2D002C8DC0 /* PackingListTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		5704F9471BD1FC77002C8DC0 /* AddItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F9461BD1FC77002C8DC0 /* AddItemTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,8 +100,6 @@
 		5704F93B1BD1D01D002C8DC0 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		5704F93F1BD1EA2D002C8DC0 /* PackingListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackingListTableViewCell.h; sourceTree = "<group>"; };
 		5704F9401BD1EA2D002C8DC0 /* PackingListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackingListTableViewCell.m; sourceTree = "<group>"; };
-		5704F9451BD1FC77002C8DC0 /* AddItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemTableViewController.h; sourceTree = "<group>"; };
-		5704F9461BD1FC77002C8DC0 /* AddItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,8 +256,6 @@
 				5704F90C1BD1C2D8002C8DC0 /* PackingListTableViewController.m */,
 				5704F93F1BD1EA2D002C8DC0 /* PackingListTableViewCell.h */,
 				5704F9401BD1EA2D002C8DC0 /* PackingListTableViewCell.m */,
-				5704F9451BD1FC77002C8DC0 /* AddItemTableViewController.h */,
-				5704F9461BD1FC77002C8DC0 /* AddItemTableViewController.m */,
 			);
 			name = PackingList;
 			sourceTree = "<group>";
@@ -397,7 +392,6 @@
 			files = (
 				5704F9391BD1D005002C8DC0 /* LoginViewController.m in Sources */,
 				5704F8DD1BD1A827002C8DC0 /* AppDelegate.m in Sources */,
-				5704F9471BD1FC77002C8DC0 /* AddItemTableViewController.m in Sources */,
 				5704F90D1BD1C2D8002C8DC0 /* PackingListTableViewController.m in Sources */,
 				5704F8DA1BD1A827002C8DC0 /* main.m in Sources */,
 				5704F93C1BD1D01D002C8DC0 /* SignupViewController.m in Sources */,
