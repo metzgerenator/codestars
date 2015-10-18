@@ -156,8 +156,12 @@
 */
 
 - (IBAction)saveItemButton:(id)sender {
-    // Create PFOBject with recipe information
+    // Create PFOBject with item information
     PFObject *packItem = [PFObject objectWithClassName:@"itemsToPack"];
+    //secure object
+    
+    packItem.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+    
     [packItem setObject:self.addItemField.text forKey:@"item"];
     
    
