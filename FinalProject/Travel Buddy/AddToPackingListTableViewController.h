@@ -19,4 +19,8 @@
 
 - (IBAction)saveItemButton:(id)sender;
 
+- (IBAction)takePhoto:(id)sender;
+
+- (IBAction)CancelButton:(id)sender;
+
 @end

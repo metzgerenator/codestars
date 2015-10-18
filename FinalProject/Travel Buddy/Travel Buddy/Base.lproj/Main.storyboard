@@ -94,6 +94,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FL-TJ-RyS">
+                                                    <rect key="frame" x="8" y="179" width="89" height="30"/>
+                                                    <state key="normal" title="Take a photo"/>
+                                                    <connections>
+                                                        <action selector="takePhoto:" destination="sLM-Mt-gJY" eventType="touchUpInside" id="dwx-Ed-3qK"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -106,6 +113,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" id="DKH-Nb-PGF">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="5dc-59-3Hp">
+                            <connections>
+                                <action selector="CancelButton:" destination="sLM-Mt-gJY" id="Mj1-vR-Vwl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="ibG-pR-izk">
                             <connections>
                                 <action selector="saveItemButton:" destination="sLM-Mt-gJY" id="8C4-6S-xuD"/>
