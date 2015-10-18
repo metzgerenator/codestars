@@ -20,12 +20,17 @@
     self.addItemField.delegate = self;
     
     
+    
    }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
 
 #pragma mark - Table view data source
 
@@ -129,5 +134,59 @@
 */
 
 - (IBAction)saveItemButton:(id)sender {
+    // Create PFOBject with recipe information
+    PFObject *packItem = [PFObject objectWithClassName:@"itemsToPack"];
+    [packItem setObject:self.addItemField.text forKey:@"item"];
+    
+   
+    
+    //Pack item Image
+    NSData *imageData = UIImageJPEGRepresentation(self.itemPicture.image, 0.8);
+    NSString *filename = [NSString stringWithFormat:@"%@.png", self.addItemField.text];
+    PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+    [packItem setObject:imageFile forKey:@"itemImage"];
+    
+    //Show progress
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+    indicator.center = self.view.center;
+    [self.view addSubview:indicator];
+    [indicator bringSubviewToFront:self.view];
+    [indicator startAnimating];
+    
+    //Upload to Parse
+    [packItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [indicator stopAnimating];
+        
+        if (!error) {
+            // Dismiss the controller
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+            //Notify table view to reload
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"refreshTable" object:self];
+        }else {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Upload Failure" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okayAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            [alertController addAction:okayAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+            
+        }
+       
+        
+
+    }];
+    
+    // exit out
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 @end

@@ -28,10 +28,22 @@
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshTable:)
+                                                 name:@"refreshTable"
+                                               object:nil];
     
     
 }
+
+
+
+-(void)refreshTable: (NSNotification*) notification
+{
+    [self loadObjects];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -63,6 +75,17 @@
 
 
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:
+(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Remove the row from data model
+    PFObject *object = [self.objects objectAtIndex:indexPath.row];
+    [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [self refreshTable:nil];
+    }];
+    [self.tableView reloadData];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(nullable PFObject *)object {
     
     static NSString *CellIdentifier = @"Cell";
@@ -78,7 +101,6 @@
     [thumbnailImageView loadInBackground];
     
     cell.itemToPackLabel.text = [object objectForKey:@"item"];
-    
     
     return cell;
 }
