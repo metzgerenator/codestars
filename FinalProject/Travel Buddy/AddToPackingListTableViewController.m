@@ -90,8 +90,12 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     UIImage *originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
     
+    //Change to allow no picture loaded
+    
     
     self.itemPicture.image = originalImage;
+    
+    
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     

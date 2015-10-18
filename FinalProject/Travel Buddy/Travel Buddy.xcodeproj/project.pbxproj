@@ -39,6 +39,8 @@
 		5704F9391BD1D005002C8DC0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F9381BD1D005002C8DC0 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5704F93C1BD1D01D002C8DC0 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F93B1BD1D01D002C8DC0 /* SignupViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5704F9411BD1EA2D002C8DC0 /* PackingListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F9401BD1EA2D002C8DC0 /* PackingListTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		57AA6CF81BD4231500554D47 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57AA6CF71BD4231500554D47 /* MapKit.framework */; };
+		57AA6CFC1BD4253500554D47 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AA6CFB1BD4253500554D47 /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,9 @@
 		5704F93B1BD1D01D002C8DC0 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		5704F93F1BD1EA2D002C8DC0 /* PackingListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackingListTableViewCell.h; sourceTree = "<group>"; };
 		5704F9401BD1EA2D002C8DC0 /* PackingListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackingListTableViewCell.m; sourceTree = "<group>"; };
+		57AA6CF71BD4231500554D47 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		57AA6CFA1BD4253500554D47 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		57AA6CFB1BD4253500554D47 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +119,7 @@
 				5704F9341BD1CA9D002C8DC0 /* libz.1.1.3.tbd in Frameworks */,
 				5704F9321BD1CA93002C8DC0 /* libstdc++.6.tbd in Frameworks */,
 				5704F9301BD1CA74002C8DC0 /* Social.framework in Frameworks */,
+				57AA6CF81BD4231500554D47 /* MapKit.framework in Frameworks */,
 				5704F92E1BD1CA6B002C8DC0 /* Accounts.framework in Frameworks */,
 				5704F92C1BD1CA5D002C8DC0 /* SystemConfiguration.framework in Frameworks */,
 				5704F92A1BD1CA50002C8DC0 /* StoreKit.framework in Frameworks */,
@@ -153,6 +159,7 @@
 		5704F8CC1BD1A827002C8DC0 = {
 			isa = PBXGroup;
 			children = (
+				57AA6CF71BD4231500554D47 /* MapKit.framework */,
 				5704F8D71BD1A827002C8DC0 /* Travel Buddy */,
 				5704F8F11BD1A827002C8DC0 /* Travel BuddyTests */,
 				5704F8FC1BD1A827002C8DC0 /* Travel BuddyUITests */,
@@ -174,6 +181,7 @@
 		5704F8D71BD1A827002C8DC0 /* Travel Buddy */ = {
 			isa = PBXGroup;
 			children = (
+				57AA6CF91BD4251500554D47 /* map */,
 				5704F93E1BD1D044002C8DC0 /* PackingList */,
 				5704F93D1BD1D023002C8DC0 /* Login */,
 				5704F8DB1BD1A827002C8DC0 /* AppDelegate.h */,
@@ -265,6 +273,15 @@
 			name = PackingList;
 			sourceTree = "<group>";
 		};
+		57AA6CF91BD4251500554D47 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				57AA6CFA1BD4253500554D47 /* MapViewController.h */,
+				57AA6CFB1BD4253500554D47 /* MapViewController.m */,
+			);
+			name = map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,6 +349,11 @@
 				TargetAttributes = {
 					5704F8D41BD1A827002C8DC0 = {
 						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					5704F8ED1BD1A827002C8DC0 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -398,6 +420,7 @@
 				5704F9391BD1D005002C8DC0 /* LoginViewController.m in Sources */,
 				5704F8DD1BD1A827002C8DC0 /* AppDelegate.m in Sources */,
 				5704F90D1BD1C2D8002C8DC0 /* PackingListTableViewController.m in Sources */,
+				57AA6CFC1BD4253500554D47 /* MapViewController.m in Sources */,
 				5704F8DA1BD1A827002C8DC0 /* main.m in Sources */,
 				2766F0601BD2A4A300758CE8 /* AddToPackingListTableViewController.m in Sources */,
 				5704F93C1BD1D01D002C8DC0 /* SignupViewController.m in Sources */,
@@ -540,6 +563,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.9.0",
@@ -555,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.9.0",
