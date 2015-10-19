@@ -7,17 +7,20 @@
 
 #import "MapViewController.h"
 
+
 @interface MapViewController ()
 
 @end
 
-@implementation MapViewController
+@implementation MapViewController{
+    NSMutableArray *placeMarks;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+ 
    
     
   
@@ -53,17 +56,33 @@
     
     //Start the search and display annotation on the map
     [search startWithCompletionHandler:^(MKLocalSearchResponse * _Nullable response, NSError * _Nullable error) {
-        NSMutableArray *placemarks = [NSMutableArray array];
+         placeMarks = [NSMutableArray array];
+        
+//        placeMarks = [response mapItems];
+//        placeMarks = [[NSMutableDictionary alloc]init];
         
         for (MKMapItem *item in response.mapItems) {
-           
             
-            [placemarks addObject:item.placemark];
+            MKPointAnnotation *point = [[MKPointAnnotation alloc]init];
+            point.coordinate = item.placemark.location.coordinate;
+            point.title = item.name;
+            point.subtitle = item.phoneNumber;
+            //need to convert placemark to a string for subtitle
+            
+            // need to add callout
+            
+//            [self.mapView addAnnotation:point];
+            
+            [placeMarks addObject:point];
+
+//            [placeMarks addObject:item.placemark];
+           
+//
         }
         
         [self.mapView removeAnnotations:[self.mapView annotations]];
         
-        [self.mapView showAnnotations:placemarks animated:NO];
+        [self.mapView showAnnotations:placeMarks animated:YES];
     }];
   
     

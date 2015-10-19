@@ -9,8 +9,10 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface MapViewController : UIViewController <MKAnnotation>
+@interface MapViewController : UIViewController <MKAnnotation,CLLocationManagerDelegate>
 @property (nonatomic)CLLocationCoordinate2D coordinate;
+
+
 
 
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
