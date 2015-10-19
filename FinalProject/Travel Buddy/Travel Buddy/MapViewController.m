@@ -21,8 +21,6 @@
     // Do any additional setup after loading the view.
     
  
-   
-    
   
 }
 
@@ -30,6 +28,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 /*
 #pragma mark - Navigation
@@ -40,6 +41,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+//-(void)button:(id)sender {
+//    NSLog(@"button pressed");
+//}
 
 - (IBAction)searchButton:(id)sender {
     
@@ -67,19 +73,25 @@
             point.coordinate = item.placemark.location.coordinate;
             point.title = item.name;
             point.subtitle = item.phoneNumber;
+            
+            [self.mapView addAnnotation:point];
+            
+            [placeMarks addObject:point];
+        
+            
+//            UIButton *advertButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//            [advertButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
+//            
             //need to convert placemark to a string for subtitle
             
             // need to add callout
             
-//            [self.mapView addAnnotation:point];
-            
-            [placeMarks addObject:point];
-
-//            [placeMarks addObject:item.placemark];
            
-//
+
         }
+//
         
+//        
         [self.mapView removeAnnotations:[self.mapView annotations]];
         
         [self.mapView showAnnotations:placeMarks animated:YES];
@@ -88,17 +100,41 @@
     
 }
 
-//mkannotation customization?   
+//mkannotation customization?
 
-//-(MKAnnotationView*)mapView:(MKMapView *) mapView viewForAnnotation:(nonnull id<MKAnnotation>)annotation
+//- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
 //{
-//    
-//    MKAnnotationView *view = [self.mapView dequeueReusableAnnotationViewWithIdentifier:@"annoView"];
-//    
-//    view.image = [UIImage imageNamed:@"images.png"];
-//    
-//    return view;
+//    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+//    if (self)
+//    {
+//        // Set the frame size to the appropriate values.
+//        CGRect  myFrame = self.frame;
+//        myFrame.size.width = 40;
+//        myFrame.size.height = 40;
+//        self.frame = myFrame;
+//        
+//        // The opaque property is YES by default. Setting it to
+//        // NO allows map content to show through any unrendered parts of your view.
+//        self.opaque = NO;
+//    }
+//    return self;
 //}
+
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    
+    
+    MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+   
+    pinView.pinColor = MKPinAnnotationColorRed;
+    pinView.animatesDrop = YES;
+    pinView.canShowCallout = YES;
+    
+   
+    
+    return pinView;
+}
 
 - (IBAction)userLocation:(id)sender {
     
