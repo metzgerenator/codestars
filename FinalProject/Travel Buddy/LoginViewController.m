@@ -18,9 +18,7 @@
     // Hide the Back Button
     
     self.navigationItem.hidesBackButton = YES;   
-    
-    
-    
+  
 }
 
 
@@ -42,7 +40,7 @@
 
     
     if ([username length] ==0 || [passWord length] == 0) {
-        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"WTF!" message:@"Make sure you enter a username and password!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh NO!" message:@"Make sure you enter a username and password!" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * action) {}];
         

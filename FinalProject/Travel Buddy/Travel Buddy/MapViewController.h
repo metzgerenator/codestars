@@ -1,20 +1,22 @@
 //
 //  MapViewController.h
 //  Travel Buddy
-//
-//  Created by Aileen Taboy on 10/18/15.
-//  Copyright © 2015 Mike. All rights reserved.
-//
+
+
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface MapViewController : UIViewController
+
+@interface MapViewController : UIViewController <MKAnnotation>
+@property (nonatomic)CLLocationCoordinate2D coordinate;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)searchButton:(id)sender;
+- (IBAction)userLocation:(id)sender;
 
 @end

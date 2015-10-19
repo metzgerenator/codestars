@@ -2,8 +2,7 @@
 //  MapViewController.m
 //  travel_planner3
 //
-//  Created by Aileen Taboy on 9/27/15.
-//  Copyright © 2015 Mike. All rights reserved.
+
 //
 
 #import "MapViewController.h"

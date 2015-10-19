@@ -16,6 +16,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+   
+    
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +56,8 @@
         NSMutableArray *placemarks = [NSMutableArray array];
         
         for (MKMapItem *item in response.mapItems) {
+           
+            
             [placemarks addObject:item.placemark];
         }
         
@@ -58,11 +65,25 @@
         
         [self.mapView showAnnotations:placemarks animated:NO];
     }];
+  
     
+}
+
+//mkannotation customization?   
+
+//-(MKAnnotationView*)mapView:(MKMapView *) mapView viewForAnnotation:(nonnull id<MKAnnotation>)annotation
+//{
+//    
+//    MKAnnotationView *view = [self.mapView dequeueReusableAnnotationViewWithIdentifier:@"annoView"];
+//    
+//    view.image = [UIImage imageNamed:@"images.png"];
+//    
+//    return view;
+//}
+
+- (IBAction)userLocation:(id)sender {
     
-    
-    
-    
-    
+//    self.mapView.showsUserLocation = YES;
+    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 }
 @end

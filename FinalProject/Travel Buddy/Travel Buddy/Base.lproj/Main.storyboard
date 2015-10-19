@@ -319,7 +319,13 @@
                             <constraint firstItem="1Re-C2-0zu" firstAttribute="leading" secondItem="nDn-s3-E7B" secondAttribute="trailing" constant="34" id="ysT-53-udv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Lodging" id="Tdz-Fg-9xS"/>
+                    <navigationItem key="navigationItem" title="Add Lodging" id="Tdz-Fg-9xS">
+                        <barButtonItem key="rightBarButtonItem" title="Locate Me" id="BWd-xX-F3B">
+                            <connections>
+                                <action selector="userLocation:" destination="WKI-et-vHD" id="Hft-10-eud"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="oPc-J2-XCJ" id="58z-YD-gF6"/>
                         <outlet property="searchTextField" destination="nDn-s3-E7B" id="BH1-OH-j2U"/>
