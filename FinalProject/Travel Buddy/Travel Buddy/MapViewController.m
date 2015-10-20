@@ -20,9 +20,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+   
+
 
   
 }
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    for (MKMapItem *item in placeMarks) {
+        MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
+        point.coordinate = item.placemark.location.coordinate;
+        point.title = item.name;
+        point.subtitle = item.phoneNumber;
+        
+        [self.mapView addAnnotation:point];
+        
+        NSLog(@" this test works %@", item);
+        
+//
+    }
+//    [self.mapView addAnnotations:placeMarks];
+//    [self.mapView showAnnotations:placeMarks animated:YES];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -60,39 +83,44 @@
     
     //Start the search and display annotation on the map
     [search startWithCompletionHandler:^(MKLocalSearchResponse * _Nullable response, NSError * _Nullable error) {
-         placeMarks = [NSMutableArray array];
+        placeMarks = [NSMutableArray array];
+        for (MKMapItem *item in response.mapItems){
+            [placeMarks addObject:item];
+            
+        }
+//
         
 //        placeMarks = [response mapItems];
 //        placeMarks = [[NSMutableDictionary alloc]init];
         
-        for (MKMapItem *item in response.mapItems) {
-//
-            MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
-            
-            
-//            MKPointAnnotation *point = [[MKPointAnnotation alloc]init];
-            point.coordinate = item.placemark.location.coordinate;
-            point.title = item.name;
-            point.subtitle = item.phoneNumber;
-            
-            [self.mapView addAnnotation:point];
-            	
-            [placeMarks addObject:point];
+//        for (MKMapItem *item in response.mapItems) {
+////
+//            MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
+//            
+//            
+//            point.coordinate = item.placemark.location.coordinate;
+//            point.title = item.name;
+//            point.subtitle = item.phoneNumber;
+//            
+//            [self.mapView addAnnotation:point];
+//            	
+//            [placeMarks addObject:point];
+//        
         
-            
 //            UIButton *advertButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 //            [advertButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
 //            
     
            
 
-        }
-      
-        [self.mapView removeAnnotations:[self.mapView annotations]];
-        
-        [self.mapView showAnnotations:placeMarks animated:YES];
+//        }
+//
+//        [self.mapView removeAnnotations:[self.mapView annotations]];
+//        
+//        [self.mapView showAnnotations:placeMarks animated:YES];
     }];
     
+    [self.view endEditing:YES];
 }
 
 //mkannotation customization?
@@ -120,14 +148,13 @@
 {
     static NSString *reuseId = @"MapViewController";
     
-   MKPinAnnotationView *pinView =(MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
+   MKAnnotationView *pinView =[mapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
 
-    if (!pinView) {
+    
         pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseId];
         
         pinView.canShowCallout = YES;
-        pinView.animatesDrop = YES;
-        
+    
         UIImageView *iconIMage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 46, 46)];
         pinView.leftCalloutAccessoryView = iconIMage;
         
@@ -136,7 +163,7 @@
         [advertButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
         
         pinView.rightCalloutAccessoryView = advertButton;
-    }
+    
    
     pinView.annotation = annotation;
    
