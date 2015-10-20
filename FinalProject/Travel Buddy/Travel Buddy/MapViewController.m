@@ -6,6 +6,7 @@
 //
 
 #import "MapViewController.h"
+#import "MapViewAnnotation.h"
 
 
 @interface MapViewController ()
@@ -19,8 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
- 
+
   
 }
 
@@ -43,9 +43,7 @@
 */
 
 
-//-(void)button:(id)sender {
-//    NSLog(@"button pressed");
-//}
+
 
 - (IBAction)searchButton:(id)sender {
     
@@ -68,35 +66,32 @@
 //        placeMarks = [[NSMutableDictionary alloc]init];
         
         for (MKMapItem *item in response.mapItems) {
+//
+            MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
             
-            MKPointAnnotation *point = [[MKPointAnnotation alloc]init];
+            
+//            MKPointAnnotation *point = [[MKPointAnnotation alloc]init];
             point.coordinate = item.placemark.location.coordinate;
             point.title = item.name;
             point.subtitle = item.phoneNumber;
             
             [self.mapView addAnnotation:point];
-            
+            	
             [placeMarks addObject:point];
         
             
 //            UIButton *advertButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 //            [advertButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
 //            
-            //need to convert placemark to a string for subtitle
-            
-            // need to add callout
-            
+    
            
 
         }
-//
-        
-//        
+      
         [self.mapView removeAnnotations:[self.mapView annotations]];
         
         [self.mapView showAnnotations:placeMarks animated:YES];
     }];
-  
     
 }
 
@@ -123,17 +118,37 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
+    static NSString *reuseId = @"MapViewController";
     
-    
-    MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+   MKPinAnnotationView *pinView =(MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
+
+    if (!pinView) {
+        pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseId];
+        
+        pinView.canShowCallout = YES;
+        pinView.animatesDrop = YES;
+        
+        UIImageView *iconIMage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 46, 46)];
+        pinView.leftCalloutAccessoryView = iconIMage;
+        
+        
+        UIButton *advertButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [advertButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
+        
+        pinView.rightCalloutAccessoryView = advertButton;
+    }
    
-    pinView.pinColor = MKPinAnnotationColorRed;
-    pinView.animatesDrop = YES;
-    pinView.canShowCallout = YES;
-    
+    pinView.annotation = annotation;
    
+    
+    
+
     
     return pinView;
+}
+
+-(void)button:(id)sender {
+    NSLog(@"button pressed");
 }
 
 - (IBAction)userLocation:(id)sender {

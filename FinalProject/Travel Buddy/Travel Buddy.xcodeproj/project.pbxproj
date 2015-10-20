@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271A9B6F1BD69F8E00DD4476 /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 271A9B6E1BD69F8E00DD4476 /* MapViewAnnotation.m */; settings = {ASSET_TAGS = (); }; };
 		2766F0601BD2A4A300758CE8 /* AddToPackingListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2766F05F1BD2A4A300758CE8 /* AddToPackingListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5704F8DA1BD1A827002C8DC0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F8D91BD1A827002C8DC0 /* main.m */; };
 		5704F8DD1BD1A827002C8DC0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F8DC1BD1A827002C8DC0 /* AppDelegate.m */; };
@@ -61,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271A9B6D1BD69F8E00DD4476 /* MapViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewAnnotation.h; sourceTree = "<group>"; };
+		271A9B6E1BD69F8E00DD4476 /* MapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAnnotation.m; sourceTree = "<group>"; };
 		2766F05E1BD2A4A300758CE8 /* AddToPackingListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddToPackingListTableViewController.h; path = ../AddToPackingListTableViewController.h; sourceTree = "<group>"; };
 		2766F05F1BD2A4A300758CE8 /* AddToPackingListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddToPackingListTableViewController.m; path = ../AddToPackingListTableViewController.m; sourceTree = "<group>"; };
 		5704F8D51BD1A827002C8DC0 /* Travel Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +281,8 @@
 			children = (
 				57AA6CFA1BD4253500554D47 /* MapViewController.h */,
 				57AA6CFB1BD4253500554D47 /* MapViewController.m */,
+				271A9B6D1BD69F8E00DD4476 /* MapViewAnnotation.h */,
+				271A9B6E1BD69F8E00DD4476 /* MapViewAnnotation.m */,
 			);
 			name = map;
 			sourceTree = "<group>";
@@ -349,7 +354,7 @@
 				TargetAttributes = {
 					5704F8D41BD1A827002C8DC0 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = BP8BUJFQU2;
+						DevelopmentTeam = K56TMNQLJF;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -421,6 +426,7 @@
 				5704F9391BD1D005002C8DC0 /* LoginViewController.m in Sources */,
 				5704F8DD1BD1A827002C8DC0 /* AppDelegate.m in Sources */,
 				5704F90D1BD1C2D8002C8DC0 /* PackingListTableViewController.m in Sources */,
+				271A9B6F1BD69F8E00DD4476 /* MapViewAnnotation.m in Sources */,
 				57AA6CFC1BD4253500554D47 /* MapViewController.m in Sources */,
 				5704F8DA1BD1A827002C8DC0 /* main.m in Sources */,
 				2766F0601BD2A4A300758CE8 /* AddToPackingListTableViewController.m in Sources */,
