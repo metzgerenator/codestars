@@ -11,6 +11,8 @@
 
 @interface MapViewController ()
 @property (nonatomic, strong) MKLocalSearch *localSearch;
+@property (nonatomic, strong) MapViewAnnotation *annotation;
+
 
 @end
 
@@ -21,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   
+    
 
 
   
@@ -40,9 +42,10 @@
         point.title = item.name;
         point.subtitle = item.phoneNumber;
         
+        
         [self.mapView addAnnotation:point];
         
-        NSLog(@" this test works %@", item);
+//        NSLog(@" this test works %@", item);
         
 //
     }
@@ -91,13 +94,12 @@
 //    MKLocalSearch *search = [[MKLocalSearch alloc]initWithRequest:request];
     
     MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error){
+        
+    //place search results in the array
         placeMarks = [response mapItems];
         
-//        for (MKMapItem *item in response.mapItems) {
-//            [placeMarks addObject:item];
-//            NSLog(@"adding item to index %@", item);
-//            [self.mapView showAnnotations:placeMarks animated:YES];
-//        }
+
+    //load our two viewdidload methods
         [self viewDidDisappear:YES];
         [self viewDidAppear:YES];
         
@@ -105,7 +107,7 @@
     
     self.localSearch = [[MKLocalSearch alloc]initWithRequest:request];
     [self.localSearch startWithCompletionHandler:completionHandler];
-    //Start the search and display annotation on the map
+    
     
     
     
@@ -119,16 +121,17 @@
     NSLog(@"Failed to load the map: %@", error);
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
-{
-    MKPinAnnotationView *annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"pin"];
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    static NSString *const kAnnotationReuseIdentifier = @"CPAnnotationView";
     
-    annotationView.animatesDrop = YES;
-    annotationView.canShowCallout = YES;
-    
-    UIImageView *myCustomImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"images.png"]];
-    annotationView.leftCalloutAccessoryView = myCustomImage;
-    
+    MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:kAnnotationReuseIdentifier];
+    if (annotationView == nil) {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:kAnnotationReuseIdentifier];
+        annotationView.enabled = YES;
+        annotationView.canShowCallout = YES;
+        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    }
     
     return annotationView;
 }
