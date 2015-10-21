@@ -125,9 +125,27 @@
 }
 
 
+
+// Take action when UI Button is hit
+
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
     
-    NSLog(@" %@", control);
+//    MyGroovyAnnotation *annotation = (MyGroovyAnnotation *)view.annotation;
+//    id businessId = annotation.businessId;
+    
+    
+    
+    
+    MapViewAnnotation *annotation = (MapViewAnnotation *)view.annotation;
+    annotation.title = annotation.title;
+    
+    double longitutde = annotation.coordinate.longitude;
+    double latitude = annotation.coordinate.latitude;
+    
+    NSLog(@"annotation title is %@ longitude is  %f latitude is %f", annotation.title,longitutde, latitude);
+    
+    
+
     
 }
 
