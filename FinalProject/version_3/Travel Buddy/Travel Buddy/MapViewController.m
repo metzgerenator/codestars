@@ -97,7 +97,7 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    // this part is boilerplate code used to create or reuse a pin annotation
+    // reuse pin annotation
     static NSString *viewId = @"MKPinAnnotationView";
     MKPinAnnotationView *annotationView = (MKPinAnnotationView*)
     [self.mapView dequeueReusableAnnotationViewWithIdentifier:viewId];
@@ -110,19 +110,32 @@
     // create a button for callout
     UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     [saveButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
-    //changes to standard annotation
     
-    annotationView.rightCalloutAccessoryView = saveButton;  
+    
+    
+    
+    //changes to standard annotation
+    annotationView.rightCalloutAccessoryView = saveButton;
     annotationView.animatesDrop = YES;
     annotationView.canShowCallout = YES;
-    NSLog(@"annotation view is working");  
+    
+    
+    NSLog(@"annotation view is working");
     return annotationView;
 }
 
 
--(void)button:(id)sender {
-    NSLog(@"button pressed");
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    
+    NSLog(@" %@", control);
+    
 }
+
+-(void)button:(id)sender {
+//    NSLog(@"button pressed %@", sender);
+}
+
+
 
 
 
