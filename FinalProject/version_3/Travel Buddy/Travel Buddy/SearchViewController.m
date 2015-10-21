@@ -11,7 +11,6 @@
 @property (nonatomic, strong) MKLocalSearch *localSearch;
 
 //Define the portion of the map to display
-@property (nonatomic, assign) MKCoordinateRegion boundingRegion;
 
 
 @end
@@ -91,15 +90,26 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     MapViewController *mapViewController = segue.destinationViewController;
     
+    MKCoordinateRegion region = self.boundingRegion;
+    
     if ([segue.identifier isEqualToString:@"map"]) {
         NSIndexPath *selectedItemPath = [self.tableView indexPathForSelectedRow];
         MKMapItem *mapItem = self.placeSearchStorage [selectedItemPath.row];
         
         //determine where the map will zoom into
-        MKCoordinateRegion region = self.boundingRegion;
+//        MKCoordinateRegion region = self.boundingRegion;
         region.center = mapItem.placemark.coordinate;
         mapViewController.boundingRegion = region;
-        mapViewController.mapItemList = self.placeSearchStorage;   
+        mapViewController.mapItemList = self.placeSearchStorage;
+       
+    
+        
+    } else if ([segue.identifier isEqualToString:@"all"]){
+    
+        
+        mapViewController.boundingRegion = self.boundingRegion;
+        mapViewController.mapItemList = self.placeSearchStorage;  
+        
         
         
     }

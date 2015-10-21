@@ -12,6 +12,8 @@
 @interface MapViewController : UIViewController <MKAnnotation,CLLocationManagerDelegate,MKMapViewDelegate>
 
 @property (nonatomic)CLLocationCoordinate2D coordinate;
+
+//Need to fix bounding region 
 @property (nonatomic, assign) MKCoordinateRegion boundingRegion;
 
 @property (nonatomic, strong) NSArray *mapItemList;

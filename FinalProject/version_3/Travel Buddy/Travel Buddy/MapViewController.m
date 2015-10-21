@@ -7,6 +7,7 @@
 
 #import "MapViewController.h"
 #import "MapViewAnnotation.h"
+#import "SearchViewController.h"
 
 
 @interface MapViewController ()
@@ -20,8 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
-    //zoom in on where the annotations are placed
+    
     [self.mapView setRegion:self.boundingRegion animated:YES];
 
 
@@ -32,7 +34,11 @@
     [super viewDidAppear:animated];
     
     
-        MKMapItem *item  = [self.mapItemList objectAtIndex:0];
+    for (MKMapItem *item in self.mapItemList) {
+        
+    
+    
+//        MKMapItem *item  = [self.mapItemList objectAtIndex:0];
    
         MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
         point.coordinate = item.placemark.location.coordinate;
@@ -41,8 +47,9 @@
         
         
         [self.mapView addAnnotation:point];
-    [self.mapView selectAnnotation:[self.mapView.annotations objectAtIndex:0] animated:YES];
-        
+//    [self.mapView selectAnnotation:[self.mapView.annotations objectAtIndex:0] animated:YES];
+//        [self.mapView selectAnnotation:point animated:YES];
+    }
     
         
 //
@@ -98,7 +105,14 @@
         annotationView = [[MKPinAnnotationView alloc]
                            initWithAnnotation:annotation reuseIdentifier:viewId];
     }
-    // set your custom image
+    
+    
+    // create a button for callout
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [saveButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
+    //changes to standard annotation
+    
+    annotationView.rightCalloutAccessoryView = saveButton;  
     annotationView.animatesDrop = YES;
     annotationView.canShowCallout = YES;
     NSLog(@"annotation view is working");  

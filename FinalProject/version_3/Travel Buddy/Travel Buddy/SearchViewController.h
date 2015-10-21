@@ -11,6 +11,9 @@
 @interface SearchViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
 
+//for defining portion to display on map
+@property (nonatomic, assign) MKCoordinateRegion boundingRegion;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
