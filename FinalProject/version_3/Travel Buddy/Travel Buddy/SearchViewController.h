@@ -6,6 +6,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "MapViewController.h"
 
 @interface SearchViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 

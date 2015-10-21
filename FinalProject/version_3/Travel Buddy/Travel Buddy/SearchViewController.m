@@ -32,15 +32,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)searchButton:(id)sender {
     
@@ -60,18 +51,6 @@
         //place search results in the array
         self.placeSearchStorage = [response mapItems];
         NSLog(@"%@", self.placeSearchStorage[0]);
-
-        
-        //load our two viewdidload methods
-//        [self viewDidDisappear:YES];
-//        [self viewDidAppear:YES];
-    //reload the table view data
-        
-        
-//        SearchViewController *datasource = [[SearchViewController alloc]init];
-//        [datasource setTableView:self.tableView];
-//        [self.tableView setDelegate:self];
-//        [self.tableView setDataSource:datasource];
 
         [self.tableView reloadData];
     
@@ -107,6 +86,25 @@
     
 }
 
+#pragma mark - Navigation
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    MapViewController *mapViewController = segue.destinationViewController;
+    
+    if ([segue.identifier isEqualToString:@"map"]) {
+        NSIndexPath *selectedItemPath = [self.tableView indexPathForSelectedRow];
+        MKMapItem *mapItem = self.placeSearchStorage [selectedItemPath.row];
+        
+        //determine where the map will zoom into
+        MKCoordinateRegion region = self.boundingRegion;
+        region.center = mapItem.placemark.coordinate;
+        mapViewController.boundingRegion = region;
+        mapViewController.mapItemList = self.placeSearchStorage;   
+        
+        
+    }
+    
+}
 
 
 

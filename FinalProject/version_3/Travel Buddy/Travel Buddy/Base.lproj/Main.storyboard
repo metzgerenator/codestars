@@ -288,6 +288,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oPc-J2-XCJ">
                                 <rect key="frame" x="13" y="107" width="294" height="391"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WKI-et-vHD" id="Qcb-qT-3iT"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Orc-cx-7YP">
                                 <rect key="frame" x="20" y="38" width="109" height="30"/>
@@ -339,7 +342,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="currentPlace" textLabel="IQK-e5-pE2" style="IBUITableViewCellStyleDefault" id="4ly-nM-eT7">
-                                        <rect key="frame" x="0.0" y="92" width="255" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="255" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ly-nM-eT7" id="Ewy-Ne-6pL">
                                             <rect key="frame" x="0.0" y="0.0" width="255" height="43"/>

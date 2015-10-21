@@ -20,8 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
+    //zoom in on where the annotations are placed
+    [self.mapView setRegion:self.boundingRegion animated:YES];
 
 
   
@@ -31,8 +32,8 @@
     [super viewDidAppear:animated];
     
     
-    
-    for (MKMapItem *item in self.mapItemList) {
+        MKMapItem *item  = [self.mapItemList objectAtIndex:0];
+   
         MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
         point.coordinate = item.placemark.location.coordinate;
         point.title = item.name;
@@ -40,12 +41,13 @@
         
         
         [self.mapView addAnnotation:point];
+    [self.mapView selectAnnotation:[self.mapView.annotations objectAtIndex:0] animated:YES];
         
-//        NSLog(@" this test works %@", item);
+    
         
 //
     
-    }
+    
 //    [self.mapView addAnnotations:placeMarks];
 //    [self.mapView showAnnotations:placeMarks animated:YES];
 }
@@ -86,25 +88,35 @@
 }
 
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    static NSString *const kAnnotationReuseIdentifier = @"CPAnnotationView";
-    
-    MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:kAnnotationReuseIdentifier];
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // this part is boilerplate code used to create or reuse a pin annotation
+    static NSString *viewId = @"MKPinAnnotationView";
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)
+    [self.mapView dequeueReusableAnnotationViewWithIdentifier:viewId];
     if (annotationView == nil) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:kAnnotationReuseIdentifier];
-        annotationView.enabled = YES;
-        annotationView.canShowCallout = YES;
-        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeInfoLight];
+        annotationView = [[MKPinAnnotationView alloc]
+                           initWithAnnotation:annotation reuseIdentifier:viewId];
     }
-    
+    // set your custom image
+    annotationView.animatesDrop = YES;
+    annotationView.canShowCallout = YES;
+    NSLog(@"annotation view is working");  
     return annotationView;
 }
+
 
 -(void)button:(id)sender {
     NSLog(@"button pressed");
 }
 
 
+
+#pragma mark - cancelButton
+
 - (IBAction)cancelButton:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
 }
 @end
