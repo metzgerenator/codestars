@@ -8,6 +8,9 @@
 #import "MapViewController.h"
 #import "MapViewAnnotation.h"
 #import "SearchViewController.h"
+#import <Parse/Parse.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+
 
 
 @interface MapViewController ()
@@ -137,10 +140,28 @@
     
     
     MapViewAnnotation *annotation = (MapViewAnnotation *)view.annotation;
+    
+    NSString *titleString = annotation.title;
     annotation.title = annotation.title;
     
     double longitutde = annotation.coordinate.longitude;
     double latitude = annotation.coordinate.latitude;
+    
+    PFGeoPoint *pointForParse = [PFGeoPoint geoPointWithLatitude:annotation.coordinate.latitude longitude:annotation.coordinate.longitude];
+    
+    PFObject *locationPoint = [PFObject objectWithClassName:@"savedPlaces"];
+    locationPoint.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+    
+    [locationPoint setObject:pointForParse forKey:@"location"];
+    [locationPoint setObject:titleString forKey:@"title"];
+    
+    //Upload to Parse
+    [locationPoint saveInBackground];
+
+    
+    
+//    placeObject[@"location"] = point;
+    
     
     NSLog(@"annotation title is %@ longitude is  %f latitude is %f", annotation.title,longitutde, latitude);
     
