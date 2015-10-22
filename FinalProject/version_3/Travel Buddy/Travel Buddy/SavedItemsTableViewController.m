@@ -142,16 +142,18 @@
         mapViewController.savedMapFromParseSegue = object;
         
         NSLog(@"mapholder object is = %@", self.mapholder);
-        
-//        PFGeoPoint *mapitem = [object objectForKey:@"location"];
-//        NSString* name = [object objectForKey:@"title"];
+
         
         PFGeoPoint *forCoordinate = [object objectForKey:@"location"];
+        float coordinateLongitutde = forCoordinate.longitude;
+        float coordinateLatitude = forCoordinate.latitude;
 
         region.center.latitude = forCoordinate.latitude;
         region.center.longitude = forCoordinate.longitude;
-        
-        
+        MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
+        region.center.longitude = coordinateLongitutde;
+        region.center.latitude = coordinateLatitude;
+
         mapViewController.boundingRegion = region;
 //        mapViewController.savedMapFromParseSegue = point;
         
