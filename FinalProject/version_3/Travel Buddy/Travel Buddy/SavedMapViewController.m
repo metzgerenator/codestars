@@ -6,7 +6,7 @@
 //
 
 #import "SavedMapViewController.h"
-#import "MapViewAnnotation.h"
+
 
 @interface SavedMapViewController ()
 
@@ -27,15 +27,29 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    
+    //retrived PFGeoPoint from segue
 
-//       PFGeoPoint *item = self.savedMapFromParseSegue;
-//    MKMapItem *newMapItem = [[MKMapItem alloc]init];
-//    
-//        MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
-//        point.coordinate = .placemark.location.coordinate;
-//        point.title = newMapItem.name;
-//        point.subtitle = newMapItem.phoneNumber;
-//        [self.mapView addAnnotation:point];
+    PFGeoPoint *forCoordinate = [self.savedMapFromParseSegue objectForKey:@"location"];
+    
+    float coordinateLongitutde = forCoordinate.longitude;
+    float coordinateLatitude = forCoordinate.latitude;
+    
+    
+    //Create MK Coordinate Region
+    MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
+    region.center.longitude = coordinateLongitutde;
+    region.center.latitude = coordinateLatitude;
+    
+    //get name from PFGeoPoint
+    NSString* name = [self.savedMapFromParseSegue objectForKey:@"title"];
+
+   //create annotation and set it
+        MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
+        point.coordinate = region.center;
+        point.title = name;
+        [self.mapView addAnnotation:point];
 
         
     

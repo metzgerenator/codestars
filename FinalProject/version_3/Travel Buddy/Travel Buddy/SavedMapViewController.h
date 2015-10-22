@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "MapViewAnnotation.h"
 #import <Parse/Parse.h>
 #import <CoreLocation/CoreLocation.h>
 
@@ -17,7 +18,7 @@
 //Need to fix bounding region
 @property (nonatomic, assign) MKCoordinateRegion boundingRegion;
 
-@property (nonatomic, strong) PFGeoPoint *savedMapFromParseSegue;
+@property (nonatomic, strong) PFObject *savedMapFromParseSegue;
 
 
 

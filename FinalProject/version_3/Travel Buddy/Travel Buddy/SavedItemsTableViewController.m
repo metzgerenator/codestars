@@ -7,13 +7,14 @@
 
 #import "SavedItemsTableViewController.h"
 #import "SavedMapViewController.h"
+#import "MapViewAnnotation.h"
 #import <MapKit/MapKit.h>
 
 #import <Parse/Parse.h>
 
 @interface SavedItemsTableViewController ()
 @property (nonatomic, assign) MKCoordinateRegion boundingRegion;
-@property (nonatomic, strong) NSArray *parsePlaceStorage;
+//@property (nonatomic, strong) NSArray *parsePlaceStorage;
 @property (weak, nonatomic) PFObject *mapholder;
 
 @end
@@ -96,82 +97,74 @@
 }
 
 
-//
+
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //    SavedMapViewController *mapViewController = segue.destinationViewController;
+//    
 //    MKCoordinateRegion region = self.boundingRegion;
 //    
-//    
-//    if ([segue.identifier isEqual:@"savedMap"]) {
+//    if ([segue.identifier isEqualToString:@"savedMap"]) {
 //        NSIndexPath *selectedItemPath = [self.tableView indexPathForSelectedRow];
 //        PFObject *object = [self.objects objectAtIndex:selectedItemPath.row];
-//        MKMapItem *mapitem = [object objectForKey:@"location"];
+//        MKMapItem *mapItem = [object objectForKey:@"location"];
 //        NSString* name = [object objectForKey:@"title"];
-//        NSLog(@"Mapitem is %@, %@", mapitem, name);
 //        
+//        MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc]init];
+//        newAnnotation.coordinate = mapItem.placemark.coordinate;
+//        newAnnotation.title = name;
 //        
-////        mapitem = self.parsePlaceStorage[selectedItemPath.row];
-//        self.mapholder = mapitem;
-////        mapitem = self.mapholder;
-//        NSLog(@"mapitem is now %@", self.mapholder);
-//        region.center = mapitem.placemark.coordinate;
+//        NSLog(@"new annotation is %@",newAnnotation);
 //        
-//        
+//        //determine where the map will zoom into
+//        //        MKCoordinateRegion region = self.boundingRegion;
+//        region.center = mapItem.placemark.coordinate;
 //        mapViewController.boundingRegion = region;
-//        mapViewController.savedMapFromParseSegue = mapitem;
+//        mapViewController.savedMapFromParseSegue = newAnnotation;
 //        
 //        
-//
 //    }
-//    
 //}
 
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    SavedMapViewController *mapViewController = segue.destinationViewController;
-//    MKCoordinateRegion region = self.boundingRegion;
-//    
-//    
-//    if ([segue.identifier isEqual:@"savedMap"]) {
-//        NSIndexPath *selectedItemPath = [self.tableView indexPathForSelectedRow];
-//        PFObject *object = [self.objects objectAtIndex:selectedItemPath.row];
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    SavedMapViewController *mapViewController = segue.destinationViewController;
+    MKCoordinateRegion region = self.boundingRegion;
+    
+    
+    if ([segue.identifier isEqual:@"savedMap"]) {
+        NSIndexPath *selectedItemPath = [self.tableView indexPathForSelectedRow];
+        PFObject *object = [self.objects objectAtIndex:selectedItemPath.row];
+        NSLog(@"pfobject is now %@", object);
+        
+        self.mapholder = object;
+        mapViewController.savedMapFromParseSegue = object;
+        
+        NSLog(@"mapholder object is = %@", self.mapholder);
+        
 //        PFGeoPoint *mapitem = [object objectForKey:@"location"];
-//    
-//        NSLog(@"Mapitem is %@" mapitem);
-//        
-//        
-//        //        mapitem = self.parsePlaceStorage[selectedItemPath.row];
-//        self.mapholder = mapitem;
-//        //        mapitem = self.mapholder;
-//        NSLog(@"mapitem is now %@", self.mapholder);
-//        region.center = mapitem.placemark.coordinate;
-//        
-//        
-//        mapViewController.boundingRegion = region;
-//        mapViewController.savedMapFromParseSegue = mapitem;
-//        
-//        
-//        
-//    }
-//    
-//}
+//        NSString* name = [object objectForKey:@"title"];
+        
+        PFGeoPoint *forCoordinate = [object objectForKey:@"location"];
+
+        region.center.latitude = forCoordinate.latitude;
+        region.center.longitude = forCoordinate.longitude;
+        
+        
+        mapViewController.boundingRegion = region;
+//        mapViewController.savedMapFromParseSegue = point;
+        
+        
+
+    }
+    
+}
 
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    // Check that a new transition has been requested to the DetailViewController and prepares for it
-//    if ([segue.identifier isEqualToString:@"displayDetailfromList"]){
-//        
-//        // Capture the object (e.g. exam) the user has selected from the list
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        PFObject *object = [self.objects objectAtIndex:indexPath.row];
-//        
-//        // Set destination view controller to DetailViewController to avoid the NavigationViewController in the middle (if you have it embedded into a navigation controller, if not ignore that part)
-//        UINavigationController *nav = [segue destinationViewController];
-//        SavedMapViewController *detailViewController = [segue destinationViewController];
-//        detailViewController.self.mapView = object;
-//    }
-//}
+
+
+
 
 
 
