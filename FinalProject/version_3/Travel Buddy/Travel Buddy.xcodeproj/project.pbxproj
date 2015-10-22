@@ -41,6 +41,8 @@
 		5704F93C1BD1D01D002C8DC0 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F93B1BD1D01D002C8DC0 /* SignupViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5704F9411BD1EA2D002C8DC0 /* PackingListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5704F9401BD1EA2D002C8DC0 /* PackingListTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		573DFD6C1BD7CC1B00C46A14 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573DFD6B1BD7CC1B00C46A14 /* SearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		573DFD701BD872A000C46A14 /* SavedItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573DFD6F1BD872A000C46A14 /* SavedItemsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		573DFD731BD880C400C46A14 /* SavedMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573DFD721BD880C400C46A14 /* SavedMapViewController.m */; settings = {ASSET_TAGS = (); }; };
 		57AA6CF81BD4231500554D47 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57AA6CF71BD4231500554D47 /* MapKit.framework */; };
 		57AA6CFC1BD4253500554D47 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AA6CFB1BD4253500554D47 /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -111,6 +113,10 @@
 		5704F9401BD1EA2D002C8DC0 /* PackingListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackingListTableViewCell.m; sourceTree = "<group>"; };
 		573DFD6A1BD7CC1B00C46A14 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		573DFD6B1BD7CC1B00C46A14 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		573DFD6E1BD872A000C46A14 /* SavedItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedItemsTableViewController.h; sourceTree = "<group>"; };
+		573DFD6F1BD872A000C46A14 /* SavedItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedItemsTableViewController.m; sourceTree = "<group>"; };
+		573DFD711BD880C400C46A14 /* SavedMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedMapViewController.h; sourceTree = "<group>"; };
+		573DFD721BD880C400C46A14 /* SavedMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedMapViewController.m; sourceTree = "<group>"; };
 		57AA6CF71BD4231500554D47 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		57AA6CFA1BD4253500554D47 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		57AA6CFB1BD4253500554D47 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 		5704F8D71BD1A827002C8DC0 /* Travel Buddy */ = {
 			isa = PBXGroup;
 			children = (
+				573DFD6D1BD8726F00C46A14 /* SavedLocations */,
 				57AA6CF91BD4251500554D47 /* map */,
 				5704F93E1BD1D044002C8DC0 /* PackingList */,
 				5704F93D1BD1D023002C8DC0 /* Login */,
@@ -277,6 +284,17 @@
 				2766F05F1BD2A4A300758CE8 /* AddToPackingListTableViewController.m */,
 			);
 			name = PackingList;
+			sourceTree = "<group>";
+		};
+		573DFD6D1BD8726F00C46A14 /* SavedLocations */ = {
+			isa = PBXGroup;
+			children = (
+				573DFD6E1BD872A000C46A14 /* SavedItemsTableViewController.h */,
+				573DFD6F1BD872A000C46A14 /* SavedItemsTableViewController.m */,
+				573DFD711BD880C400C46A14 /* SavedMapViewController.h */,
+				573DFD721BD880C400C46A14 /* SavedMapViewController.m */,
+			);
+			name = SavedLocations;
 			sourceTree = "<group>";
 		};
 		57AA6CF91BD4251500554D47 /* map */ = {
@@ -435,6 +453,8 @@
 				271A9B6F1BD69F8E00DD4476 /* MapViewAnnotation.m in Sources */,
 				57AA6CFC1BD4253500554D47 /* MapViewController.m in Sources */,
 				5704F8DA1BD1A827002C8DC0 /* main.m in Sources */,
+				573DFD731BD880C400C46A14 /* SavedMapViewController.m in Sources */,
+				573DFD701BD872A000C46A14 /* SavedItemsTableViewController.m in Sources */,
 				2766F0601BD2A4A300758CE8 /* AddToPackingListTableViewController.m in Sources */,
 				5704F93C1BD1D01D002C8DC0 /* SignupViewController.m in Sources */,
 				5704F9411BD1EA2D002C8DC0 /* PackingListTableViewCell.m in Sources */,
