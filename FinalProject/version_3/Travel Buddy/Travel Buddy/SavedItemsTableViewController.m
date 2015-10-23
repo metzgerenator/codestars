@@ -98,32 +98,7 @@
 
 
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    SavedMapViewController *mapViewController = segue.destinationViewController;
-//    
-//    MKCoordinateRegion region = self.boundingRegion;
-//    
-//    if ([segue.identifier isEqualToString:@"savedMap"]) {
-//        NSIndexPath *selectedItemPath = [self.tableView indexPathForSelectedRow];
-//        PFObject *object = [self.objects objectAtIndex:selectedItemPath.row];
-//        MKMapItem *mapItem = [object objectForKey:@"location"];
-//        NSString* name = [object objectForKey:@"title"];
-//        
-//        MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc]init];
-//        newAnnotation.coordinate = mapItem.placemark.coordinate;
-//        newAnnotation.title = name;
-//        
-//        NSLog(@"new annotation is %@",newAnnotation);
-//        
-//        //determine where the map will zoom into
-//        //        MKCoordinateRegion region = self.boundingRegion;
-//        region.center = mapItem.placemark.coordinate;
-//        mapViewController.boundingRegion = region;
-//        mapViewController.savedMapFromParseSegue = newAnnotation;
-//        
-//        
-//    }
-//}
+
 
 
 
