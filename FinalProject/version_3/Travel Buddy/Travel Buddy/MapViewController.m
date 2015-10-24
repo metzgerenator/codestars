@@ -114,13 +114,16 @@
     UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     [saveButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
     
+    
+    
+    
     //changes to standard annotation
     annotationView.rightCalloutAccessoryView = saveButton;
     annotationView.animatesDrop = YES;
     annotationView.canShowCallout = YES;
     
     
-   
+    NSLog(@"annotation view is working");
     return annotationView;
 }
 
@@ -130,7 +133,12 @@
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
     
-
+//    MyGroovyAnnotation *annotation = (MyGroovyAnnotation *)view.annotation;
+//    id businessId = annotation.businessId;
+    
+    
+    
+    
     MapViewAnnotation *annotation = (MapViewAnnotation *)view.annotation;
     
     NSString *titleString = annotation.title;
@@ -150,9 +158,9 @@
     //Upload to Parse
     [locationPoint saveInBackground];
 
-
     
-     NSLog(@"annotation view is working");
+    
+//    placeObject[@"location"] = point;
     
     
     NSLog(@"annotation title is %@ longitude is  %f latitude is %f", annotation.title,longitutde, latitude);

@@ -130,7 +130,6 @@
         region.center.latitude = coordinateLatitude;
 
         mapViewController.boundingRegion = region;
-//        mapViewController.savedMapFromParseSegue = point;
         
         
 

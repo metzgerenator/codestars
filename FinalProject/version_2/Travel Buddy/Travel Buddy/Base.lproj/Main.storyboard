@@ -18,7 +18,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="114"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ce3-I3-vzw" id="QKm-iv-yfK">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="113"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="113.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKp-5Z-rU1" customClass="PFImageView">
@@ -289,6 +289,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oPc-J2-XCJ">
                                 <rect key="frame" x="13" y="107" width="294" height="391"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WKI-et-vHD" id="DLN-My-NS9"/>
+                                </connections>
                             </mapView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nDn-s3-E7B">
                                 <rect key="frame" x="13" y="71" width="176" height="30"/>

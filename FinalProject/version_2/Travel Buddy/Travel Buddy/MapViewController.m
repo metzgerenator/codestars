@@ -50,8 +50,7 @@
 //
     }
     }
-//    [self.mapView addAnnotations:placeMarks];
-//    [self.mapView showAnnotations:placeMarks animated:YES];
+
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
@@ -91,7 +90,6 @@
     request.region = self.mapView.region;
     
     //Create and initialize search object
-//    MKLocalSearch *search = [[MKLocalSearch alloc]initWithRequest:request];
     
     MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error){
         
@@ -109,7 +107,7 @@
     [self.localSearch startWithCompletionHandler:completionHandler];
     
     
-    
+    //Remove the keyboard after editing
     
     [self.view endEditing:YES];
     
@@ -128,9 +126,17 @@
     MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:kAnnotationReuseIdentifier];
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:kAnnotationReuseIdentifier];
+//        annotationView.animatesDrop = YES;
         annotationView.enabled = YES;
         annotationView.canShowCallout = YES;
-        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeInfoLight];
+//        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeInfoLight];
+        
+        UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [saveButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
+        annotationView.rightCalloutAccessoryView = saveButton;
+    
+        
+    
     }
     
     return annotationView;
