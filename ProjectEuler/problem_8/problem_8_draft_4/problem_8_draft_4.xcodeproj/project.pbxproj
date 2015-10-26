@@ -10,6 +10,7 @@
 		27B167AF1BDEC36E009DC3C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B167AE1BDEC36E009DC3C2 /* main.m */; };
 		27B167B71BDEC3B6009DC3C2 /* ArraySorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B167B61BDEC3B6009DC3C2 /* ArraySorting.m */; };
 		27B167BA1BDEC642009DC3C2 /* ArrayDecrease.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B167B91BDEC642009DC3C2 /* ArrayDecrease.m */; };
+		57FE98E61BDED41F00454575 /* ArrayIncrease.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FE98E51BDED41F00454575 /* ArrayIncrease.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		27B167B61BDEC3B6009DC3C2 /* ArraySorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArraySorting.m; sourceTree = "<group>"; };
 		27B167B81BDEC642009DC3C2 /* ArrayDecrease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDecrease.h; sourceTree = "<group>"; };
 		27B167B91BDEC642009DC3C2 /* ArrayDecrease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDecrease.m; sourceTree = "<group>"; };
+		57FE98E41BDED41F00454575 /* ArrayIncrease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrayIncrease.h; path = ../ArrayIncrease.h; sourceTree = "<group>"; };
+		57FE98E51BDED41F00454575 /* ArrayIncrease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrayIncrease.m; path = ../ArrayIncrease.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				27B167B61BDEC3B6009DC3C2 /* ArraySorting.m */,
 				27B167B81BDEC642009DC3C2 /* ArrayDecrease.h */,
 				27B167B91BDEC642009DC3C2 /* ArrayDecrease.m */,
+				57FE98E41BDED41F00454575 /* ArrayIncrease.h */,
+				57FE98E51BDED41F00454575 /* ArrayIncrease.m */,
 			);
 			path = problem_8_draft_4;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				27B167BA1BDEC642009DC3C2 /* ArrayDecrease.m in Sources */,
 				27B167B71BDEC3B6009DC3C2 /* ArraySorting.m in Sources */,
 				27B167AF1BDEC36E009DC3C2 /* main.m in Sources */,
+				57FE98E61BDED41F00454575 /* ArrayIncrease.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +255,7 @@
 				27B167B41BDEC36E009DC3C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -52,7 +52,7 @@
             if (arrayIndex == 0) {
                 break;
             }
-            NSLog(@"arrayIndex is now changing to  %ld", arrayIndex);
+//            NSLog(@"arrayIndex is now changing to  %ld", arrayIndex);
             
             
             

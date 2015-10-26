@@ -80,7 +80,7 @@ int main(int argc, const char * argv[]) {
         }];
         
         for (NSNumber *f in sorted) {
-//            NSLog(@"sorting %@", f);
+            NSLog(@"sorting %@", f);
         }
         
         

@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "ArraySorting.h" 
 #import "ArrayDecrease.h"
+#import "ArrayIncrease.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -26,6 +27,8 @@ int main(int argc, const char * argv[]) {
         //Create an array to store all of the products
         
         NSMutableArray *numberArray2 = [[NSMutableArray alloc]init];
+        
+        NSMutableArray *finalProductArray = [[NSMutableArray alloc]init];
         
         //convert a string into an array
         
@@ -51,7 +54,13 @@ int main(int argc, const char * argv[]) {
         ArrayDecrease *arrayDecreaseInstance = [[ArrayDecrease alloc]init];
        NSArray *arrayDecreased = [arrayDecreaseInstance decreaseArray:numberArray];
         
+        // Ascend through Array
         
+        ArrayIncrease *arrayIncreasedInstance = [[ArrayIncrease alloc]init];
+        NSArray *arrayIncreased = [arrayIncreasedInstance arryIncreaeSorter:numberArray2];
+        
+        
+        //Combine the array's into product array
         
      
         
@@ -60,7 +69,7 @@ int main(int argc, const char * argv[]) {
         
         // sort the product array
         ArraySorting *sortedArray = [[ArraySorting alloc]init];
-       NSArray *finalArray = [sortedArray arraysorter:arrayDecreased];
+       NSArray *finalArray = [sortedArray arraysorter:arrayIncreased];
         
         
         // Find the largest sorted number
