@@ -18,9 +18,11 @@
     unsigned long arrayIndex = 0;
     
     
-    for (int x = 1; x<= 4; x++) {
+    for (int x = 1; x<= 13; x++) {
         numberAdder = numberAdder * [inputArray[arrayIndex] intValue];
         NSNumber *forArray = [[NSNumber alloc]initWithInt:numberAdder];
+        
+//        NSLog(@"x is now %d", x);  
         
         [productInput addObject:forArray];
         
@@ -28,7 +30,7 @@
 //        NSLog(@"arrayindex is now %ld", arrayIndex);
         
         
-        if (x == 4) {
+        if (x == 13) {
             x = 0;
             numberAdder = 1;
         }
@@ -41,7 +43,7 @@
             if (inputArray.count -1 ==0) {
                 break;
             }
-            NSLog(@"arrayIndex limit is now changing to  %ld", inputArray.count -1);
+//            NSLog(@"arrayIndex limit is now changing to  %ld", inputArray.count -1);
         }
         
 

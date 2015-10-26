@@ -24,10 +24,12 @@ int main(int argc, const char * argv[]) {
         //Create an array to store the 1000 numbers into
         NSMutableArray *numberArray = [[NSMutableArray alloc]init];
         
-        //Create an array to store all of the products
+        //2nd array for other iteration
         
         NSMutableArray *numberArray2 = [[NSMutableArray alloc]init];
         
+        
+        //final array to store all the products
         NSMutableArray *finalProductArray = [[NSMutableArray alloc]init];
         
         //convert a string into an array
@@ -54,12 +56,18 @@ int main(int argc, const char * argv[]) {
         ArrayDecrease *arrayDecreaseInstance = [[ArrayDecrease alloc]init];
        NSArray *arrayDecreased = [arrayDecreaseInstance decreaseArray:numberArray];
         
+        for (NSNumber *numberInput1 in arrayDecreased) {
+            [finalProductArray addObject:numberInput1];
+        }
+        
         // Ascend through Array
         
         ArrayIncrease *arrayIncreasedInstance = [[ArrayIncrease alloc]init];
         NSArray *arrayIncreased = [arrayIncreasedInstance arryIncreaeSorter:numberArray2];
         
-        
+        for (NSNumber *numberInput2 in arrayIncreased) {
+            [finalProductArray addObject:numberInput2];
+        }
         //Combine the array's into product array
         
      
@@ -69,7 +77,7 @@ int main(int argc, const char * argv[]) {
         
         // sort the product array
         ArraySorting *sortedArray = [[ArraySorting alloc]init];
-       NSArray *finalArray = [sortedArray arraysorter:arrayIncreased];
+       NSArray *finalArray = [sortedArray arraysorter:finalProductArray];
         
         
         // Find the largest sorted number
@@ -82,7 +90,13 @@ int main(int argc, const char * argv[]) {
         
     }
     
-    
-    
+
+  
+
+
+
+
+
+
     return 0;
 }

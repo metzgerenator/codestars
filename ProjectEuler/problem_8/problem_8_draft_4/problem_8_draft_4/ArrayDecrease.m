@@ -22,8 +22,8 @@
     unsigned long arrayIndex = inputArray.count - 1;
     
     //loop through 4 numbers at a time and get product
-    for (int x = 4; x >= 1; x--) {
-        
+    for (int x = 13; x >= 1; x--) {
+//        NSLog(@"x is now %d", x); 
         
         numberAdder = numberAdder * [inputArray[arrayIndex] intValue];
         NSNumber *forArray = [[NSNumber alloc]initWithInt:numberAdder];
@@ -34,8 +34,8 @@
         arrayIndex = arrayIndex -1;
         
         if (x == 1) {
-            //  x = 14;
-            x = 5;
+              x = 14;
+//            x = 5;
             numberAdder = 1;
         }
         
