@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface ViewController : UIViewController  <MKAnnotation,MKMapViewDelegate>
+@interface ViewController : UIViewController  <MKAnnotation,MKMapViewDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *MapView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;

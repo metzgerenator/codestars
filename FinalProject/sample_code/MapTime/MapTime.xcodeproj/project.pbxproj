@@ -16,6 +16,7 @@
 		27A4AAF71BDBE2DD0079BA1E /* MapTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A4AAF61BDBE2DD0079BA1E /* MapTimeTests.m */; };
 		27A4AB021BDBE2DD0079BA1E /* MapTimeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A4AB011BDBE2DD0079BA1E /* MapTimeUITests.m */; };
 		27A4AB101BDBE2FA0079BA1E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A4AB0F1BDBE2FA0079BA1E /* MapKit.framework */; };
+		5712D31D1BDC294600E60EA0 /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5712D31C1BDC294600E60EA0 /* MapViewAnnotation.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		27A4AB011BDBE2DD0079BA1E /* MapTimeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapTimeUITests.m; sourceTree = "<group>"; };
 		27A4AB031BDBE2DD0079BA1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27A4AB0F1BDBE2FA0079BA1E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5712D31B1BDC294600E60EA0 /* MapViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewAnnotation.h; sourceTree = "<group>"; };
+		5712D31C1BDC294600E60EA0 /* MapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				27A4AAE01BDBE2DD0079BA1E /* AppDelegate.m */,
 				27A4AAE21BDBE2DD0079BA1E /* ViewController.h */,
 				27A4AAE31BDBE2DD0079BA1E /* ViewController.m */,
+				5712D31B1BDC294600E60EA0 /* MapViewAnnotation.h */,
+				5712D31C1BDC294600E60EA0 /* MapViewAnnotation.m */,
 				27A4AAE51BDBE2DD0079BA1E /* Main.storyboard */,
 				27A4AAE81BDBE2DD0079BA1E /* Assets.xcassets */,
 				27A4AAEA1BDBE2DD0079BA1E /* LaunchScreen.storyboard */,
@@ -281,6 +286,7 @@
 			files = (
 				27A4AAE41BDBE2DD0079BA1E /* ViewController.m in Sources */,
 				27A4AAE11BDBE2DD0079BA1E /* AppDelegate.m in Sources */,
+				5712D31D1BDC294600E60EA0 /* MapViewAnnotation.m in Sources */,
 				27A4AADE1BDBE2DD0079BA1E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +511,7 @@
 				27A4AB081BDBE2DD0079BA1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27A4AB091BDBE2DD0079BA1E /* Build configuration list for PBXNativeTarget "MapTimeTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +520,7 @@
 				27A4AB0B1BDBE2DD0079BA1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27A4AB0C1BDBE2DD0079BA1E /* Build configuration list for PBXNativeTarget "MapTimeUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +529,7 @@
 				27A4AB0E1BDBE2DD0079BA1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
