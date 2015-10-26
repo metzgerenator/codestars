@@ -6,6 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ArraySorting.h" 
+#import "ArrayDecrease.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -22,7 +24,6 @@ int main(int argc, const char * argv[]) {
         NSMutableArray *numberArray = [[NSMutableArray alloc]init];
         
         //Create an array to store all of the products
-        NSMutableArray *productArray = [[NSMutableArray alloc]init];
         
         NSMutableArray *numberArray2 = [[NSMutableArray alloc]init];
         
@@ -45,74 +46,27 @@ int main(int argc, const char * argv[]) {
         
         
         
+        // Descend through Array
         
-    
-        int numberAdder = 1;
-//        int arrayIndex = 999;
+        ArrayDecrease *arrayDecreaseInstance = [[ArrayDecrease alloc]init];
+       NSArray *arrayDecreased = [arrayDecreaseInstance decreaseArray:numberArray];
         
-        unsigned long arrayIndex = numberArray.count - 1;
         
-        //loop through 4 numbers at a time and get product
-        for (int x = 4; x >= 1; x--) {
-            
         
-        numberAdder = numberAdder * [numberArray[arrayIndex] intValue];
-            NSNumber *forArray = [[NSNumber alloc]initWithInt:numberAdder];
-            
-            
-            [productArray addObject:forArray];
-            
-            arrayIndex = arrayIndex -1;
-//            NSLog(@"arrayIndex %ld", arrayIndex);
-            
-            if (x == 1) {
-//                NSLog(@"number adder is now %d", numberAdder);
-//                x = 14;
-                x = 5;
-                numberAdder = 1;
-            }
-            
-      
-            
-            if (arrayIndex ==0 ) {
-                
-                
      
-                [numberArray removeObjectAtIndex:numberArray.count - 1];
-               
-                     arrayIndex = numberArray.count - 1;
-                
-                //provide a breaking point to stop error
-                if (arrayIndex == 0) {
-                    break;
-                }
-                    NSLog(@"arrayIndex is now changing to  %ld", arrayIndex);
-              
-    
-        
-            }
         
         
-           
-        }
+        
         
         // sort the product array
-        NSArray *sorted = [productArray sortedArrayUsingComparator:^(id obj1, id obj2) {
-            if ([obj1 integerValue] > [obj2 integerValue]) {
-                return  (NSComparisonResult)NSOrderedDescending;
-            }
-            
-            if ([obj1 integerValue] < [ obj2 integerValue]) {
-                return  (NSComparisonResult) NSOrderedAscending;
-            }
-            return (NSComparisonResult)NSOrderedSame;
-        }];
+        ArraySorting *sortedArray = [[ArraySorting alloc]init];
+       NSArray *finalArray = [sortedArray arraysorter:arrayDecreased];
         
-
+        
         // Find the largest sorted number
-        unsigned long finalNumerIndex = sorted.count -1;
+        unsigned long finalNumerIndex = finalArray.count -1;
         
-        NSNumber *finalNumber = [sorted objectAtIndex:finalNumerIndex];
+        NSNumber *finalNumber = [finalArray objectAtIndex:finalNumerIndex];
         
         NSLog(@"final number is %@", finalNumber);
         
