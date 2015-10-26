@@ -63,6 +63,7 @@ int main(int argc, const char * argv[]) {
             
             if (x == 1) {
 //                NSLog(@"number adder is now %d", numberAdder);
+//                x = 14;
                 x = 5;
                 numberAdder = 1;
             }
@@ -92,8 +93,24 @@ int main(int argc, const char * argv[]) {
         }
         
         // sort the product array
+        NSArray *sorted = [productArray sortedArrayUsingComparator:^(id obj1, id obj2) {
+            if ([obj1 integerValue] > [obj2 integerValue]) {
+                return  (NSComparisonResult)NSOrderedDescending;
+            }
+            
+            if ([obj1 integerValue] < [ obj2 integerValue]) {
+                return  (NSComparisonResult) NSOrderedAscending;
+            }
+            return (NSComparisonResult)NSOrderedSame;
+        }];
         
+
+        // Find the largest sorted number
+        unsigned long finalNumerIndex = sorted.count -1;
         
+        NSNumber *finalNumber = [sorted objectAtIndex:finalNumerIndex];
+        
+        NSLog(@"final number is %@", finalNumber);
         
         
     }
