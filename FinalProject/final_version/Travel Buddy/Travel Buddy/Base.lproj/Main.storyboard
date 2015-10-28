@@ -82,28 +82,35 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Item Here " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-tY-f2d">
-                                                    <rect key="frame" x="94" y="193" width="205" height="30"/>
+                                                    <rect key="frame" x="94" y="211" width="205" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7Z-og-jNv">
-                                                    <rect key="frame" x="22" y="197" width="69" height="21"/>
+                                                    <rect key="frame" x="22" y="215" width="69" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="0Iw-8Z-D07" customClass="PFImageView">
+                                                    <rect key="frame" x="98" y="36" width="124" height="92"/>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FL-TJ-RyS">
-                                                    <rect key="frame" x="106" y="231" width="84" height="30"/>
+                                                    <rect key="frame" x="118" y="249" width="84" height="30"/>
                                                     <state key="normal" title="Add a photo"/>
                                                     <connections>
                                                         <action selector="takePhoto:" destination="sLM-Mt-gJY" eventType="touchUpInside" id="dwx-Ed-3qK"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="0Iw-8Z-D07" customClass="PFImageView">
-                                                    <rect key="frame" x="59" y="44" width="203" height="111"/>
-                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select from Library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zt-yg-Urv">
+                                                    <rect key="frame" x="94" y="150" width="146" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -178,7 +185,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="qmc-40-Gyf"/>
                     <connections>
@@ -504,11 +511,11 @@
             </objects>
             <point key="canvasLocation" x="71" y="169"/>
         </scene>
-        <!--Lodging -->
+        <!--Search and Save Location-->
         <scene sceneID="VNG-vY-Dqz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gWw-um-cfD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Lodging " id="T3n-c5-aF8"/>
+                    <tabBarItem key="tabBarItem" title="Search and Save Location" id="T3n-c5-aF8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bTO-gh-KCV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

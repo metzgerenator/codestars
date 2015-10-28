@@ -16,18 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="eq1-zK-jef">
-                                <rect key="frame" x="191" y="187" width="218" height="225"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="gwE-mw-UZY">
+                                <rect key="frame" x="188" y="206" width="224" height="187"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="218" id="dDb-QU-hUw"/>
+                                    <constraint firstAttribute="width" constant="224" id="kV7-EG-2lB"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eq1-zK-jef" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="2tw-ZT-Gb5"/>
-                            <constraint firstItem="eq1-zK-jef" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6gV-nt-5gq"/>
+                            <constraint firstItem="gwE-mw-UZY" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="186" id="8EE-NM-FSf"/>
+                            <constraint firstItem="gwE-mw-UZY" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Tm3-pf-8Gg"/>
+                            <constraint firstItem="gwE-mw-UZY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tB5-pD-wXm"/>
                         </constraints>
                     </view>
                 </viewController>

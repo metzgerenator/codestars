@@ -27,6 +27,7 @@
 
     
     
+    
     [self.mapView setRegion:self.boundingRegion animated:YES];
 
 
@@ -37,11 +38,10 @@
     [super viewDidAppear:animated];
     
     
+    
     for (MKMapItem *item in self.mapItemList) {
         
-    
-    
-//        MKMapItem *item  = [self.mapItemList objectAtIndex:0];
+        
    
         MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
         point.coordinate = item.placemark.location.coordinate;
@@ -50,16 +50,14 @@
         
         
         [self.mapView addAnnotation:point];
-//    [self.mapView selectAnnotation:[self.mapView.annotations objectAtIndex:0] animated:YES];
-//        [self.mapView selectAnnotation:point animated:YES];
+        
+
     }
     
         
-//
+
     
     
-//    [self.mapView addAnnotations:placeMarks];
-//    [self.mapView showAnnotations:placeMarks animated:YES];
 }
 
 -(void)viewDidDisappear:(BOOL)animated {

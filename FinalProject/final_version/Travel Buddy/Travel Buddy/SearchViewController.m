@@ -108,7 +108,9 @@
     
         
         mapViewController.boundingRegion = self.boundingRegion;
-        mapViewController.mapItemList = self.placeSearchStorage;  
+        mapViewController.mapItemList = self.placeSearchStorage;
+        
+      
         
         
         
