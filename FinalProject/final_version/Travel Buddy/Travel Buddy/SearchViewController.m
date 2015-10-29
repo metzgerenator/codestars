@@ -6,6 +6,7 @@
 //
 
 #import "SearchViewController.h"
+#import "MapViewAnnotation.h"
 
 @interface SearchViewController ()
 @property (nonatomic, strong) MKLocalSearch *localSearch;
@@ -116,6 +117,21 @@
     
         
     } else if ([segue.identifier isEqualToString:@"all"]){
+        
+        if ([self.placeSearchStorage count] == 0) {
+            
+            
+            double latitude = 40.763720;
+            double longitude = -73.965509;
+            MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(latitude, longitude) addressDictionary:nil];
+            MKMapItem *newItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+            [newItem setName:@"Go back and Run A Search"];
+            
+            NSArray *OneItem  = @[newItem];
+            self.placeSearchStorage = OneItem;
+            
+         
+        }
         
         
             MKMapPoint points[[self.placeSearchStorage count]];
