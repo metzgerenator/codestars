@@ -442,7 +442,13 @@
                             <outlet property="delegate" destination="C83-Hv-xhP" id="3xj-IO-8IQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Saved Places" id="2Bk-PZ-UIn"/>
+                    <navigationItem key="navigationItem" title="My Saved Places" id="2Bk-PZ-UIn">
+                        <barButtonItem key="rightBarButtonItem" title="Show All" id="FC8-WF-ER4">
+                            <connections>
+                                <segue destination="0UY-Gt-VRO" kind="modal" identifier="all" id="4Ay-PC-Kay"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cte-yL-wdn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -555,6 +561,7 @@
         <image name="images" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="4Ay-PC-Kay"/>
         <segue reference="hug-UZ-Jjv"/>
     </inferredMetricsTieBreakers>
 </document>

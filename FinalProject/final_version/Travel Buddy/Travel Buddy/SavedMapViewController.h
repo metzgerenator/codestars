@@ -15,10 +15,13 @@
 
 @property (nonatomic)CLLocationCoordinate2D coordinate;
 
-//Need to fix bounding region
 @property (nonatomic, assign) MKCoordinateRegion boundingRegion;
 
+
+// This is set by prepare for seque method
 @property (nonatomic, strong) PFObject *savedMapFromParseSegue;
+
+@property (nonatomic, strong) NSArray *savedObjectsFromParseSegue;  
 
 
 

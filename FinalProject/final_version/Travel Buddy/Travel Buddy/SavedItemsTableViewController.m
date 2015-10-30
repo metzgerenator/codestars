@@ -107,16 +107,19 @@
     SavedMapViewController *mapViewController = segue.destinationViewController;
     MKCoordinateRegion region = self.boundingRegion;
     
+//    //Array for all map view
+//    NSArray *objects = self.objects;
+
     
     if ([segue.identifier isEqual:@"savedMap"]) {
         NSIndexPath *selectedItemPath = [self.tableView indexPathForSelectedRow];
         PFObject *object = [self.objects objectAtIndex:selectedItemPath.row];
-        NSLog(@"pfobject is now %@", object);
-        
+     
+//        NSLog(@"pfobject is now %@", object);
         self.mapholder = object;
         mapViewController.savedMapFromParseSegue = object;
         
-        NSLog(@"mapholder object is = %@", self.mapholder);
+//        NSLog(@"mapholder object is = %@", self.mapholder);
 
         
         PFGeoPoint *forCoordinate = [object objectForKey:@"location"];
@@ -133,6 +136,15 @@
         
         
 
+    }
+    else if ([segue.identifier isEqual:@"all"]){
+        
+        mapViewController.savedObjectsFromParseSegue = self.objects;  
+        
+//        for (PFObject *d in self.objects) {
+//            <#statements#>
+//        }
+        
     }
     
 }
