@@ -110,9 +110,10 @@
     
     
     // create a button for callout
-    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [saveButton addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [saveButton setTitle:@"Save Location" forState:UIControlStateNormal];
+    saveButton.bounds = CGRectMake(0, 0, 100, 44);
     
     
     
