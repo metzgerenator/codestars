@@ -122,8 +122,8 @@
         float coordinateLongitutde = forCoordinate.longitude;
         float coordinateLatitude = forCoordinate.latitude;
 
-        region.center.latitude = forCoordinate.latitude;
-        region.center.longitude = forCoordinate.longitude;
+//        region.center.latitude = forCoordinate.latitude;
+//        region.center.longitude = forCoordinate.longitude;
         MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
         region.center.longitude = coordinateLongitutde;
         region.center.latitude = coordinateLatitude;
@@ -134,7 +134,7 @@
 
     }
     else if ([segue.identifier isEqual:@"all"]){
-        
+        //Set savedObject array to all parse objects
         mapViewController.savedObjectsFromParseSegue = self.objects;  
         
         MKMapPoint points[[self.objects count]];
