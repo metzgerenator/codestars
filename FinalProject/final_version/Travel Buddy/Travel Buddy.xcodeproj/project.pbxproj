@@ -45,6 +45,7 @@
 		573DFD731BD880C400C46A14 /* SavedMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573DFD721BD880C400C46A14 /* SavedMapViewController.m */; settings = {ASSET_TAGS = (); }; };
 		57AA6CF81BD4231500554D47 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57AA6CF71BD4231500554D47 /* MapKit.framework */; };
 		57AA6CFC1BD4253500554D47 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AA6CFB1BD4253500554D47 /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57F66BFB1BE7ACE400F02841 /* PasswordRecoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F66BFA1BE7ACE400F02841 /* PasswordRecoverViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,8 @@
 		57AA6CF71BD4231500554D47 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		57AA6CFA1BD4253500554D47 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		57AA6CFB1BD4253500554D47 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		57F66BF91BE7ACE400F02841 /* PasswordRecoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoverViewController.h; sourceTree = "<group>"; };
+		57F66BFA1BE7ACE400F02841 /* PasswordRecoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +272,8 @@
 				5704F93B1BD1D01D002C8DC0 /* SignupViewController.m */,
 				5704F9371BD1D005002C8DC0 /* LoginViewController.h */,
 				5704F9381BD1D005002C8DC0 /* LoginViewController.m */,
+				57F66BF91BE7ACE400F02841 /* PasswordRecoverViewController.h */,
+				57F66BFA1BE7ACE400F02841 /* PasswordRecoverViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				57AA6CFC1BD4253500554D47 /* MapViewController.m in Sources */,
 				5704F8DA1BD1A827002C8DC0 /* main.m in Sources */,
 				573DFD731BD880C400C46A14 /* SavedMapViewController.m in Sources */,
+				57F66BFB1BE7ACE400F02841 /* PasswordRecoverViewController.m in Sources */,
 				573DFD701BD872A000C46A14 /* SavedItemsTableViewController.m in Sources */,
 				2766F0601BD2A4A300758CE8 /* AddToPackingListTableViewController.m in Sources */,
 				5704F93C1BD1D01D002C8DC0 /* SignupViewController.m in Sources */,
