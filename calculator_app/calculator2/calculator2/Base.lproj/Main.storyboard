@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Calculator View Controller-->
+        <!--Calc View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CalculatorViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalcViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="AC"/>
                                 <connections>
-                                    <action selector="clearActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lWS-ZD-jYt"/>
+                                    <action selector="clearActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tk2-Sl-V5v"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jyl-2y-vdo">
@@ -39,7 +39,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="/"/>
                                 <connections>
-                                    <action selector="divideActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Peu-aB-zEh"/>
+                                    <action selector="divideActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hNi-5F-UQ0"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-7u-vxy">
@@ -52,7 +52,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="x"/>
                                 <connections>
-                                    <action selector="multiplicationActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aqo-jN-DiY"/>
+                                    <action selector="multiplicationActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wo9-fU-hj6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTb-n8-231">
@@ -60,7 +60,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="-"/>
                                 <connections>
-                                    <action selector="subTractionActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0K-Yw-XIO"/>
+                                    <action selector="subTractionActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hbs-JY-G4u"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSg-sF-mTc">
@@ -68,7 +68,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <action selector="additionActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Pm-k5-hId"/>
+                                    <action selector="additionActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RUS-Jt-wda"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fji-EZ-iaP">
@@ -76,7 +76,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="="/>
                                 <connections>
-                                    <action selector="equalsActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A0x-fB-jPK"/>
+                                    <action selector="equalsActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KQd-TC-3ad"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6N-6k-CK0">
@@ -84,7 +84,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="."/>
                                 <connections>
-                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xtN-R8-a51"/>
+                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WGn-cf-OkL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5f-ED-aw9">
@@ -92,7 +92,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="0"/>
                                 <connections>
-                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7yw-3F-uXQ"/>
+                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QGL-op-nHz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0x-Cw-4k0">
@@ -100,7 +100,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="7"/>
                                 <connections>
-                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2VX-eK-S9P"/>
+                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t76-D6-Vcl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgi-Av-AWk">
@@ -108,7 +108,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="4"/>
                                 <connections>
-                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hvM-Ua-l4v"/>
+                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bLc-xb-wZT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Meh-KR-AuC">
@@ -116,7 +116,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="1"/>
                                 <connections>
-                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PoM-Zl-edh"/>
+                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rS8-0P-EfB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbu-8K-2Dx">
@@ -124,7 +124,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="2"/>
                                 <connections>
-                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qa0-km-wcB"/>
+                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ybe-EM-ure"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEH-nA-3ME">
@@ -132,7 +132,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="5"/>
                                 <connections>
-                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ivx-T2-a9e"/>
+                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iiT-va-B4B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8Q-wN-nvl">
@@ -140,7 +140,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="6"/>
                                 <connections>
-                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qmb-eg-a6G"/>
+                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="buy-uF-F6r"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tl9-5G-cGy">
@@ -148,7 +148,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="8"/>
                                 <connections>
-                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hPl-9j-vt8"/>
+                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jhW-02-bSQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCS-qr-fat">
@@ -156,7 +156,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="9"/>
                                 <connections>
-                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vMF-3M-AMc"/>
+                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uGq-SP-WgQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wto-HX-fTt">
@@ -164,14 +164,14 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="3"/>
                                 <connections>
-                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t64-HF-UL9"/>
+                                    <action selector="numberInputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PYh-as-m0P"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="calculatorTextField" destination="YJO-7u-vxy" id="xwd-h2-hZJ"/>
+                        <outlet property="calculatorTextField" destination="YJO-7u-vxy" id="lwY-dM-IgR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
