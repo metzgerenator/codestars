@@ -20,21 +20,37 @@
     return converted;
 }
 
-//
-//-(NSNumber *)subtraction: (double)numberInputOne
-//            secondDouble:(double)numberInputTwo{
-//    return self;
-//}
-//
-//-(NSNumber *)multiplication: (double)numberInputOne
-//               secondDouble:(double)numberInputTwo{
-//    return self;
-//}
-//
-//-(NSNumber *)division: (double)numberInputOne
-//         secondDouble:(double)numberInputTwo{
-//    return self;
-//}
+
+-(NSNumber *)subtraction: (double)numberInputOne
+            secondDouble:(double)numberInputTwo{
+    
+    double forInput = numberInputOne - numberInputTwo;
+    
+    NSNumber *converted = [[NSNumber alloc]initWithDouble:forInput];
+    
+    return converted;
+    
+    
+}
+
+-(NSNumber *)multiplication: (double)numberInputOne
+               secondDouble:(double)numberInputTwo{
+    double forInput = numberInputOne * numberInputTwo;
+    
+    NSNumber *converted = [[NSNumber alloc]initWithDouble:forInput];
+    
+    return converted;
+}
+
+-(NSNumber *)division: (double)numberInputOne
+         secondDouble:(double)numberInputTwo{
+    
+    double forInput = numberInputOne / numberInputTwo;
+    
+    NSNumber *converted = [[NSNumber alloc]initWithDouble:forInput];
+    
+    return converted;
+}
 
 
 
