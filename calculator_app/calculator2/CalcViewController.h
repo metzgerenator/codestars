@@ -24,14 +24,14 @@
 
 - (IBAction)clearActionButton:(id)sender;
 
-- (IBAction)divideActionButton:(id)sender;
+- (IBAction)divideActionButton:(id)sender; //
 
-- (IBAction)multiplicationActionButton:(id)sender;
+- (IBAction)multiplicationActionButton:(id)sender;//
 
-- (IBAction)subTractionActionButton:(id)sender;
+- (IBAction)subTractionActionButton:(id)sender;//
 
-- (IBAction)additionActionButton:(id)sender;
+- (IBAction)additionActionButton:(id)sender;//
 
-- (IBAction)equalsActionButton:(id)sender;
+- (IBAction)equalsActionButton:(id)sender;//
 
 @end

@@ -12,15 +12,17 @@
 @interface CalcViewController ()
 
 {
-    NSNumber * CurrentTotal;
-    NSNumber * otherNumber;  
+    NSNumber * currentTotal;
+    NSNumber * secondNumber;
+    
+    BOOL useSecondNumber;
     
     BOOL addition;
     BOOL subtraction;
     BOOL multiplication;
     BOOL divison;
     
-    BOOL numberTwo;
+   
 
 
 }
@@ -35,7 +37,61 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
+-(void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    if (addition && secondNumber != nil) {
+        double number1 = [currentTotal doubleValue];
+        double number2 = [secondNumber doubleValue];
+        double answer = number1 + number2;
+        
+        currentTotal = [[NSNumber alloc]initWithDouble:answer];
+        secondNumber = nil;
+        
+        NSLog(@"answer is %f", answer);
+        addition = NO;
+        
+    } else if (subtraction && secondNumber != nil) {
+        double number1 = [currentTotal doubleValue];
+        double number2 = [secondNumber doubleValue];
+        double answer = number1 - number2;
+        
+        currentTotal = [[NSNumber alloc]initWithDouble:answer];
+        secondNumber = nil;
+        
+        NSLog(@"answer is %f", answer);
+        subtraction = NO;
+        
+    } else if (multiplication && secondNumber != nil) {
+        
+        double number1 = [currentTotal doubleValue];
+        double number2 = [secondNumber doubleValue];
+        double answer = number1 * number2;
+        
+        currentTotal = [[NSNumber alloc]initWithDouble:answer];
+        secondNumber = nil;
+        
+        NSLog(@"answer is %f", answer);
+        multiplication = NO;
+        
+    } else if (divison && secondNumber != nil ){
+        
+        double number1 = [currentTotal doubleValue];
+        double number2 = [secondNumber doubleValue];
+        double answer = number1 / number2;
+        
+        currentTotal = [[NSNumber alloc]initWithDouble:answer];
+        secondNumber = nil;
+        
+        NSLog(@"answer is %f", answer);
+        divison = NO;
+        
+    }
+    
+    
+    
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -60,30 +116,19 @@
     double disPlayDouble = [forTextOutput doubleValue];
     
     
-//    if (otherNumber == NULL && CurrentTotal == NULL) {
-//        CurrentTotal = [[NSNumber alloc]initWithDouble:disPlayDouble];
-//        
-//       
-//        
-//    }else if (CurrentTotal!= NULL) {
-//        
-//        otherNumber = [[NSNumber alloc]initWithDouble:disPlayDouble];
-//    }
-    
-    if (!numberTwo) {
-        CurrentTotal = [[NSNumber alloc]initWithDouble:disPlayDouble];
-        
-        
-        
-    }else if (numberTwo) {
-        
-        otherNumber = [[NSNumber alloc]initWithDouble:disPlayDouble];
+    if (!useSecondNumber) {
+        currentTotal = [[NSNumber alloc]initWithDouble:disPlayDouble];
+    }else {
+        secondNumber = [[NSNumber alloc]initWithDouble:disPlayDouble];
     }
     
     
+        
+
+    
     
    
-    NSLog(@"currenttotal is %@ othernumber is %@", CurrentTotal, otherNumber);
+    NSLog(@"currenttotal is %@, secondnumber is %@", currentTotal, secondNumber);
     
     
     
@@ -97,68 +142,60 @@
 #pragma mark - functions
 
 - (IBAction)additionActionButton:(id)sender{
-//    if (otherNumber != NULL) {
     
-    if (numberTwo) {
-        CalcFunctions *additionFunction = [[CalcFunctions alloc]init];
-      CurrentTotal = [additionFunction addition:[CurrentTotal doubleValue] secondDouble:[otherNumber doubleValue]];
-        
-        NSLog(@"current total is %@ othernumber is %@", CurrentTotal, otherNumber);
-        otherNumber = NULL;
-        
-       
-        
-        
-        
-    } else {
-        
-        numberTwo = YES;
-        
-        addition = YES;
-        subtraction = NO;
-        multiplication = NO;
-        divison = NO;
-        
-    }
-    
-    NSLog(@"current total is %@ othernumber is %@", CurrentTotal, otherNumber);
-    
+    addition = YES;
+    useSecondNumber = YES;
+    subtraction = NO;
+    multiplication = NO;
+    divison = NO;
+   
     self.calculatorTextField.text = @" ";
-    
+    [self viewDidAppear:YES];
+
 }
 
 
 
 - (IBAction)subTractionActionButton:(id)sender{
     
-    if (numberTwo) {
-        CalcFunctions *subtractionFunction = [[CalcFunctions alloc]init];
-       CurrentTotal = [subtractionFunction subtraction:[CurrentTotal doubleValue] secondDouble:[otherNumber doubleValue]];
-        
-        NSLog(@"current total is %@ othernumber is %@", CurrentTotal, otherNumber);
-        otherNumber = NULL;
-        
-        
-        
-    } else {
-        numberTwo = YES;
-        
-        addition = NO;
-        subtraction = YES;
-        multiplication = NO;
-        divison = NO;
-        
-    }
-    
-    NSLog(@"current total is %@ othernumber is %@", CurrentTotal, otherNumber);
+    addition = NO;
+    useSecondNumber = YES;
+    subtraction = YES;
+    multiplication = NO;
+    divison = NO;
     
     self.calculatorTextField.text = @" ";
-    
-    
-    
+    [self viewDidAppear:YES];
     
 }
 
+
+
+
+- (IBAction)multiplicationActionButton:(id)sender{
+    addition = NO;
+    useSecondNumber = YES;
+    subtraction = NO;
+    multiplication = YES;
+    divison = NO;
+    
+    self.calculatorTextField.text = @" ";
+    [self viewDidAppear:YES];
+    
+}
+
+- (IBAction)divideActionButton:(id)sender{
+    
+    addition = NO;
+    useSecondNumber = YES;
+    subtraction = NO;
+    multiplication = NO;
+    divison = YES;
+    
+    self.calculatorTextField.text = @" ";
+    [self viewDidAppear:YES];
+    
+}
 
 
 
@@ -170,15 +207,15 @@
 - (IBAction)clearActionButton:(id)sender{
     
     //Clear everyting out
-    CurrentTotal = NULL;
-    otherNumber = NULL;
-    addition = NO;
-    subtraction = NO;
-    multiplication = NO;
-    divison = NO;
+    currentTotal = nil;
+    secondNumber = nil;
     
-    numberTwo = NO;
+     useSecondNumber = NO;
     
+     addition = NO;
+     subtraction = NO;
+     multiplication = NO;
+     divison = NO;
     self.calculatorTextField.text = @" ";
     
 }
@@ -186,36 +223,64 @@
 
 - (IBAction)equalsActionButton:(id)sender{
     
-    
-    
-    
-    if (addition) {
-        CalcFunctions *additionFunction = [[CalcFunctions alloc]init];
-        CurrentTotal = [additionFunction addition:[CurrentTotal doubleValue] secondDouble:[otherNumber doubleValue]];
+    if (addition && secondNumber != nil) {
+        double number1 = [currentTotal doubleValue];
+        double number2 = [secondNumber doubleValue];
+        double answer = number1 + number2;
         
+        currentTotal = [[NSNumber alloc]initWithDouble:answer];
+        secondNumber = nil;
         
-        otherNumber = NULL;
-        NSLog(@"current total is %@ othernumber is %@", CurrentTotal, otherNumber);
-        NSString *forDisplay = [CurrentTotal stringValue];
-        self.calculatorTextField.text = forDisplay;
- 
-    }else if (subtraction){
-        
-        CalcFunctions *subtractionFunction = [[CalcFunctions alloc]init];
-        CurrentTotal = [subtractionFunction subtraction:[CurrentTotal doubleValue] secondDouble:[otherNumber doubleValue]];
-        
-        
-        otherNumber = NULL;
-        NSLog(@"current total is %@ othernumber is %@", CurrentTotal, otherNumber);
-        NSString *forDisplay = [CurrentTotal stringValue];
+        NSLog(@"answer is %f", answer);
+        addition = NO;
+        NSString *forDisplay = [currentTotal stringValue];
         self.calculatorTextField.text = forDisplay;
         
+    } else if (subtraction && secondNumber != nil) {
+        double number1 = [currentTotal doubleValue];
+        double number2 = [secondNumber doubleValue];
+        double answer = number1 - number2;
         
+        currentTotal = [[NSNumber alloc]initWithDouble:answer];
+        secondNumber = nil;
+        
+        NSLog(@"answer is %f", answer);
+        subtraction = NO;
+        NSString *forDisplay = [currentTotal stringValue];
+        self.calculatorTextField.text = forDisplay;
+        
+    } else if (multiplication && secondNumber != nil) {
+        
+        double number1 = [currentTotal doubleValue];
+        double number2 = [secondNumber doubleValue];
+        double answer = number1 * number2;
+        
+        currentTotal = [[NSNumber alloc]initWithDouble:answer];
+        secondNumber = nil;
+        
+        NSLog(@"answer is %f", answer);
+        multiplication = NO;
+        NSString *forDisplay = [currentTotal stringValue];
+        self.calculatorTextField.text = forDisplay;
+        
+    } else if (divison && secondNumber != nil ){
+        
+        double number1 = [currentTotal doubleValue];
+        double number2 = [secondNumber doubleValue];
+        double answer = number1 / number2;
+        
+        currentTotal = [[NSNumber alloc]initWithDouble:answer];
+        secondNumber = nil;
+        
+        NSLog(@"answer is %f", answer);
+        divison = NO;
+        NSString *forDisplay = [currentTotal stringValue];
+        self.calculatorTextField.text = forDisplay;
         
     }
     
     
-    
 }
+
 
 @end
