@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		27FC362F1BEAFA0C00D7D2C7 /* CalcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FC362E1BEAFA0C00D7D2C7 /* CalcViewController.m */; };
-		27FC36321BEAFB5F00D7D2C7 /* CalcFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FC36311BEAFB5F00D7D2C7 /* CalcFunctions.m */; };
 		576F46671BEAA6BD00CE7306 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 576F46661BEAA6BD00CE7306 /* main.m */; };
 		576F466A1BEAA6BD00CE7306 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 576F46691BEAA6BD00CE7306 /* AppDelegate.m */; };
 		576F46701BEAA6BD00CE7306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 576F466E1BEAA6BD00CE7306 /* Main.storyboard */; };
@@ -38,8 +37,6 @@
 /* Begin PBXFileReference section */
 		27FC362D1BEAFA0C00D7D2C7 /* CalcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalcViewController.h; sourceTree = "<group>"; };
 		27FC362E1BEAFA0C00D7D2C7 /* CalcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalcViewController.m; sourceTree = "<group>"; };
-		27FC36301BEAFB5F00D7D2C7 /* CalcFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalcFunctions.h; sourceTree = "<group>"; };
-		27FC36311BEAFB5F00D7D2C7 /* CalcFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalcFunctions.m; sourceTree = "<group>"; };
 		576F46621BEAA6BD00CE7306 /* calculator2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		576F46661BEAA6BD00CE7306 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		576F46681BEAA6BD00CE7306 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,8 +83,6 @@
 			children = (
 				27FC362D1BEAFA0C00D7D2C7 /* CalcViewController.h */,
 				27FC362E1BEAFA0C00D7D2C7 /* CalcViewController.m */,
-				27FC36301BEAFB5F00D7D2C7 /* CalcFunctions.h */,
-				27FC36311BEAFB5F00D7D2C7 /* CalcFunctions.m */,
 			);
 			name = calculatorView2;
 			sourceTree = "<group>";
@@ -291,7 +286,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27FC36321BEAFB5F00D7D2C7 /* CalcFunctions.m in Sources */,
 				576F466A1BEAA6BD00CE7306 /* AppDelegate.m in Sources */,
 				27FC362F1BEAFA0C00D7D2C7 /* CalcViewController.m in Sources */,
 				576F46671BEAA6BD00CE7306 /* main.m in Sources */,

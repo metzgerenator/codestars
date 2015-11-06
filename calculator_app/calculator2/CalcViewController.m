@@ -7,7 +7,6 @@
 //
 
 #import "CalcViewController.h"
-#import "CalcFunctions.h"
 
 @interface CalcViewController ()
 
@@ -21,6 +20,9 @@
     BOOL subtraction;
     BOOL multiplication;
     BOOL divison;
+    
+    BOOL clearScreen;
+    
     
    
 
@@ -50,6 +52,8 @@
         
         NSLog(@"answer is %f", answer);
         addition = NO;
+        NSString *forDisplay = [currentTotal stringValue];
+        self.calculatorTextField.text = forDisplay;
         
     } else if (subtraction && secondNumber != nil) {
         double number1 = [currentTotal doubleValue];
@@ -61,6 +65,8 @@
         
         NSLog(@"answer is %f", answer);
         subtraction = NO;
+        NSString *forDisplay = [currentTotal stringValue];
+        self.calculatorTextField.text = forDisplay;
         
     } else if (multiplication && secondNumber != nil) {
         
@@ -73,6 +79,8 @@
         
         NSLog(@"answer is %f", answer);
         multiplication = NO;
+        NSString *forDisplay = [currentTotal stringValue];
+        self.calculatorTextField.text = forDisplay;
         
     } else if (divison && secondNumber != nil ){
         
@@ -85,11 +93,12 @@
         
         NSLog(@"answer is %f", answer);
         divison = NO;
-        
+        NSString *forDisplay = [currentTotal stringValue];
+        self.calculatorTextField.text = forDisplay;
     }
     
     
-    
+    clearScreen = YES;
     
 }
 - (void)didReceiveMemoryWarning {
@@ -101,7 +110,10 @@
 
 
 - (IBAction)numberInputAction:(id)numberInput{
-    
+    if (clearScreen) {
+        clearScreen = NO;
+        self.calculatorTextField.text = @" ";
+    }
     
     NSString *inputString = [numberInput currentTitle];
     
@@ -277,9 +289,12 @@
         NSString *forDisplay = [currentTotal stringValue];
         self.calculatorTextField.text = forDisplay;
         
+    } else {
+        NSString *forDisplay = [currentTotal stringValue];
+        self.calculatorTextField.text = forDisplay;
     }
     
-    
+    clearScreen = YES;
 }
 
 
