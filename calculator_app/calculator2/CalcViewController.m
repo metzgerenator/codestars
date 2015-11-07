@@ -42,63 +42,7 @@
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    if (addition && secondNumber != nil) {
-        double number1 = [currentTotal doubleValue];
-        double number2 = [secondNumber doubleValue];
-        double answer = number1 + number2;
-        
-        currentTotal = [[NSNumber alloc]initWithDouble:answer];
-        secondNumber = nil;
-        
-        NSLog(@"answer is %f", answer);
-        addition = NO;
-        NSString *forDisplay = [currentTotal stringValue];
-        self.calculatorTextField.text = forDisplay;
-        
-    } else if (subtraction && secondNumber != nil) {
-        double number1 = [currentTotal doubleValue];
-        double number2 = [secondNumber doubleValue];
-        double answer = number1 - number2;
-        
-        currentTotal = [[NSNumber alloc]initWithDouble:answer];
-        secondNumber = nil;
-        
-        NSLog(@"answer is %f", answer);
-        subtraction = NO;
-        NSString *forDisplay = [currentTotal stringValue];
-        self.calculatorTextField.text = forDisplay;
-        
-    } else if (multiplication && secondNumber != nil) {
-        
-        double number1 = [currentTotal doubleValue];
-        double number2 = [secondNumber doubleValue];
-        double answer = number1 * number2;
-        
-        currentTotal = [[NSNumber alloc]initWithDouble:answer];
-        secondNumber = nil;
-        
-        NSLog(@"answer is %f", answer);
-        multiplication = NO;
-        NSString *forDisplay = [currentTotal stringValue];
-        self.calculatorTextField.text = forDisplay;
-        
-    } else if (divison && secondNumber != nil ){
-        
-        double number1 = [currentTotal doubleValue];
-        double number2 = [secondNumber doubleValue];
-        double answer = number1 / number2;
-        
-        currentTotal = [[NSNumber alloc]initWithDouble:answer];
-        secondNumber = nil;
-        
-        NSLog(@"answer is %f", answer);
-        divison = NO;
-        NSString *forDisplay = [currentTotal stringValue];
-        self.calculatorTextField.text = forDisplay;
-    }
     
-    
-    clearScreen = YES;
     
 }
 - (void)didReceiveMemoryWarning {
@@ -151,24 +95,43 @@
     
 }
 
+
 #pragma mark - functions
 
-- (IBAction)additionActionButton:(id)sender{
+- (IBAction)additionActionButton:(UIButton *)sender{
+    if (subtraction || divison || multiplication ) {
+        SEL aSelector = @selector(function:);
+        
+        [sender sendAction:aSelector to:nil forEvent:nil];
+    }
     
     addition = YES;
     useSecondNumber = YES;
     subtraction = NO;
     multiplication = NO;
     divison = NO;
-   
+    
+    NSLog(@"setting adition to yes");
+    
     self.calculatorTextField.text = @" ";
-    [self viewDidAppear:YES];
+    
+    SEL aSelector = @selector(function:);
+    
+    [sender sendAction:aSelector to:nil forEvent:nil];
+    
+ 
 
 }
 
 
 
+
 - (IBAction)subTractionActionButton:(id)sender{
+    if (addition || divison || multiplication ) {
+        SEL aSelector = @selector(function:);
+        
+        [sender sendAction:aSelector to:nil forEvent:nil];
+    }
     
     addition = NO;
     useSecondNumber = YES;
@@ -177,7 +140,10 @@
     divison = NO;
     
     self.calculatorTextField.text = @" ";
-    [self viewDidAppear:YES];
+    
+    SEL aSelector = @selector(function:);
+    
+    [sender sendAction:aSelector to:nil forEvent:nil];
     
 }
 
@@ -185,6 +151,13 @@
 
 
 - (IBAction)multiplicationActionButton:(id)sender{
+    if (subtraction || divison || addition ) {
+        SEL aSelector = @selector(function:);
+        
+        [sender sendAction:aSelector to:nil forEvent:nil];
+    }
+    
+    
     addition = NO;
     useSecondNumber = YES;
     subtraction = NO;
@@ -192,11 +165,21 @@
     divison = NO;
     
     self.calculatorTextField.text = @" ";
-    [self viewDidAppear:YES];
+    
+    SEL aSelector = @selector(function:);
+    
+    [sender sendAction:aSelector to:nil forEvent:nil];
     
 }
 
 - (IBAction)divideActionButton:(id)sender{
+    
+    
+    if (subtraction || addition || multiplication ) {
+        SEL aSelector = @selector(function:);
+        
+        [sender sendAction:aSelector to:nil forEvent:nil];
+    }
     
     addition = NO;
     useSecondNumber = YES;
@@ -205,7 +188,10 @@
     divison = YES;
     
     self.calculatorTextField.text = @" ";
-    [self viewDidAppear:YES];
+    
+    SEL aSelector = @selector(function:);
+    
+    [sender sendAction:aSelector to:nil forEvent:nil];
     
 }
 
@@ -232,8 +218,23 @@
     
 }
 
+#pragma mark = equals 
 
 - (IBAction)equalsActionButton:(id)sender{
+    
+    
+    clearScreen = YES;
+    
+        SEL aSelector = @selector(function:);
+        [sender sendAction:aSelector to:nil forEvent:nil];
+    
+    
+    
+}
+
+
+-(void)function:(UIButton *)sender {
+    NSLog(@"this button works");
     
     if (addition && secondNumber != nil) {
         double number1 = [currentTotal doubleValue];
@@ -244,7 +245,8 @@
         secondNumber = nil;
         
         NSLog(@"answer is %f", answer);
-        addition = NO;
+//        addition = NO;
+        
         NSString *forDisplay = [currentTotal stringValue];
         self.calculatorTextField.text = forDisplay;
         
@@ -257,7 +259,7 @@
         secondNumber = nil;
         
         NSLog(@"answer is %f", answer);
-        subtraction = NO;
+//        subtraction = NO;
         NSString *forDisplay = [currentTotal stringValue];
         self.calculatorTextField.text = forDisplay;
         
@@ -271,7 +273,7 @@
         secondNumber = nil;
         
         NSLog(@"answer is %f", answer);
-        multiplication = NO;
+//        multiplication = NO;
         NSString *forDisplay = [currentTotal stringValue];
         self.calculatorTextField.text = forDisplay;
         
@@ -285,14 +287,11 @@
         secondNumber = nil;
         
         NSLog(@"answer is %f", answer);
-        divison = NO;
-        NSString *forDisplay = [currentTotal stringValue];
-        self.calculatorTextField.text = forDisplay;
-        
-    } else {
+//        divison = NO;
         NSString *forDisplay = [currentTotal stringValue];
         self.calculatorTextField.text = forDisplay;
     }
+    
     
     clearScreen = YES;
 }
