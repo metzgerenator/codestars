@@ -20,6 +20,7 @@
     BOOL subtraction;
     BOOL multiplication;
     BOOL divison;
+//    BOOL percentage;
     
     BOOL clearScreen;
     
@@ -86,17 +87,36 @@
    
     NSLog(@"currenttotal is %@, secondnumber is %@", currentTotal, secondNumber);
     
-    
-    
-    
-    
-    
-    
-    
+  
 }
 
 
 #pragma mark - functions
+
+
+- (IBAction)percentActionButton:(id)sender {
+    
+    clearScreen = YES;
+    
+    
+   
+    
+    
+    double percent = [currentTotal doubleValue] / 100;
+    
+    currentTotal = [[NSNumber alloc]initWithDouble:percent];
+    
+    
+    
+    NSString *forDisplay = [currentTotal stringValue];
+    self.calculatorTextField.text = forDisplay;
+    
+    SEL aSelector = @selector(function:);
+    [sender sendAction:aSelector to:nil forEvent:nil];
+    
+}
+
+
 
 - (IBAction)additionActionButton:(UIButton *)sender{
     if (subtraction || divison || multiplication ) {

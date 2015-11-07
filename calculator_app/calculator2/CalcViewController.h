@@ -17,6 +17,7 @@
 - (IBAction)numberInputAction:(id)numberInput;
 
 
+- (IBAction)percentActionButton:(id)sender;
 
 
 

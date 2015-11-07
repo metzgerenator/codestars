@@ -26,6 +26,16 @@
 }
 
 
+-(UIView *)headerView {
+    //if you have not loaded the headerViewyet..
+    if (!_headerView) {
+        //Load HeaderView.xib
+        [[NSBundle mainBundle]loadNibNamed:@"HeaderView" owner:self options:nil];
+    }
+    
+    return _headerView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class]
