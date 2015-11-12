@@ -39,6 +39,8 @@
 		5725B34F1BF28CAB006A7898 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5725B34E1BF28CAB006A7898 /* EditFriendsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5725B3531BF29AF1006A7898 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5725B3521BF29AF1006A7898 /* FriendsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		57C852D51BF3980B003ACE70 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C852D41BF3980B003ACE70 /* CameraViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57C852D91BF4247B003ACE70 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C852D81BF4247B003ACE70 /* ImageViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57C852DC1BF43EF6003ACE70 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C852DB1BF43EF6003ACE70 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,9 @@
 		5725B3521BF29AF1006A7898 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendsViewController.m; path = ../FriendsViewController.m; sourceTree = "<group>"; };
 		57C852D31BF3980B003ACE70 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = Ribbit/CameraViewController.h; sourceTree = "<group>"; };
 		57C852D41BF3980B003ACE70 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = Ribbit/CameraViewController.m; sourceTree = "<group>"; };
+		57C852D71BF4247B003ACE70 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = ../ImageViewController.h; sourceTree = "<group>"; };
+		57C852D81BF4247B003ACE70 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../ImageViewController.m; sourceTree = "<group>"; };
+		57C852DB1BF43EF6003ACE70 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C852DC1BF43EF6003ACE70 /* MediaPlayer.framework in Frameworks */,
 				5725B3451BF25AF6006A7898 /* Social.framework in Frameworks */,
 				5725B3431BF25AED006A7898 /* Accounts.framework in Frameworks */,
 				5725B3411BF25AE6006A7898 /* libsqlite3.tbd in Frameworks */,
@@ -174,14 +180,13 @@
 		5725B2E81BF245F0006A7898 /* Ribbit */ = {
 			isa = PBXGroup;
 			children = (
+				57C852DA1BF42488003ACE70 /* inbox */,
 				57C852D61BF398DE003ACE70 /* camera */,
 				5725B3501BF28CC9006A7898 /* editFriends */,
 				5725B34C1BF25F2E006A7898 /* login */,
 				5725B2EC1BF245F0006A7898 /* AppDelegate.h */,
 				5725B2ED1BF245F0006A7898 /* AppDelegate.m */,
 				5725B2F21BF245F0006A7898 /* Main.storyboard */,
-				5725B31C1BF25030006A7898 /* InboxViewController.h */,
-				5725B31D1BF25030006A7898 /* InboxViewController.m */,
 				5725B2F51BF245F0006A7898 /* Assets.xcassets */,
 				5725B2F71BF245F0006A7898 /* LaunchScreen.storyboard */,
 				5725B2FA1BF245F0006A7898 /* Info.plist */,
@@ -219,6 +224,7 @@
 		5725B31F1BF25A53006A7898 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57C852DB1BF43EF6003ACE70 /* MediaPlayer.framework */,
 				5725B3441BF25AF6006A7898 /* Social.framework */,
 				5725B3421BF25AED006A7898 /* Accounts.framework */,
 				5725B3401BF25AE6006A7898 /* libsqlite3.tbd */,
@@ -273,6 +279,17 @@
 			);
 			name = camera;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		57C852DA1BF42488003ACE70 /* inbox */ = {
+			isa = PBXGroup;
+			children = (
+				57C852D71BF4247B003ACE70 /* ImageViewController.h */,
+				57C852D81BF4247B003ACE70 /* ImageViewController.m */,
+				5725B31C1BF25030006A7898 /* InboxViewController.h */,
+				5725B31D1BF25030006A7898 /* InboxViewController.m */,
+			);
+			name = inbox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +428,7 @@
 				5725B3531BF29AF1006A7898 /* FriendsViewController.m in Sources */,
 				5725B2EB1BF245F0006A7898 /* main.m in Sources */,
 				5725B31E1BF25030006A7898 /* InboxViewController.m in Sources */,
+				57C852D91BF4247B003ACE70 /* ImageViewController.m in Sources */,
 				5725B34F1BF28CAB006A7898 /* EditFriendsViewController.m in Sources */,
 				5725B34B1BF25F14006A7898 /* SignupViewController.m in Sources */,
 			);

@@ -248,13 +248,7 @@
             }];
         }
     }];
-    
-    //Check if image or video
-    // If image, shirnk it
-    //Upload the file itself
-    //Upload the message details
-    
-    
+       
     
 }
 

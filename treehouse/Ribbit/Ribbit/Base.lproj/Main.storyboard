@@ -136,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tty-VA-39e">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Tty-VA-39e">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tty-VA-39e" id="4oU-hd-ZM3">
@@ -159,11 +159,39 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Cfw-VI-Sn2" kind="push" identifier="showLogin" id="pbk-r2-PxL"/>
+                        <segue destination="h6O-IF-0s1" kind="push" identifier="showImage" id="aqK-CN-VzV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOh-tL-GgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="923" y="68"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="Kki-ni-tlP">
+            <objects>
+                <viewController id="h6O-IF-0s1" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jEQ-z1-jBB"/>
+                        <viewControllerLayoutGuide type="bottom" id="0O8-Fl-MZO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DuB-we-DD6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yvE-PS-evJ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="466"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="axS-m3-tQ4"/>
+                    <connections>
+                        <outlet property="imageView" destination="yvE-PS-evJ" id="zxU-rU-19P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Du2-xh-keY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="-581"/>
         </scene>
         <!--Ribbit-->
         <scene sceneID="vRR-2E-wrE">
