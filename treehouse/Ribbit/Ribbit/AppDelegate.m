@@ -18,7 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [NSThread sleepForTimeInterval:05];
     
     [Parse setApplicationId:@"kNLJuFvhb00qQ6gANurhWzqE688JWbk8hDAm5UuN"
                   clientKey:@"GAe6348RdovtZ62SF8SmcXciHaukvNVDQYLSXafw"];
