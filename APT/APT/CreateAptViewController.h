@@ -10,5 +10,11 @@
 #import <FSCalendar/FSCalendar.h>
 
 @interface CreateAptViewController : UIViewController 
+@property (weak, nonatomic) IBOutlet UIDatePicker *dateInstance;
+@property (weak, nonatomic) IBOutlet UITextView *NotesField;
+
+@property(nonatomic,strong)NSDate *selectedTime;
+@property (nonatomic,strong)NSDate *selectedDate;
+
 
 @end

@@ -16,6 +16,12 @@
 		5778893B1BE9530B0062FF9B /* APTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5778893A1BE9530B0062FF9B /* APTUITests.m */; };
 		57A2FC1F1BF7A2C500F07FFB /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 57A2FC1E1BF7A2C500F07FFB /* Podfile */; settings = {ASSET_TAGS = (); }; };
 		57A2FC221BF7AD2700F07FFB /* CreateAptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC211BF7AD2700F07FFB /* CreateAptViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57A2FC2B1BF7F7DB00F07FFB /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC261BF7F7DB00F07FFB /* SignupViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57A2FC2C1BF7F7DB00F07FFB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC281BF7F7DB00F07FFB /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57A2FC2D1BF7F7DB00F07FFB /* PasswordRecoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC2A1BF7F7DB00F07FFB /* PasswordRecoverViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57A2FC301BF7F98000F07FFB /* ApartmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC2F1BF7F98000F07FFB /* ApartmentTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57A2FC341BF817C000F07FFB /* ApartmentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC331BF817C000F07FFB /* ApartmentInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57A2FC371BF8294100F07FFB /* ApartmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		AC1AFC64CF9D7BF6272F6CB2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63636AE49F7641827187C0C6 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +60,18 @@
 		57A2FC1E1BF7A2C500F07FFB /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		57A2FC201BF7AD2700F07FFB /* CreateAptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAptViewController.h; sourceTree = "<group>"; };
 		57A2FC211BF7AD2700F07FFB /* CreateAptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAptViewController.m; sourceTree = "<group>"; };
+		57A2FC251BF7F7DB00F07FFB /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		57A2FC261BF7F7DB00F07FFB /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		57A2FC271BF7F7DB00F07FFB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		57A2FC281BF7F7DB00F07FFB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		57A2FC291BF7F7DB00F07FFB /* PasswordRecoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoverViewController.h; sourceTree = "<group>"; };
+		57A2FC2A1BF7F7DB00F07FFB /* PasswordRecoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoverViewController.m; sourceTree = "<group>"; };
+		57A2FC2E1BF7F98000F07FFB /* ApartmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApartmentTableViewController.h; path = ../ApartmentTableViewController.h; sourceTree = "<group>"; };
+		57A2FC2F1BF7F98000F07FFB /* ApartmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApartmentTableViewController.m; path = ../ApartmentTableViewController.m; sourceTree = "<group>"; };
+		57A2FC321BF817C000F07FFB /* ApartmentInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApartmentInfoViewController.h; sourceTree = "<group>"; };
+		57A2FC331BF817C000F07FFB /* ApartmentInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartmentInfoViewController.m; sourceTree = "<group>"; };
+		57A2FC351BF8294100F07FFB /* ApartmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApartmentTableViewCell.h; sourceTree = "<group>"; };
+		57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartmentTableViewCell.m; sourceTree = "<group>"; };
 		63636AE49F7641827187C0C6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CA0155AF3AE0FBFF97FB4B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B91170BF7D3CB9349B9D2569 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,11 +129,16 @@
 		577889141BE9530A0062FF9B /* APT */ = {
 			isa = PBXGroup;
 			children = (
+				57A2FC2E1BF7F98000F07FFB /* ApartmentTableViewController.h */,
+				57A2FC2F1BF7F98000F07FFB /* ApartmentTableViewController.m */,
+				57A2FC351BF8294100F07FFB /* ApartmentTableViewCell.h */,
+				57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */,
+				57A2FC311BF817A000F07FFB /* New Group */,
+				57A2FC241BF7F7CB00F07FFB /* login */,
 				577889181BE9530B0062FF9B /* AppDelegate.h */,
 				577889191BE9530B0062FF9B /* AppDelegate.m */,
 				5778891E1BE9530B0062FF9B /* Main.storyboard */,
-				57A2FC201BF7AD2700F07FFB /* CreateAptViewController.h */,
-				57A2FC211BF7AD2700F07FFB /* CreateAptViewController.m */,
+				57A2FC231BF7F7A400F07FFB /* setAppointment */,
 				577889211BE9530B0062FF9B /* Assets.xcassets */,
 				577889231BE9530B0062FF9B /* LaunchScreen.storyboard */,
 				577889261BE9530B0062FF9B /* Info.plist */,
@@ -148,6 +171,37 @@
 				5778893C1BE9530B0062FF9B /* Info.plist */,
 			);
 			path = APTUITests;
+			sourceTree = "<group>";
+		};
+		57A2FC231BF7F7A400F07FFB /* setAppointment */ = {
+			isa = PBXGroup;
+			children = (
+				57A2FC201BF7AD2700F07FFB /* CreateAptViewController.h */,
+				57A2FC211BF7AD2700F07FFB /* CreateAptViewController.m */,
+			);
+			name = setAppointment;
+			sourceTree = "<group>";
+		};
+		57A2FC241BF7F7CB00F07FFB /* login */ = {
+			isa = PBXGroup;
+			children = (
+				57A2FC251BF7F7DB00F07FFB /* SignupViewController.h */,
+				57A2FC261BF7F7DB00F07FFB /* SignupViewController.m */,
+				57A2FC271BF7F7DB00F07FFB /* LoginViewController.h */,
+				57A2FC281BF7F7DB00F07FFB /* LoginViewController.m */,
+				57A2FC291BF7F7DB00F07FFB /* PasswordRecoverViewController.h */,
+				57A2FC2A1BF7F7DB00F07FFB /* PasswordRecoverViewController.m */,
+			);
+			name = login;
+			sourceTree = "<group>";
+		};
+		57A2FC311BF817A000F07FFB /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				57A2FC321BF817C000F07FFB /* ApartmentInfoViewController.h */,
+				57A2FC331BF817C000F07FFB /* ApartmentInfoViewController.m */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		5F791E26249563151B7623C6 /* Frameworks */ = {
@@ -349,9 +403,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A2FC2D1BF7F7DB00F07FFB /* PasswordRecoverViewController.m in Sources */,
+				57A2FC371BF8294100F07FFB /* ApartmentTableViewCell.m in Sources */,
 				5778891A1BE9530B0062FF9B /* AppDelegate.m in Sources */,
 				577889171BE9530B0062FF9B /* main.m in Sources */,
+				57A2FC2B1BF7F7DB00F07FFB /* SignupViewController.m in Sources */,
+				57A2FC301BF7F98000F07FFB /* ApartmentTableViewController.m in Sources */,
 				57A2FC221BF7AD2700F07FFB /* CreateAptViewController.m in Sources */,
+				57A2FC2C1BF7F7DB00F07FFB /* LoginViewController.m in Sources */,
+				57A2FC341BF817C000F07FFB /* ApartmentInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
