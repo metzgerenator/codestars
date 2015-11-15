@@ -50,7 +50,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="apartmentName" destination="q6e-nv-4TT" id="1oX-cd-EdP"/>
-                                    <segue destination="r27-ru-dyf" kind="push" id="8Pw-0e-Lbw"/>
+                                    <segue destination="r27-ru-dyf" kind="push" identifier="apartmentInfo" id="8Pw-0e-Lbw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -254,10 +254,16 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRq-g8-hob">
                                 <rect key="frame" x="312" y="14" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savButton:" destination="CaN-mB-dwR" eventType="touchUpInside" id="QZa-Hr-qqo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11Z-fO-0dO">
                                 <rect key="frame" x="12" y="14" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelbutton:" destination="CaN-mB-dwR" eventType="touchUpInside" id="ocj-j0-Zjv"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMK-KJ-5au" customClass="FSCalendar">
                                 <rect key="frame" x="20" y="122" width="323" height="206"/>

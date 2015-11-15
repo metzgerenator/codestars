@@ -47,4 +47,11 @@
     NSLog(@"did change page %@",[calendar.currentPage fs_stringWithFormat:@"yyyy-MM"]);
 }
 
+- (IBAction)cancelbutton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (IBAction)savButton:(id)sender {
+}
 @end

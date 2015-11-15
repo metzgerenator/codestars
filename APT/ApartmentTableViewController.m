@@ -8,6 +8,7 @@
 
 #import "ApartmentTableViewController.h"
 #import "ApartmentTableViewCell.h"
+#import "ApartmentInfoViewController.h"
 
 
 @interface ApartmentTableViewController ()
@@ -18,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.objectStorage = [[NSMutableArray alloc]init];
+    
     
     PFUser *currentUser = [PFUser currentUser];
     
@@ -91,14 +94,33 @@
     
     // Configure the cell...
     
-    
+  
+    [self.objectStorage addObject:object];
     
     cell.apartmentName.text = [object objectForKey:@"ApartmentName"];
     
     return cell;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //apartmentInfo
+    ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
+    
+    if ([[segue identifier] isEqualToString:@"apartmentInfo"]) {
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        PFObject *objet = self.objectStorage [selectedIndexPath.row];
+//        NSString *propName = [objet objectForKey:@"ApartmentName"];
+//        NSString *lease = [objet objectForKey:@"leaseLength"];
 
+        apartmentInfo.propertyString = [objet objectForKey:@"ApartmentName"];
+        apartmentInfo.leaseString = [objet objectForKey:@"leaseLength"];
+        NSLog(@"segue working %@", objet);
+        
+    }
+    
+    
+    
+}
 
 #pragma mark - Log Out
 - (IBAction)logOutButton:(id)sender {

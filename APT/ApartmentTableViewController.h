@@ -11,8 +11,11 @@
 
 #import <ParseUI/PFQueryTableViewController.h>
 
-
 @interface ApartmentTableViewController :PFQueryTableViewController
+
+@property(nonatomic, strong)NSMutableArray *objectStorage;
+
+
 - (IBAction)logOutButton:(id)sender;
 
 @end

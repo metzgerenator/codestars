@@ -7,6 +7,9 @@
 //
 
 #import "ApartmentInfoViewController.h"
+#import <Parse/Parse.h>
+
+
 
 @interface ApartmentInfoViewController ()
 
@@ -16,8 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.proPertyName.text = self.propertyString;
+    
+    self.LeaseLength.text = self.leaseString;
     // Do any additional setup after loading the view.
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -34,6 +43,27 @@
 }
 */
 
+#pragma mark - save and cancel
+
 - (IBAction)saveActionButton:(id)sender {
+    
+    NSString *propertyName = self.proPertyName.text;
+    
+    NSString* LeaseLength = self.LeaseLength.text;
+    
+    PFObject *apartMentObject = [PFObject objectWithClassName:@"apartments"];
+    
+    apartMentObject.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+    
+    
+    [apartMentObject setObject:propertyName forKey:@"ApartmentName"];
+    
+    [apartMentObject setObject:LeaseLength forKey:@"leaseLength"];
+    
+    
+    [apartMentObject saveInBackground];
+    
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

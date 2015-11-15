@@ -11,8 +11,13 @@
 @interface ApartmentInfoViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *proPertyName;
+@property(nonatomic,strong)NSString *propertyString;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *LeaseLength;
+@property(nonatomic,strong)NSString *leaseString;
+
+
 
 - (IBAction)saveActionButton:(id)sender;
 
