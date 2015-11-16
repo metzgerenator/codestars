@@ -180,7 +180,7 @@
                                 <rect key="frame" x="326" y="245" width="30" height="30"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
-                                    <segue destination="CaN-mB-dwR" kind="modal" identifier="" id="Uc9-jN-FZS"/>
+                                    <segue destination="CaN-mB-dwR" kind="modal" identifier="apartMentInfo" id="Uc9-jN-FZS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ON-cd-MoO">
@@ -188,7 +188,7 @@
                                 <state key="normal" title="Map"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Next Appointment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvl-hD-Mfa">
-                                <rect key="frame" x="89" y="249" width="229" height="21"/>
+                                <rect key="frame" x="169" y="249" width="149" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -233,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jf0-5f-OvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1400.5" y="473.5"/>
+            <point key="canvasLocation" x="1400.5" y="443.5"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="6Yd-L8-Klm">
@@ -254,17 +254,10 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRq-g8-hob">
-                                <rect key="frame" x="312" y="14" width="34" height="30"/>
+                                <rect key="frame" x="309" y="14" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="savButton:" destination="CaN-mB-dwR" eventType="touchUpInside" id="QZa-Hr-qqo"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11Z-fO-0dO">
-                                <rect key="frame" x="12" y="14" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelbutton:" destination="CaN-mB-dwR" eventType="touchUpInside" id="ocj-j0-Zjv"/>
+                                    <action selector="saveButton:" destination="CaN-mB-dwR" eventType="touchUpInside" id="aaj-bl-12n"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMK-KJ-5au" customClass="FSCalendar">
@@ -282,6 +275,13 @@
                                     <outlet property="delegate" destination="CaN-mB-dwR" id="cWj-ok-vsq"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11Z-fO-0dO">
+                                <rect key="frame" x="12" y="14" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="0Z6-Uh-yuP" kind="unwind" identifier="apartment" unwindAction="unwindFromModalViewController:" id="H64-wL-nE2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -297,8 +297,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Auf-Wg-f6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0Z6-Uh-yuP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1872.5" y="468.5"/>
+            <point key="canvasLocation" x="1988.5" y="473.5"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="uNj-Uw-OLf">

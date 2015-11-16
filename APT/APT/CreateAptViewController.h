@@ -9,12 +9,24 @@
 #import <UIKit/UIKit.h>
 #import <FSCalendar/FSCalendar.h>
 
-@interface CreateAptViewController : UIViewController 
+@protocol sendDataProtocol <NSObject>
+
+-(void)sendDatatoA:(NSString *)newDate;
+
+@end
+
+@interface CreateAptViewController : UIViewController
+
+@property(nonatomic,assign)id delegate;
+
 @property (weak, nonatomic) IBOutlet UIDatePicker *dateInstance;
 
 @property (nonatomic,strong)NSDate *selectedDate;
 
-- (IBAction)cancelbutton:(id)sender;
-- (IBAction)savButton:(id)sender;
+
+@property (nonatomic,strong)NSString *combinedDateAndTime;  
+
+
+
 
 @end

@@ -21,8 +21,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"time is %@", self.dateInstance);
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -57,52 +59,107 @@
 }
 
 
-#pragma mark - Cancel and Save button
 
-- (IBAction)cancelbutton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+
+
+- (IBAction)saveButton:(id)sender {
     
+    
+    NSDate *currentTime = [self.dateInstance date];
+    
+            NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
+            timeFormatter.dateFormat = @"HH:mm";
+            NSString *timeSelected = [timeFormatter stringFromDate:currentTime];
+    
+            //    NSLog(@"time is %@",timeSelected);
+    
+            //Set the date
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+            dateFormatter.dateFormat = @"MM/dd/yy";
+            NSString *dateSelected = [dateFormatter stringFromDate:self.selectedDate];
+    
+            //    NSLog(@"date is %@", dateSelected);
+    
+            self.combinedDateAndTime = [NSString stringWithFormat:@"%@ on %@", timeSelected,dateSelected];
+    
+            //    NSLog(@"final time is %@", combinedDateAndTime);
+    
+
+    
+    [self performSegueWithIdentifier:@"apartment" sender:self];
 }
 
-- (IBAction)savButton:(id)sender {
-   
 
-    [self performSegueWithIdentifier:@"apartMentInfo" sender:self];
 
-    
-}
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
-//    apartMentInfo
-    
-    if ([[segue identifier] isEqualToString:@"apartMentInfo"]) {
-        NSDate *currentTime = [self.dateInstance date];
-        
-        NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
-        timeFormatter.dateFormat = @"HH:mm:ss";
-        NSString *timeSelected = [timeFormatter stringFromDate:currentTime];
-        
-        //    NSLog(@"time is %@",timeSelected);
-        
-        //Set the date
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        dateFormatter.dateFormat = @"MM/dd/yy";
-        NSString *dateSelected = [dateFormatter stringFromDate:self.selectedDate];
-        
-        //    NSLog(@"date is %@", dateSelected);
-        
-        NSString *combinedDateAndTime = [NSString stringWithFormat:@"%@ on %@", timeSelected,dateSelected];
-        
-        //    NSLog(@"final time is %@", combinedDateAndTime);
-        
-        //Set the date and time on ApartmentInfo
-        apartmentInfo.appointmentTime = combinedDateAndTime;
-        
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
+////    apartMentInfo
+//    
+//    if ([segue.sourceViewController isKindOfClass:[ApartmentInfoViewController class]]) {
+//        NSDate *currentTime = [self.dateInstance date];
+//        
+//        NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
+//        timeFormatter.dateFormat = @"HH:mm:ss";
+//        NSString *timeSelected = [timeFormatter stringFromDate:currentTime];
+//        
+//        //    NSLog(@"time is %@",timeSelected);
+//        
+//        //Set the date
+//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//        dateFormatter.dateFormat = @"MM/dd/yy";
+//        NSString *dateSelected = [dateFormatter stringFromDate:self.selectedDate];
+//        
+//        //    NSLog(@"date is %@", dateSelected);
+//        
+//        NSString *combinedDateAndTime = [NSString stringWithFormat:@"%@ on %@", timeSelected,dateSelected];
+//        
+//        //    NSLog(@"final time is %@", combinedDateAndTime);
+//        
+//        //Set the date and time on ApartmentInfo
+//        apartmentInfo.appointmentTime = combinedDateAndTime;
+//
+//    }}
+////
+////    if ([[segue identifier] isEqualToString:@"apartmentInfo"]) {
+////        NSDate *currentTime = [self.dateInstance date];
+////        
+////        NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
+////        timeFormatter.dateFormat = @"HH:mm:ss";
+////        NSString *timeSelected = [timeFormatter stringFromDate:currentTime];
+////        
+////        //    NSLog(@"time is %@",timeSelected);
+////        
+////        //Set the date
+////        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+////        dateFormatter.dateFormat = @"MM/dd/yy";
+////        NSString *dateSelected = [dateFormatter stringFromDate:self.selectedDate];
+////        
+////        //    NSLog(@"date is %@", dateSelected);
+////        
+////        NSString *combinedDateAndTime = [NSString stringWithFormat:@"%@ on %@", timeSelected,dateSelected];
+////        
+////        //    NSLog(@"final time is %@", combinedDateAndTime);
+////        
+////        //Set the date and time on ApartmentInfo
+////        apartmentInfo.appointmentTime = combinedDateAndTime;
+////        NSLog(@"%@", combinedDateAndTime);
+////        
+////
+////    
+////
+////    } }
 
-    }
-    
-}
 
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.destinationViewController isKindOfClass:[NTRMainViewController class]]) {
+//        NTRMainViewController *mainViewConroller = segue.destinationViewController;
+//        if (self.selectedColor) {
+//            mainViewConroller.backgroundColor = self.selectedColor;
+//        }
+//    }
+//}
 
 @end

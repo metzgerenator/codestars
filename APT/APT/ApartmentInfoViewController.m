@@ -7,6 +7,7 @@
 //
 
 #import "ApartmentInfoViewController.h"
+#import "CreateAptViewController.h"
 
 
 
@@ -28,7 +29,8 @@
     }else {
         self.proPertyName.text = self.propertyString;
         self.LeaseLength.text = self.leaseString;
-        self.appointmentDateLabel.text = self.appointmentTime;
+//        self.appointmentDateLabel.text = self.appointmentTime;
+
        
 
         
@@ -46,6 +48,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)unwindFromModalViewController:(UIStoryboardSegue *)segue{
+    
+    if ([segue.sourceViewController isKindOfClass:[CreateAptViewController class]]) {
+        CreateAptViewController *createAptView = segue.sourceViewController;
+      
+        
+       self.appointmentTime = createAptView.combinedDateAndTime;
+        self.appointmentDateLabel.text = self.appointmentTime;
+        NSLog(@"%@",self.appointmentTime); 
+    
+    
+    
+    }
+
+    
+}
+
+
+//   }
 /*
 #pragma mark - Navigation
 
