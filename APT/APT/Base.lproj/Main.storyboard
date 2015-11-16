@@ -156,14 +156,11 @@
                                 </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="k6A-r1-lOW">
-                                <rect key="frame" x="-7" y="69" width="173" height="128"/>
+                                <rect key="frame" x="-7" y="79" width="173" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoo-WD-I1Q">
                                 <rect key="frame" x="12" y="294" width="98" height="30"/>
                                 <state key="normal" title="Edit Amenities"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gx5-U4-jas">
-                                <rect key="frame" x="0.0" y="64" width="159" height="158"/>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Property Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6a-eP-tmx">
                                 <rect key="frame" x="161" y="72" width="145" height="30"/>
@@ -180,34 +177,37 @@
                                 <state key="normal" title="Edit "/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNN-8D-Pu1">
-                                <rect key="frame" x="311" y="177" width="30" height="30"/>
+                                <rect key="frame" x="326" y="245" width="30" height="30"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
-                                    <segue destination="CaN-mB-dwR" kind="modal" id="Uc9-jN-FZS"/>
+                                    <segue destination="CaN-mB-dwR" kind="modal" identifier="" id="Uc9-jN-FZS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ON-cd-MoO">
-                                <rect key="frame" x="310" y="211" width="30" height="30"/>
+                                <rect key="frame" x="300" y="182" width="30" height="30"/>
                                 <state key="normal" title="Map"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Next Appointment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvl-hD-Mfa">
-                                <rect key="frame" x="157" y="181" width="152" height="21"/>
+                                <rect key="frame" x="89" y="249" width="229" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIo-58-jaJ">
-                                <rect key="frame" x="157" y="215" width="90" height="21"/>
+                                <rect key="frame" x="202" y="186" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lease Price " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKF-Zu-L0S">
-                                <rect key="frame" x="157" y="152" width="93" height="21"/>
+                                <rect key="frame" x="187" y="152" width="93" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gx5-U4-jas">
+                                <rect key="frame" x="0.0" y="83" width="159" height="120"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -226,6 +226,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="LeaseLength" destination="ngi-Hk-8I0" id="kuM-LW-WJn"/>
+                        <outlet property="appointmentDateLabel" destination="Fvl-hD-Mfa" id="2RZ-A1-Fw0"/>
+                        <outlet property="leasePriceLabel" destination="AKF-Zu-L0S" id="rdD-Bb-dTW"/>
                         <outlet property="proPertyName" destination="n6a-eP-tmx" id="hvq-iR-MS2"/>
                     </connections>
                 </viewController>
@@ -296,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Auf-Wg-f6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1915.5" y="467.5"/>
+            <point key="canvasLocation" x="1872.5" y="468.5"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="uNj-Uw-OLf">
@@ -494,6 +496,6 @@
         <image name="images" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Pw-0e-Lbw"/>
+        <segue reference="yGQ-Y2-jlf"/>
     </inferredMetricsTieBreakers>
 </document>

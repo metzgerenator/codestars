@@ -12,7 +12,6 @@
 @interface CreateAptViewController : UIViewController 
 @property (weak, nonatomic) IBOutlet UIDatePicker *dateInstance;
 
-@property(nonatomic,strong)NSDate *selectedTime;
 @property (nonatomic,strong)NSDate *selectedDate;
 
 - (IBAction)cancelbutton:(id)sender;

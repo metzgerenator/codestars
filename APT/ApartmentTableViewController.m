@@ -11,7 +11,9 @@
 #import "ApartmentInfoViewController.h"
 
 
-@interface ApartmentTableViewController ()
+@interface ApartmentTableViewController (){
+    NSArray *pfobjectStorage;
+}
 
 @end
 
@@ -19,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.objectStorage = [[NSMutableArray alloc]init];
     
     
     PFUser *currentUser = [PFUser currentUser];
@@ -93,9 +94,8 @@
     ApartmentTableViewCell *cell = (ApartmentTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    
+    pfobjectStorage = self.objects;
   
-    [self.objectStorage addObject:object];
     
     cell.apartmentName.text = [object objectForKey:@"ApartmentName"];
     
@@ -108,13 +108,10 @@
     
     if ([[segue identifier] isEqualToString:@"apartmentInfo"]) {
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-        PFObject *objet = self.objectStorage [selectedIndexPath.row];
-//        NSString *propName = [objet objectForKey:@"ApartmentName"];
-//        NSString *lease = [objet objectForKey:@"leaseLength"];
+        PFObject *objet = pfobjectStorage [selectedIndexPath.row];
+        apartmentInfo.fromSegue = objet;
 
-        apartmentInfo.propertyString = [objet objectForKey:@"ApartmentName"];
-        apartmentInfo.leaseString = [objet objectForKey:@"leaseLength"];
-        NSLog(@"segue working %@", objet);
+
         
     }
     

@@ -7,7 +7,6 @@
 //
 
 #import "ApartmentInfoViewController.h"
-#import <Parse/Parse.h>
 
 
 
@@ -15,14 +14,28 @@
 
 @end
 
+//apartmentInfo.propertyString = [objet objectForKey:@"ApartmentName"];
+//apartmentInfo.leaseString = [objet objectForKey:@"leaseLength"]
+
 @implementation ApartmentInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.proPertyName.text = self.propertyString;
+    if (self.fromSegue) {
+        self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
+        self.LeaseLength.text = [self.fromSegue objectForKey:@"leaseLength"];
+    }else {
+        self.proPertyName.text = self.propertyString;
+        self.LeaseLength.text = self.leaseString;
+        self.appointmentDateLabel.text = self.appointmentTime;
+       
+
+        
+        
+    }
     
-    self.LeaseLength.text = self.leaseString;
+   
     // Do any additional setup after loading the view.
 }
 
@@ -50,6 +63,25 @@
     NSString *propertyName = self.proPertyName.text;
     
     NSString* LeaseLength = self.LeaseLength.text;
+
+    
+    if (self.fromSegue) {
+
+        
+        
+        self.fromSegue.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+        
+        
+        [self.fromSegue setObject:propertyName forKey:@"ApartmentName"];
+        
+        [self.fromSegue setObject:LeaseLength forKey:@"leaseLength"];
+        
+        
+        [self.fromSegue saveInBackground];
+
+    }else {
+        
+
     
     PFObject *apartMentObject = [PFObject objectWithClassName:@"apartments"];
     
@@ -62,6 +94,8 @@
     
     
     [apartMentObject saveInBackground];
+    
+    }
     
     
     [self.navigationController popViewControllerAnimated:YES];
