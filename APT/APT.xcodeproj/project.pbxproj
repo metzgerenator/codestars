@@ -14,14 +14,14 @@
 		577889251BE9530B0062FF9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577889231BE9530B0062FF9B /* LaunchScreen.storyboard */; };
 		577889301BE9530B0062FF9B /* APTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5778892F1BE9530B0062FF9B /* APTTests.m */; };
 		5778893B1BE9530B0062FF9B /* APTUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5778893A1BE9530B0062FF9B /* APTUITests.m */; };
-		57A2FC1F1BF7A2C500F07FFB /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 57A2FC1E1BF7A2C500F07FFB /* Podfile */; settings = {ASSET_TAGS = (); }; };
-		57A2FC221BF7AD2700F07FFB /* CreateAptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC211BF7AD2700F07FFB /* CreateAptViewController.m */; settings = {ASSET_TAGS = (); }; };
-		57A2FC2B1BF7F7DB00F07FFB /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC261BF7F7DB00F07FFB /* SignupViewController.m */; settings = {ASSET_TAGS = (); }; };
-		57A2FC2C1BF7F7DB00F07FFB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC281BF7F7DB00F07FFB /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		57A2FC2D1BF7F7DB00F07FFB /* PasswordRecoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC2A1BF7F7DB00F07FFB /* PasswordRecoverViewController.m */; settings = {ASSET_TAGS = (); }; };
-		57A2FC301BF7F98000F07FFB /* ApartmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC2F1BF7F98000F07FFB /* ApartmentTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		57A2FC341BF817C000F07FFB /* ApartmentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC331BF817C000F07FFB /* ApartmentInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
-		57A2FC371BF8294100F07FFB /* ApartmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		57A2FC1F1BF7A2C500F07FFB /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 57A2FC1E1BF7A2C500F07FFB /* Podfile */; };
+		57A2FC221BF7AD2700F07FFB /* CreateAptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC211BF7AD2700F07FFB /* CreateAptViewController.m */; };
+		57A2FC2B1BF7F7DB00F07FFB /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC261BF7F7DB00F07FFB /* SignupViewController.m */; };
+		57A2FC2C1BF7F7DB00F07FFB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC281BF7F7DB00F07FFB /* LoginViewController.m */; };
+		57A2FC2D1BF7F7DB00F07FFB /* PasswordRecoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC2A1BF7F7DB00F07FFB /* PasswordRecoverViewController.m */; };
+		57A2FC301BF7F98000F07FFB /* ApartmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC2F1BF7F98000F07FFB /* ApartmentTableViewController.m */; };
+		57A2FC341BF817C000F07FFB /* ApartmentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC331BF817C000F07FFB /* ApartmentInfoViewController.m */; };
+		57A2FC371BF8294100F07FFB /* ApartmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */; };
 		AC1AFC64CF9D7BF6272F6CB2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63636AE49F7641827187C0C6 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,7 +133,7 @@
 				57A2FC2F1BF7F98000F07FFB /* ApartmentTableViewController.m */,
 				57A2FC351BF8294100F07FFB /* ApartmentTableViewCell.h */,
 				57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */,
-				57A2FC311BF817A000F07FFB /* New Group */,
+				57A2FC311BF817A000F07FFB /* ApartmentInfo */,
 				57A2FC241BF7F7CB00F07FFB /* login */,
 				577889181BE9530B0062FF9B /* AppDelegate.h */,
 				577889191BE9530B0062FF9B /* AppDelegate.m */,
@@ -195,13 +195,13 @@
 			name = login;
 			sourceTree = "<group>";
 		};
-		57A2FC311BF817A000F07FFB /* New Group */ = {
+		57A2FC311BF817A000F07FFB /* ApartmentInfo */ = {
 			isa = PBXGroup;
 			children = (
 				57A2FC321BF817C000F07FFB /* ApartmentInfoViewController.h */,
 				57A2FC331BF817C000F07FFB /* ApartmentInfoViewController.m */,
 			);
-			name = "New Group";
+			name = ApartmentInfo;
 			sourceTree = "<group>";
 		};
 		5F791E26249563151B7623C6 /* Frameworks */ = {

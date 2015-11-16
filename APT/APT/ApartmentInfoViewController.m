@@ -26,10 +26,11 @@
     if (self.fromSegue) {
         self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
         self.LeaseLength.text = [self.fromSegue objectForKey:@"leaseLength"];
+        self.appointmentDateLabel.text = [self.fromSegue objectForKey:@"apointmentTime"];
+        
     }else {
         self.proPertyName.text = self.propertyString;
         self.LeaseLength.text = self.leaseString;
-//        self.appointmentDateLabel.text = self.appointmentTime;
 
        
 
@@ -52,11 +53,15 @@
     
     if ([segue.sourceViewController isKindOfClass:[CreateAptViewController class]]) {
         CreateAptViewController *createAptView = segue.sourceViewController;
-      
+        if (createAptView.combinedDateAndTime) {
+            self.appointmentTime = createAptView.combinedDateAndTime;
+            self.appointmentDateLabel.text = self.appointmentTime;
+            NSLog(@"%@",self.appointmentTime);
+        }else {
+            self.appointmentDateLabel.text = @"click Edit";
+        }
         
-       self.appointmentTime = createAptView.combinedDateAndTime;
-        self.appointmentDateLabel.text = self.appointmentTime;
-        NSLog(@"%@",self.appointmentTime); 
+       
     
     
     
@@ -84,6 +89,8 @@
     NSString *propertyName = self.proPertyName.text;
     
     NSString* LeaseLength = self.LeaseLength.text;
+    
+    NSString *appointmentTime = self.appointmentDateLabel.text;
 
     
     if (self.fromSegue) {
@@ -96,6 +103,8 @@
         [self.fromSegue setObject:propertyName forKey:@"ApartmentName"];
         
         [self.fromSegue setObject:LeaseLength forKey:@"leaseLength"];
+        
+        [self.fromSegue setObject:appointmentTime forKey:@"apointmentTime"];
         
         
         [self.fromSegue saveInBackground];
@@ -112,6 +121,8 @@
     [apartMentObject setObject:propertyName forKey:@"ApartmentName"];
     
     [apartMentObject setObject:LeaseLength forKey:@"leaseLength"];
+        
+    [apartMentObject setObject:appointmentTime forKey:@"apointmentTime"];
     
     
     [apartMentObject saveInBackground];
