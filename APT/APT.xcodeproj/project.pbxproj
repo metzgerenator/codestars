@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27CF77501BFA5F7D008EA6AC /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF774F1BFA5F7D008EA6AC /* PhotosViewController.m */; };
+		27CF77531BFA7110008EA6AC /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF77521BFA7110008EA6AC /* PhotosCollectionViewController.m */; };
 		577889171BE9530B0062FF9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577889161BE9530B0062FF9B /* main.m */; };
 		5778891A1BE9530B0062FF9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 577889191BE9530B0062FF9B /* AppDelegate.m */; };
 		577889201BE9530B0062FF9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5778891E1BE9530B0062FF9B /* Main.storyboard */; };
@@ -43,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27CF774E1BFA5F7D008EA6AC /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
+		27CF774F1BFA5F7D008EA6AC /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
+		27CF77511BFA7110008EA6AC /* PhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewController.h; sourceTree = "<group>"; };
+		27CF77521BFA7110008EA6AC /* PhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewController.m; sourceTree = "<group>"; };
 		577889121BE9530A0062FF9B /* APT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577889161BE9530B0062FF9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		577889181BE9530B0062FF9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +109,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27CF774D1BFA5F07008EA6AC /* ApartmentPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				27CF774E1BFA5F7D008EA6AC /* PhotosViewController.h */,
+				27CF774F1BFA5F7D008EA6AC /* PhotosViewController.m */,
+				27CF77511BFA7110008EA6AC /* PhotosCollectionViewController.h */,
+				27CF77521BFA7110008EA6AC /* PhotosCollectionViewController.m */,
+			);
+			name = ApartmentPhotos;
+			sourceTree = "<group>";
+		};
 		577889091BE9530A0062FF9B = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +152,7 @@
 				57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */,
 				57A2FC311BF817A000F07FFB /* ApartmentInfo */,
 				57A2FC241BF7F7CB00F07FFB /* login */,
+				27CF774D1BFA5F07008EA6AC /* ApartmentPhotos */,
 				577889181BE9530B0062FF9B /* AppDelegate.h */,
 				577889191BE9530B0062FF9B /* AppDelegate.m */,
 				5778891E1BE9530B0062FF9B /* Main.storyboard */,
@@ -406,6 +424,8 @@
 				57A2FC2D1BF7F7DB00F07FFB /* PasswordRecoverViewController.m in Sources */,
 				57A2FC371BF8294100F07FFB /* ApartmentTableViewCell.m in Sources */,
 				5778891A1BE9530B0062FF9B /* AppDelegate.m in Sources */,
+				27CF77501BFA5F7D008EA6AC /* PhotosViewController.m in Sources */,
+				27CF77531BFA7110008EA6AC /* PhotosCollectionViewController.m in Sources */,
 				577889171BE9530B0062FF9B /* main.m in Sources */,
 				57A2FC2B1BF7F7DB00F07FFB /* SignupViewController.m in Sources */,
 				57A2FC301BF7F98000F07FFB /* ApartmentTableViewController.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "ApartmentInfoViewController.h"
 #import "CreateAptViewController.h"
+#import "PhotosViewController.h"
 
 
 
@@ -29,7 +30,10 @@
         self.appointmentDateLabel.text = [self.fromSegue objectForKey:@"apointmentTime"];
         
     }else {
-        self.proPertyName.text = self.propertyString;
+        
+        self.proPertyName.text = @"unamed property";  
+        
+//        self.proPertyName.text = self.propertyString;
         self.LeaseLength.text = self.leaseString;
 
        
@@ -69,6 +73,39 @@
 
     
 }
+
+
+#pragma mark - Navigation 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    PhotosViewController *apartmentObject = segue.destinationViewController;
+    if ([[segue identifier]isEqualToString:@"photos"]) {
+        //need to get whole pfobject
+        
+        apartmentObject.currentPfObject = self.fromSegue;
+        
+        apartmentObject.keyForPfObject = self.proPertyName.text;
+        
+        NSLog(@"current pfobject being passed %@", self.fromSegue);
+ 
+    }
+    
+    
+}
+
+
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    //apartmentInfo
+//    ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
+//    
+//    if ([[segue identifier] isEqualToString:@"apartmentInfo"]) {
+//        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+//        PFObject *objet = pfobjectStorage [selectedIndexPath.row];
+//        apartmentInfo.fromSegue = objet;
+//        
+//        
+//        
+//    }
 
 
 //   }
