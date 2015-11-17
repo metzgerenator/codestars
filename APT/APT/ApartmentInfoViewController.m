@@ -106,7 +106,6 @@
         
         allPhotos.pfObjectfromInfoView = self.fromSegue;
         
-//        NSLog(@"showing all photos %@", self.fromSegue);
         
         
     }

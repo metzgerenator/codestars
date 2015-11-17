@@ -14,7 +14,6 @@
 
 @implementation PhotosCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,15 +24,43 @@ static NSString * const reuseIdentifier = @"Cell";
     NSLog(@"value of pfobject is %@", self.pfObjectfromInfoView);
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
+//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     // Do any additional setup after loading the view.
+}
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [self queryParseMethod];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - query parse
+
+-(void)queryParseMethod {
+    PFQuery *query = [PFQuery queryWithClassName:@"photos"];
+    
+    
+    [query whereKey:@"unitPhotos" equalTo:[self.pfObjectfromInfoView  objectId]];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (!error) {
+            imageFilesArray = [[NSArray alloc]initWithArray:objects];
+            
+            
+            [self.collectionView reloadData];
+        }
+    }];
+    
+    
+}
+
 
 /*
 #pragma mark - Navigation
@@ -48,20 +75,38 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    return imageFilesArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    static NSString * const reuseIdentifier = @"imageCell";
+
+    PhotosCollectionViewCell *cell = (PhotosCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
+    
+    PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
+    //only pull PFobjects matching current object ID
+    
+    PFFile *imageFile = [imageObject objectForKey:@"apartmentPhotos"];
+
+ 
+    
+    [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!error) {
+            
+            cell.parseImage.image = [UIImage imageWithData:data];
+
+        }
+        
+        
+          }];
+    
     
     return cell;
 }
