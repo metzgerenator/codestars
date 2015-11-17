@@ -9,6 +9,7 @@
 #import "ApartmentInfoViewController.h"
 #import "CreateAptViewController.h"
 #import "PhotosViewController.h"
+#import "PhotosCollectionViewController.h"
 
 
 
@@ -77,47 +78,51 @@
 
 #pragma mark - Navigation 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    PhotosViewController *apartmentObject = segue.destinationViewController;
     if ([[segue identifier]isEqualToString:@"photos"]) {
-        //need to get whole pfobject
+        
+        PhotosViewController *apartmentObject = segue.destinationViewController;
+
+        //stop user from not setting a property name
+        if ([self.proPertyName.text isEqualToString:@"unamed property"]) {
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No!" message:@"Make sure you name your property before adding photos!" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alertView addAction:defaultAction];
+            [self presentViewController:alertView animated:YES completion:nil];
+        }else{
+        
         
         apartmentObject.currentPfObject = self.fromSegue;
         
         apartmentObject.keyForPfObject = self.proPertyName.text;
         
-        NSLog(@"current pfobject being passed %@", self.fromSegue);
+//            NSLog(@"current pfobject being passed %@", self.fromSegue);
+        }
  
+    }else if ([[segue identifier]isEqualToString:@"allPhotos"]){
+        
+        PhotosCollectionViewController *allPhotos = segue.destinationViewController;
+        
+        allPhotos.pfObjectfromInfoView = self.fromSegue;
+        
+//        NSLog(@"showing all photos %@", self.fromSegue);
+        
+        
     }
     
     
+    
+    
 }
 
 
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    //apartmentInfo
-//    ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
-//    
-//    if ([[segue identifier] isEqualToString:@"apartmentInfo"]) {
-//        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-//        PFObject *objet = pfobjectStorage [selectedIndexPath.row];
-//        apartmentInfo.fromSegue = objet;
-//        
-//        
-//        
-//    }
 
 
-//   }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
 
 #pragma mark - save and cancel
 

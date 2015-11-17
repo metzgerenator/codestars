@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <ParseUI/PFQueryCollectionViewController.h>
 
 
-@interface PhotosCollectionViewController : UICollectionViewController
+@interface PhotosCollectionViewController : PFQueryCollectionViewController{
+    NSArray *imageFilesArray;  
+    NSMutableArray *imagesArray;
+}
 
 
 
