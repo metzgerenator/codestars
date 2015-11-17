@@ -32,7 +32,16 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [self queryParseMethod];
+    //check for null and reload
+    if (!self.pfObjectfromInfoView) {
+        
+        NSLog(@"pfobject is null !!");
+        [self popoverPresentationController];
+    }else{
+        [self queryParseMethod];
+
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

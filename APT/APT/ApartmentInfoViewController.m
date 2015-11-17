@@ -32,9 +32,9 @@
         
     }else {
         
-        self.proPertyName.text = @"unamed property";  
+//        self.proPertyName.text = @"unamed property";  
         
-//        self.proPertyName.text = self.propertyString;
+        self.proPertyName.text = self.propertyString;
         self.LeaseLength.text = self.leaseString;
 
        
@@ -83,8 +83,8 @@
         PhotosViewController *apartmentObject = segue.destinationViewController;
 
         //stop user from not setting a property name
-        if ([self.proPertyName.text isEqualToString:@"unamed property"]) {
-            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No!" message:@"Make sure you name your property before adding photos!" preferredStyle:UIAlertControllerStyleAlert];
+        if ([self.proPertyName.text length] == 0) {
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No!" message:@"Make sure you name your property before continuing!" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {}];
             
@@ -103,8 +103,41 @@
     }else if ([[segue identifier]isEqualToString:@"allPhotos"]){
         
         PhotosCollectionViewController *allPhotos = segue.destinationViewController;
+
         
-        allPhotos.pfObjectfromInfoView = self.fromSegue;
+        // stop user from going to allPhoto's if PFOBject is nill
+        
+        if ([self.proPertyName.text length] == 0) {
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No!" message:@"Make sure you name your property before viewing photos!" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alertView addAction:defaultAction];
+            [self presentViewController:alertView animated:YES completion:nil];
+            
+            
+        } // if a pfobject exists then pass it on
+        else if (self.fromSegue){
+            
+            allPhotos.pfObjectfromInfoView = self.fromSegue;
+            
+        }
+        //if no pfobject and user has created name, then save and pass on
+        else if ([self.proPertyName.text length] > 0 && (!self.fromSegue)) {
+            
+            // Call Save method
+            [self saveNewObject];
+            
+            //Pas new Pfobject
+            allPhotos.pfObjectfromInfoView = self.fromSegue;
+            
+            
+          
+            
+            
+        }
+        
+        
         
         
         
@@ -124,6 +157,61 @@
 
 
 #pragma mark - save and cancel
+
+-(void)saveNewObject {
+    
+    
+    NSString *propertyName = self.proPertyName.text;
+    
+    NSString* LeaseLength = self.LeaseLength.text;
+    
+    NSString *appointmentTime = self.appointmentDateLabel.text;
+    
+    
+    if (self.fromSegue) {
+        
+        
+        
+        self.fromSegue.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+        
+        
+        [self.fromSegue setObject:propertyName forKey:@"ApartmentName"];
+        
+        [self.fromSegue setObject:LeaseLength forKey:@"leaseLength"];
+        
+        [self.fromSegue setObject:appointmentTime forKey:@"apointmentTime"];
+        
+        
+        [self.fromSegue saveInBackground];
+        
+    }else {
+        
+        
+        
+        PFObject *apartMentObject = [PFObject objectWithClassName:@"apartments"];
+        
+        apartMentObject.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+        
+        
+        [apartMentObject setObject:propertyName forKey:@"ApartmentName"];
+        
+        [apartMentObject setObject:LeaseLength forKey:@"leaseLength"];
+        
+        [apartMentObject setObject:appointmentTime forKey:@"apointmentTime"];
+        
+        self.fromSegue = apartMentObject;
+        
+        
+        [apartMentObject saveInBackground];
+        
+    }
+    
+    
+//    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+
 
 - (IBAction)saveActionButton:(id)sender {
     
