@@ -10,6 +10,9 @@
 		2795DDC41BFB71A3002E59E9 /* PhotosCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2795DDC31BFB71A3002E59E9 /* PhotosCollectionViewCell.m */; };
 		27CF77501BFA5F7D008EA6AC /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF774F1BFA5F7D008EA6AC /* PhotosViewController.m */; };
 		27CF77531BFA7110008EA6AC /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF77521BFA7110008EA6AC /* PhotosCollectionViewController.m */; };
+		57168BE71BFBC97200C96AED /* MapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57168BE61BFBC97200C96AED /* MapSearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57168BE91BFBC9E100C96AED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57168BE81BFBC9E100C96AED /* MapKit.framework */; };
+		57168BEC1BFBCC7C00C96AED /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57168BEB1BFBCC7C00C96AED /* MapViewAnnotation.m */; settings = {ASSET_TAGS = (); }; };
 		577889171BE9530B0062FF9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577889161BE9530B0062FF9B /* main.m */; };
 		5778891A1BE9530B0062FF9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 577889191BE9530B0062FF9B /* AppDelegate.m */; };
 		577889201BE9530B0062FF9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5778891E1BE9530B0062FF9B /* Main.storyboard */; };
@@ -52,6 +55,11 @@
 		27CF774F1BFA5F7D008EA6AC /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		27CF77511BFA7110008EA6AC /* PhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewController.h; sourceTree = "<group>"; };
 		27CF77521BFA7110008EA6AC /* PhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewController.m; sourceTree = "<group>"; };
+		57168BE51BFBC97200C96AED /* MapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapSearchViewController.h; sourceTree = "<group>"; };
+		57168BE61BFBC97200C96AED /* MapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapSearchViewController.m; sourceTree = "<group>"; };
+		57168BE81BFBC9E100C96AED /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		57168BEA1BFBCC7C00C96AED /* MapViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewAnnotation.h; sourceTree = "<group>"; };
+		57168BEB1BFBCC7C00C96AED /* MapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAnnotation.m; sourceTree = "<group>"; };
 		577889121BE9530A0062FF9B /* APT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577889161BE9530B0062FF9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		577889181BE9530B0062FF9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57168BE91BFBC9E100C96AED /* MapKit.framework in Frameworks */,
 				AC1AFC64CF9D7BF6272F6CB2 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +134,17 @@
 			name = ApartmentPhotos;
 			sourceTree = "<group>";
 		};
+		57168BE41BFBC93700C96AED /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				57168BE51BFBC97200C96AED /* MapSearchViewController.h */,
+				57168BE61BFBC97200C96AED /* MapSearchViewController.m */,
+				57168BEA1BFBCC7C00C96AED /* MapViewAnnotation.h */,
+				57168BEB1BFBCC7C00C96AED /* MapViewAnnotation.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		577889091BE9530A0062FF9B = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +175,7 @@
 				57A2FC2F1BF7F98000F07FFB /* ApartmentTableViewController.m */,
 				57A2FC351BF8294100F07FFB /* ApartmentTableViewCell.h */,
 				57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */,
+				57168BE41BFBC93700C96AED /* Map */,
 				57A2FC311BF817A000F07FFB /* ApartmentInfo */,
 				57A2FC241BF7F7CB00F07FFB /* login */,
 				27CF774D1BFA5F07008EA6AC /* ApartmentPhotos */,
@@ -230,6 +251,7 @@
 		5F791E26249563151B7623C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57168BE81BFBC9E100C96AED /* MapKit.framework */,
 				63636AE49F7641827187C0C6 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -314,6 +336,11 @@
 				TargetAttributes = {
 					577889111BE9530A0062FF9B = {
 						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					5778892A1BE9530B0062FF9B = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -430,6 +457,7 @@
 				57A2FC371BF8294100F07FFB /* ApartmentTableViewCell.m in Sources */,
 				5778891A1BE9530B0062FF9B /* AppDelegate.m in Sources */,
 				27CF77501BFA5F7D008EA6AC /* PhotosViewController.m in Sources */,
+				57168BE71BFBC97200C96AED /* MapSearchViewController.m in Sources */,
 				27CF77531BFA7110008EA6AC /* PhotosCollectionViewController.m in Sources */,
 				577889171BE9530B0062FF9B /* main.m in Sources */,
 				57A2FC2B1BF7F7DB00F07FFB /* SignupViewController.m in Sources */,
@@ -437,6 +465,7 @@
 				57A2FC221BF7AD2700F07FFB /* CreateAptViewController.m in Sources */,
 				2795DDC41BFB71A3002E59E9 /* PhotosCollectionViewCell.m in Sources */,
 				57A2FC2C1BF7F7DB00F07FFB /* LoginViewController.m in Sources */,
+				57168BEC1BFBCC7C00C96AED /* MapViewAnnotation.m in Sources */,
 				57A2FC341BF817C000F07FFB /* ApartmentInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

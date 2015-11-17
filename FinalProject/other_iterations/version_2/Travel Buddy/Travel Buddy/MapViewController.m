@@ -45,9 +45,7 @@
         
         [self.mapView addAnnotation:point];
         
-//        NSLog(@" this test works %@", item);
-        
-//
+
     }
     }
 

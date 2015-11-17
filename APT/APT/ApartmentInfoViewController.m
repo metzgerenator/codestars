@@ -54,6 +54,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - calendar picker
+// Reverse Segue from calendar picker
 - (IBAction)unwindFromModalViewController:(UIStoryboardSegue *)segue{
     
     if ([segue.sourceViewController isKindOfClass:[CreateAptViewController class]]) {
@@ -65,14 +67,10 @@
         }else {
             self.appointmentDateLabel.text = @"click Edit";
         }
-        
-       
-    
-    
+      
     
     }
 
-    
 }
 
 
@@ -90,15 +88,28 @@
             
             [alertView addAction:defaultAction];
             [self presentViewController:alertView animated:YES completion:nil];
-        }else{
+        }//if no pfobject and user has created name, then save and pass on
+        else if ([self.proPertyName.text length] > 0 && (!self.fromSegue)) {
+            
+            // Call Save method
+            [self saveNewObject];
+            
+            //Pas new Pfobject
+            apartmentObject.currentPfObject = self.fromSegue;
+            
+            apartmentObject.keyForPfObject = self.proPertyName.text;
+            
+        }
+        else{
         
         
         apartmentObject.currentPfObject = self.fromSegue;
         
         apartmentObject.keyForPfObject = self.proPertyName.text;
         
-//            NSLog(@"current pfobject being passed %@", self.fromSegue);
         }
+        
+       ///segue for collection View
  
     }else if ([[segue identifier]isEqualToString:@"allPhotos"]){
         
@@ -130,10 +141,7 @@
             
             //Pas new Pfobject
             allPhotos.pfObjectfromInfoView = self.fromSegue;
-            
-            
-          
-            
+       
             
         }
         
@@ -158,6 +166,7 @@
 
 #pragma mark - save and cancel
 
+//Save method for prepareForSegue
 -(void)saveNewObject {
     
     
@@ -205,9 +214,7 @@
         [apartMentObject saveInBackground];
         
     }
-    
-    
-//    [self.navigationController popViewControllerAnimated:YES];
+
     
 }
 

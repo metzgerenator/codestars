@@ -15,7 +15,6 @@
 
 @interface PhotosCollectionViewController : UICollectionViewController{
     NSArray *imageFilesArray;  
-//    NSMutableArray *imagesArray;
 }
 
 
