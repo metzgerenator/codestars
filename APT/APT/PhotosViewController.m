@@ -101,8 +101,14 @@
 //    [game setObject:[PFUser currentUser] forKey:@"createdBy"];
     
     PFObject *forPhotos = [PFObject objectWithClassName:@"photos"];
-    PFObject *currentObject = [PFObject objectWithClassName:@"apartments"];
-    [currentObject setObject:forPhotos forKey:@"apartmentPhotos"];
+    
+    
+    //establish the relation with current object id
+    
+    PFRelation *photoRelation  = [forPhotos relationForKey:@"unitPhotos"];
+    
+    [photoRelation addObject:self.currentPfObject];
+    
     
     
     forPhotos.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
