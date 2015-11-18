@@ -132,12 +132,7 @@
 // Take action when UI Button is hit
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-    
-//    MyGroovyAnnotation *annotation = (MyGroovyAnnotation *)view.annotation;
-//    id businessId = annotation.businessId;
-    
-    
-    
+
     
     MapViewAnnotation *annotation = (MapViewAnnotation *)view.annotation;
     

@@ -411,19 +411,16 @@
                                     <action selector="searchButton:" destination="xB3-cm-MNg" eventType="touchUpInside" id="9y3-8W-p9U"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWe-wm-E91">
-                                <rect key="frame" x="291" y="122" width="84" height="38"/>
-                                <state key="normal" title="My Location"/>
-                                <connections>
-                                    <action selector="userLocation:" destination="xB3-cm-MNg" eventType="touchUpInside" id="h5t-uL-w1Y"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="reU-yZ-V91">
                         <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save Location" id="qCI-Pd-Jsr"/>
+                        <barButtonItem key="rightBarButtonItem" title="My Location" id="qCI-Pd-Jsr">
+                            <connections>
+                                <action selector="userLocation:" destination="xB3-cm-MNg" id="kX5-nH-14b"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

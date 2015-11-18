@@ -83,6 +83,93 @@
 }
 
 
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    // reuse pin annotation
+    static NSString *viewId = @"MKPinAnnotationView";
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)
+    [self.mapView dequeueReusableAnnotationViewWithIdentifier:viewId];
+    if (annotationView == nil) {
+        annotationView = [[MKPinAnnotationView alloc]
+                          initWithAnnotation:annotation reuseIdentifier:viewId];
+    }
+    
+    
+    // create a button for callout
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [saveButton addTarget:self action:@selector(saveToParse:) forControlEvents:UIControlEventTouchUpInside];
+    [saveButton setTitle:@"Save Location" forState:UIControlStateNormal];
+    saveButton.bounds = CGRectMake(0, 0, 100, 44);
+    
+    
+    
+    //changes to standard annotation
+    annotationView.rightCalloutAccessoryView = saveButton;
+    annotationView.animatesDrop = YES;
+    annotationView.canShowCallout = YES;
+    
+    
+    NSLog(@"annotation view is working");
+    return annotationView;
+    
+    
+    
+}
+
+-(void)saveToParse:(id)sender {
+        NSLog(@"button pressed %@", sender);
+}
+
+
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    
+    
+    MapViewAnnotation *annotation = (MapViewAnnotation *)view.annotation;
+    
+    NSString *titleString = annotation.title;
+    annotation.title = annotation.title;
+    
+    double longitutde = annotation.coordinate.longitude;
+    double latitude = annotation.coordinate.latitude;
+    
+    PFGeoPoint *pointForParse = [PFGeoPoint geoPointWithLatitude:annotation.coordinate.latitude longitude:annotation.coordinate.longitude];
+    
+    PFObject *locationPoint = [PFObject objectWithClassName:@"propertyLocations"];
+    
+    //establish the relation wiht current object id;
+    
+    PFRelation *locationRelation = [locationPoint relationForKey:@"apartmentLocations"];
+    
+    //Need to get a pfObject 
+    
+    [locationRelation addObject:self.currentPFObject];
+    
+    
+    locationPoint.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+    
+    [locationPoint setObject:pointForParse forKey:@"location"];
+    [locationPoint setObject:titleString forKey:@"title"];
+    
+    //Upload to Parse
+    // Need to change this to a block with error dialog
+    [locationPoint saveInBackground];
+    
+    
+    
+    
+    
+    NSLog(@"annotation title is %@ longitude is  %f latitude is %f", annotation.title,longitutde, latitude);
+    
+    
+    
+    
+}
+
+
+
+
+
+
 
 #pragma mark - mapView delagate methods
 
@@ -94,15 +181,7 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    
-    
-//    CLLocationManager *locatonManager = [[CLLocationManager alloc]init];
-//    [locatonManager requestWhenInUseAuthorization];
-//    self.mapView.showsUserLocation = YES;
-
-
-    //This activates the zoom function
+ 
 
     if (placeMarks > 0) {
         

@@ -17,7 +17,7 @@
 @property (nonatomic, assign) MKCoordinateRegion boundingRegion;
 @property (nonatomic)CLLocationCoordinate2D coordinate;
 
-
+@property (nonatomic, strong)PFObject *currentPFObject;  
 
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
