@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) MKLocalSearch *localSearch;
 @property (nonatomic, strong) MapViewAnnotation *annotation;
+@property (nonatomic) CLLocationManager *locationManager;
 
 
 @end
@@ -25,36 +26,89 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-
+    
     // Do any additional setup after loading the view.
 }
 
 
+
+#pragma mark - ask for user location
+
+- (IBAction)userLocation:(id)sender {
+    
+    [self startLocationManager];  
+}
+
+
+
+-(void)startLocationManager{
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone; //whenever we move
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [self.locationManager startUpdatingLocation];
+    [self.locationManager requestWhenInUseAuthorization]; // Add This Line
+    
+    self.mapView.showsUserLocation = YES;
+    
+}
+
+#pragma mark - setannotation location and zoom
+
+-(void)annotationLocation {
+    
+    
+    MKCoordinateRegion region = self.boundingRegion;
+    MKMapPoint points[[placeMarks count]];
+    
+    for (int i = 0;i < placeMarks.count; i ++) {
+        MKMapItem *mapItem = [placeMarks objectAtIndex:i];
+        
+        points[i] = MKMapPointForCoordinate(mapItem.placemark.coordinate);
+    }
+    
+    MKPolygon *poly = [MKPolygon polygonWithPoints:points count:[placeMarks count]];
+    
+    MKMapRect rectForMap = [poly boundingMapRect];
+    region = MKCoordinateRegionForMapRect(rectForMap);
+    region = MKCoordinateRegionForMapRect(rectForMap);
+    
+    self.boundingRegion = region;
+    region = [self.mapView regionThatFits:region];
+    
+    [self.mapView setRegion:self.boundingRegion animated:YES];
+
+    
+}
+
+
+
+#pragma mark - mapView delagate methods
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+}
 
 #pragma mark - viewcontroller appear & disappear
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    CLLocationManager *locatonManager = [[CLLocationManager alloc]init];
-    [locatonManager requestAlwaysAuthorization];
-    self.mapView.showsUserLocation = YES;
+    
+    
+//    CLLocationManager *locatonManager = [[CLLocationManager alloc]init];
+//    [locatonManager requestWhenInUseAuthorization];
+//    self.mapView.showsUserLocation = YES;
 
 
     //This activates the zoom function
-    [self.mapView setRegion:self.boundingRegion animated:YES];
-    
+
     if (placeMarks > 0) {
         
         
         
         for (MKMapItem *item in placeMarks) {
-            
-            //determine where the map will zoom into®
-           
-
-           
-            
             
             
             //Set the annotation attributes
@@ -114,6 +168,11 @@
         
         //place search results in the array
         placeMarks = [response mapItems];
+        
+        
+        //setplaceMark Locations
+        
+        [self annotationLocation];
         
         
         //load our two viewdidload methods

@@ -25,6 +25,7 @@
 //Add search text field 
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
+- (IBAction)userLocation:(id)sender;
 
 - (IBAction)searchButton:(id)sender;
 
