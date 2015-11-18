@@ -21,10 +21,13 @@
 
 
 
-@implementation ApartmentInfoViewController
+@implementation ApartmentInfoViewController {
+    NSArray *placeMarks;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     if (self.fromSegue) {
         self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
@@ -316,10 +319,13 @@
     float coordinateLatitude = forCoordinate.latitude;
     
     
-    //Create MK Coordinate Region
+//    //Create MK Coordinate Region
     MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
     region.center.longitude = coordinateLongitutde;
     region.center.latitude = coordinateLatitude;
+    self.boundingRegion = region;
+    
+    
     
     //get name from PFGeoPoint
     NSString* name = [self.fromSegue objectForKey:@"location"];
@@ -329,11 +335,18 @@
     MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
     point.coordinate = region.center;
     point.title = name;
+    
+   
+    
     [self.mapView addAnnotation:point];
+    [self.mapView setRegion:self.boundingRegion animated:YES];
+
     
-    
+
     
 }
+
+
 
 
 

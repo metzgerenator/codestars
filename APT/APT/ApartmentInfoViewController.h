@@ -14,6 +14,13 @@
 
 @interface ApartmentInfoViewController : UIViewController  <MKAnnotation,CLLocationManagerDelegate,MKMapViewDelegate>
 
+// for maps
+
+@property (nonatomic, assign) MKCoordinateRegion boundingRegion;
+
+
+
+
 @property (weak, nonatomic) IBOutlet UITextField *proPertyName;
 @property(nonatomic,strong)NSString *propertyString;
 
