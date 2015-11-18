@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface ApartmentInfoViewController : UIViewController
+@interface ApartmentInfoViewController : UIViewController  <MKAnnotation,CLLocationManagerDelegate,MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *proPertyName;
 @property(nonatomic,strong)NSString *propertyString;
@@ -25,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *appointmentDateLabel;
 @property(nonatomic,strong)NSString *appointmentTime;
 
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 
 

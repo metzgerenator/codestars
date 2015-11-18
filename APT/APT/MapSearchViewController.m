@@ -139,8 +139,9 @@
 //    PFOBject *locationPoint = [PFObject objectWithClassName:@"apartments"];
     locationPoint.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
     
-    [locationPoint setObject:pointForParse forKey:@"location"];
-    [locationPoint setObject:titleString forKey:@"locationCoordinates"];
+
+    [locationPoint setObject:pointForParse forKey:@"locationCoordinates"];
+    [locationPoint setObject:titleString forKey:@"location"];
     
     //Upload to Parse
     [locationPoint saveInBackground];

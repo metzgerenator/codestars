@@ -11,6 +11,7 @@
 #import "PhotosViewController.h"
 #import "PhotosCollectionViewController.h"
 #import "MapSearchViewController.h"
+#import "MapViewAnnotation.h"
 
 
 
@@ -18,8 +19,7 @@
 
 @end
 
-//apartmentInfo.propertyString = [objet objectForKey:@"ApartmentName"];
-//apartmentInfo.leaseString = [objet objectForKey:@"leaseLength"]
+
 
 @implementation ApartmentInfoViewController
 
@@ -300,4 +300,51 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+#pragma mark - map functions
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    //Check for PfObject being nill
+    
+    //retrived PFGeoPoint from segue
+    
+    PFGeoPoint *forCoordinate = [self.fromSegue objectForKey:@"locationCoordinates"];
+    
+    float coordinateLongitutde = forCoordinate.longitude;
+    float coordinateLatitude = forCoordinate.latitude;
+    
+    
+    //Create MK Coordinate Region
+    MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
+    region.center.longitude = coordinateLongitutde;
+    region.center.latitude = coordinateLatitude;
+    
+    //get name from PFGeoPoint
+    NSString* name = [self.fromSegue objectForKey:@"location"];
+    
+
+    //create annotation and set it
+    MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
+    point.coordinate = region.center;
+    point.title = name;
+    [self.mapView addAnnotation:point];
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end
