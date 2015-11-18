@@ -108,7 +108,6 @@
     annotationView.canShowCallout = YES;
     
     
-    NSLog(@"annotation view is working");
     return annotationView;
     
     
@@ -116,13 +115,14 @@
 }
 
 -(void)saveToParse:(id)sender {
-        NSLog(@"button pressed %@", sender);
+        NSLog(@"saving to this pfobject %@", self.currentPFObject);
 }
+
+#pragma mark - save to Parse
 
 
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-    
     
     MapViewAnnotation *annotation = (MapViewAnnotation *)view.annotation;
     
@@ -134,28 +134,20 @@
     
     PFGeoPoint *pointForParse = [PFGeoPoint geoPointWithLatitude:annotation.coordinate.latitude longitude:annotation.coordinate.longitude];
     
-    PFObject *locationPoint = [PFObject objectWithClassName:@"propertyLocations"];
+    PFObject *locationPoint  = self.currentPFObject;
     
-    //establish the relation wiht current object id;
-    
-    PFRelation *locationRelation = [locationPoint relationForKey:@"apartmentLocations"];
-    
-    //Need to get a pfObject 
-    
-    [locationRelation addObject:self.currentPFObject];
-    
-    
+//    PFOBject *locationPoint = [PFObject objectWithClassName:@"apartments"];
     locationPoint.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
     
     [locationPoint setObject:pointForParse forKey:@"location"];
-    [locationPoint setObject:titleString forKey:@"title"];
+    [locationPoint setObject:titleString forKey:@"locationCoordinates"];
     
     //Upload to Parse
-    // Need to change this to a block with error dialog
     [locationPoint saveInBackground];
     
     
     
+    //    placeObject[@"location"] = point;
     
     
     NSLog(@"annotation title is %@ longitude is  %f latitude is %f", annotation.title,longitutde, latitude);
@@ -163,7 +155,9 @@
     
     
     
+    
 }
+
 
 
 
@@ -181,7 +175,7 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
- 
+//    NSLog(@"current pfobject is %@", self.currentPFObject);
 
     if (placeMarks > 0) {
         
