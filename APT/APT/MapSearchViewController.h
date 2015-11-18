@@ -13,7 +13,10 @@
 
 @interface MapSearchViewController : UIViewController <MKAnnotation,CLLocationManagerDelegate,MKMapViewDelegate>
 
+//for defining portion to display on map
+@property (nonatomic, assign) MKCoordinateRegion boundingRegion;
 @property (nonatomic)CLLocationCoordinate2D coordinate;
+
 
 
 

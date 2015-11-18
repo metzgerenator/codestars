@@ -24,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+
     // Do any additional setup after loading the view.
 }
 
@@ -34,15 +36,28 @@
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    CLLocationManager *locatonManager = [[CLLocationManager alloc]init];
+    [locatonManager requestAlwaysAuthorization];
+    self.mapView.showsUserLocation = YES;
+
+
+    //This activates the zoom function
+    [self.mapView setRegion:self.boundingRegion animated:YES];
+    
     if (placeMarks > 0) {
         
-//        //determine where the map will zoom into
-//        MKCoordinateRegion region = self.boundingRegion;
-//        region.center = mapItem.placemark.coordinate;
-//        boundingRegion = region;
-//        .mapItemList = self.placeSearchStorage;
+        
         
         for (MKMapItem *item in placeMarks) {
+            
+            //determine where the map will zoom into®
+           
+
+           
+            
+            
+            
+            //Set the annotation attributes
             MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
             point.coordinate = item.placemark.location.coordinate;
             point.title = item.name;
@@ -93,6 +108,9 @@
     //Create and initialize search object
     
     MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error){
+        
+        
+        
         
         //place search results in the array
         placeMarks = [response mapItems];
