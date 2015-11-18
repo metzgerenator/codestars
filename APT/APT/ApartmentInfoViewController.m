@@ -10,6 +10,7 @@
 #import "CreateAptViewController.h"
 #import "PhotosViewController.h"
 #import "PhotosCollectionViewController.h"
+#import "MapSearchViewController.h"
 
 
 
@@ -76,7 +77,38 @@
 
 #pragma mark - Navigation 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier]isEqualToString:@"photos"]) {
+    if ([[segue identifier]isEqualToString:@"Map"]){
+        MapSearchViewController *mapObject = segue.destinationViewController;
+        //stop user from not setting a property name
+        
+        if ([self.proPertyName.text length] == 0) {
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No!" message:@"Make sure you name your property before continuing!" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alertView addAction:defaultAction];
+            [self presentViewController:alertView animated:YES completion:nil];
+        
+        
+        
+        
+        
+    }//if no pfobject and user has created name, then save and pass on
+        else if ([self.proPertyName.text length] > 0 && (!self.fromSegue)) {
+            
+            // Call Save method
+            [self saveNewObject];
+            
+            //Pas new Pfobject
+            mapObject.currentPFObject = self.fromSegue;
+        } else {
+            
+            mapObject.currentPFObject = self.fromSegue;
+        }
+    }
+    
+    ///next segue to Photos
+   else if ([[segue identifier]isEqualToString:@"photos"]) {
         
         PhotosViewController *apartmentObject = segue.destinationViewController;
 
