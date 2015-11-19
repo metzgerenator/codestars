@@ -12,6 +12,13 @@
     NSArray *amenitiesArray;
     
     NSMutableArray *amenitiesForParse;
+    
+    NSString *bedrooms;
+    
+    NSString *bathrooms;
+    
+    
+   
 }
 @property (nonatomic, strong)NSString *feature;
 
@@ -22,12 +29,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self queryParseMethod];
+    
+
 
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    
+    
+    
+    
+    
+    [self queryParseMethod];
+    
+    
     
     amenitiesForParse = [[NSMutableArray alloc]init];
 }
@@ -39,6 +56,9 @@
 
 
 #pragma mark - Query Parse
+
+
+
 
 -(void)queryParseMethod {
     PFQuery *query = [PFQuery queryWithClassName:@"amenities"];
@@ -55,6 +75,23 @@
             [self.tableView reloadData];
         }
     }];
+    
+    
+    // set the Bedrooms and Bathrooms
+    
+    bedrooms = [self.currentPFObject objectForKey:@"numberOfBedrooms"];
+    
+    bathrooms = [self.currentPFObject objectForKey:@"numberOfBathrooms"];
+    
+    self.numberOfBedrooms.text = bedrooms;
+    
+    self.numberOfBathrooms.text = bathrooms;
+    
+    
+    
+
+
+    
     
     
 }
@@ -75,7 +112,12 @@
     
     static NSString *cellIdentifier = @"Cell";
     EditAmenitiesTableViewCell *cell = (EditAmenitiesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    cell.amenityLabel.text
+    
+    
+    // change the switch to off or on
+    
+    
+    
     
     PFObject *amenityObject = [amenitiesArray objectAtIndex:indexPath.row];
     
@@ -84,7 +126,24 @@
     
     self.feature = amenityString;
     cell.amenitySwitch.tag = indexPath.row;
-   
+    
+    for (NSString *d in self.arrayFromSegue) {
+        
+        if ([d isEqualToString:amenityString]) {
+            [cell.amenitySwitch setOn:YES];
+            //add to the array to equal original values
+            [amenitiesForParse addObject:amenityString];
+        }
+        
+        
+    }
+    
+    // set the default stepper value
+    
+    
+    self.numberOfBedrooms.text = bedrooms;
+    
+    self.numberOfBathrooms.text = bathrooms;
     
     
      [cell.amenitySwitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
@@ -96,6 +155,7 @@
 
 
 #pragma mark - switch Action
+
 
 -(IBAction)switchChanged:(UISwitch *)sender {
     
@@ -129,12 +189,10 @@
 #pragma mark - step controllers
 
 - (IBAction)stepControllerBedrooms:(UIStepper *)sender {
-    
+   
     double value = sender.value;
     
     [self.numberOfBedrooms setText:[NSString stringWithFormat:@"%d", (int)value]];
-   
-    
     
 }
 - (IBAction)stepControllerBathrooms:(UIStepper *)sender {
@@ -165,6 +223,10 @@
     
     // Create an array of amenities and save it to parse as an object
     
+    
+    
+    
+    
     NSArray *amenityList = [[NSArray alloc]init];
     amenityList = amenitiesForParse;
     
@@ -176,6 +238,8 @@
     
     //Upload to Parse
     [amenities saveInBackground];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 
     
     

@@ -96,7 +96,11 @@
     
     // create a button for callout
     UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [saveButton addTarget:self action:@selector(saveToParse:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //no need for target action for now
+//    [saveButton addTarget:self action:@selector(saveToParse:) forControlEvents:UIControlEventTouchUpInside];
+  
+    
     [saveButton setTitle:@"Save Location" forState:UIControlStateNormal];
     saveButton.bounds = CGRectMake(0, 0, 100, 44);
     
@@ -115,7 +119,8 @@
 }
 
 -(void)saveToParse:(id)sender {
-        NSLog(@"saving to this pfobject %@", self.currentPFObject);
+    
+
 }
 
 #pragma mark - save to Parse
@@ -154,8 +159,7 @@
     NSLog(@"annotation title is %@ longitude is  %f latitude is %f", annotation.title,longitutde, latitude);
     
     
-    
-    
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

@@ -38,6 +38,8 @@
 
 //PFObject from segue
 
+@property (nonatomic, strong)NSArray *arrayFromSegue;   
+
 @property (nonatomic, strong)PFObject *currentPFObject;
 
 

@@ -139,6 +139,9 @@
         } else {
             
             editAmenity.currentPFObject = self.fromSegue;
+            NSArray *forSegue = [self.fromSegue objectForKey:@"amenities"];
+            editAmenity.arrayFromSegue = forSegue;
+
         }
     }
   
