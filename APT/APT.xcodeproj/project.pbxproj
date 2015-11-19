@@ -12,6 +12,8 @@
 		27CF77531BFA7110008EA6AC /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF77521BFA7110008EA6AC /* PhotosCollectionViewController.m */; };
 		570514611BFD273C003E0878 /* EditAmenitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514601BFD273C003E0878 /* EditAmenitiesViewController.m */; settings = {ASSET_TAGS = (); }; };
 		570514641BFD279D003E0878 /* EditAmenitiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514631BFD279D003E0878 /* EditAmenitiesTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		570514671BFD6E81003E0878 /* ShowAmenitiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514661BFD6E81003E0878 /* ShowAmenitiesTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		5705146A1BFD6E9B003E0878 /* ShowAmenitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514691BFD6E9B003E0878 /* ShowAmenitiesTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		57168BE71BFBC97200C96AED /* MapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57168BE61BFBC97200C96AED /* MapSearchViewController.m */; settings = {ASSET_TAGS = (); }; };
 		57168BE91BFBC9E100C96AED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57168BE81BFBC9E100C96AED /* MapKit.framework */; };
 		57168BEC1BFBCC7C00C96AED /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57168BEB1BFBCC7C00C96AED /* MapViewAnnotation.m */; settings = {ASSET_TAGS = (); }; };
@@ -61,6 +63,10 @@
 		570514601BFD273C003E0878 /* EditAmenitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAmenitiesViewController.m; sourceTree = "<group>"; };
 		570514621BFD279D003E0878 /* EditAmenitiesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAmenitiesTableViewCell.h; sourceTree = "<group>"; };
 		570514631BFD279D003E0878 /* EditAmenitiesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAmenitiesTableViewCell.m; sourceTree = "<group>"; };
+		570514651BFD6E81003E0878 /* ShowAmenitiesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAmenitiesTableViewCell.h; sourceTree = "<group>"; };
+		570514661BFD6E81003E0878 /* ShowAmenitiesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAmenitiesTableViewCell.m; sourceTree = "<group>"; };
+		570514681BFD6E9B003E0878 /* ShowAmenitiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAmenitiesTableViewController.h; sourceTree = "<group>"; };
+		570514691BFD6E9B003E0878 /* ShowAmenitiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAmenitiesTableViewController.m; sourceTree = "<group>"; };
 		57168BE51BFBC97200C96AED /* MapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapSearchViewController.h; sourceTree = "<group>"; };
 		57168BE61BFBC97200C96AED /* MapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapSearchViewController.m; sourceTree = "<group>"; };
 		57168BE81BFBC9E100C96AED /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -147,6 +153,10 @@
 				570514601BFD273C003E0878 /* EditAmenitiesViewController.m */,
 				570514621BFD279D003E0878 /* EditAmenitiesTableViewCell.h */,
 				570514631BFD279D003E0878 /* EditAmenitiesTableViewCell.m */,
+				570514651BFD6E81003E0878 /* ShowAmenitiesTableViewCell.h */,
+				570514661BFD6E81003E0878 /* ShowAmenitiesTableViewCell.m */,
+				570514681BFD6E9B003E0878 /* ShowAmenitiesTableViewController.h */,
+				570514691BFD6E9B003E0878 /* ShowAmenitiesTableViewController.m */,
 			);
 			name = Amenities;
 			sourceTree = "<group>";
@@ -474,10 +484,12 @@
 				57A2FC2D1BF7F7DB00F07FFB /* PasswordRecoverViewController.m in Sources */,
 				57A2FC371BF8294100F07FFB /* ApartmentTableViewCell.m in Sources */,
 				570514611BFD273C003E0878 /* EditAmenitiesViewController.m in Sources */,
+				570514671BFD6E81003E0878 /* ShowAmenitiesTableViewCell.m in Sources */,
 				5778891A1BE9530B0062FF9B /* AppDelegate.m in Sources */,
 				27CF77501BFA5F7D008EA6AC /* PhotosViewController.m in Sources */,
 				57168BE71BFBC97200C96AED /* MapSearchViewController.m in Sources */,
 				27CF77531BFA7110008EA6AC /* PhotosCollectionViewController.m in Sources */,
+				5705146A1BFD6E9B003E0878 /* ShowAmenitiesTableViewController.m in Sources */,
 				577889171BE9530B0062FF9B /* main.m in Sources */,
 				57A2FC2B1BF7F7DB00F07FFB /* SignupViewController.m in Sources */,
 				57A2FC301BF7F98000F07FFB /* ApartmentTableViewController.m in Sources */,

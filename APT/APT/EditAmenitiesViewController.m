@@ -38,6 +38,8 @@
 }
 
 
+#pragma mark - Query Parse
+
 -(void)queryParseMethod {
     PFQuery *query = [PFQuery queryWithClassName:@"amenities"];
     
@@ -131,7 +133,7 @@
     double value = sender.value;
     
     [self.numberOfBedrooms setText:[NSString stringWithFormat:@"%d", (int)value]];
-    NSLog(@"%@", sender);
+   
     
     
 }
@@ -140,7 +142,7 @@
      double value = sender.value;
     
     [self.numberOfBathrooms setText:[NSString stringWithFormat:@"%d", (int)value]];
-    NSLog(@"%@", sender);
+  
     
 }
 

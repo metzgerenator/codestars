@@ -13,6 +13,7 @@
 #import "MapSearchViewController.h"
 #import "MapViewAnnotation.h"
 #import "EditAmenitiesViewController.h"
+#import "ShowAmenitiesTableViewController.h"
 
 
 
@@ -82,10 +83,39 @@
 
 #pragma mark - segue to other views
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    //editAmenities
+    //showAmenities
     
-    
-    if ([[segue identifier]isEqualToString:@"editAmenities"]){
+    if ([[segue identifier]isEqualToString:@"showAmenities"]){
+        ShowAmenitiesTableViewController *showEditAmenity = segue.destinationViewController;
+        //stop user from not setting a property name
+        
+        if ([self.proPertyName.text length] == 0) {
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No!" message:@"Make sure you name your property before continuing!" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alertView addAction:defaultAction];
+            [self presentViewController:alertView animated:YES completion:nil];
+            
+            
+        }//if no pfobject and user has created name, then save and pass on
+        else if ([self.proPertyName.text length] > 0 && (!self.fromSegue)) {
+            
+            // Call Save method
+            [self saveNewObject];
+            
+            //Pas new Pfobject
+            showEditAmenity.currentPFObject = self.fromSegue;
+        } else {
+            // Pass Array
+            showEditAmenity.currentPFObject = self.fromSegue;
+            NSArray *forSegue = [self.fromSegue objectForKey:@"amenities"];
+            showEditAmenity.arrayFromSegue = forSegue;
+            
+            
+        }
+    }
+    else if ([[segue identifier]isEqualToString:@"editAmenities"]){
         EditAmenitiesViewController *editAmenity = segue.destinationViewController;
         //stop user from not setting a property name
         
