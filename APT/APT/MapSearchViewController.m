@@ -247,6 +247,8 @@
         //place search results in the array
         placeMarks = [response mapItems];
         
+//        NSLog(@"place marks is %@", placeMarks);  
+        
         
         //setplaceMark Locations
         

@@ -10,13 +10,14 @@
 		2795DDC41BFB71A3002E59E9 /* PhotosCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2795DDC31BFB71A3002E59E9 /* PhotosCollectionViewCell.m */; };
 		27CF77501BFA5F7D008EA6AC /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF774F1BFA5F7D008EA6AC /* PhotosViewController.m */; };
 		27CF77531BFA7110008EA6AC /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF77521BFA7110008EA6AC /* PhotosCollectionViewController.m */; };
-		570514611BFD273C003E0878 /* EditAmenitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514601BFD273C003E0878 /* EditAmenitiesViewController.m */; settings = {ASSET_TAGS = (); }; };
-		570514641BFD279D003E0878 /* EditAmenitiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514631BFD279D003E0878 /* EditAmenitiesTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		570514671BFD6E81003E0878 /* ShowAmenitiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514661BFD6E81003E0878 /* ShowAmenitiesTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		5705146A1BFD6E9B003E0878 /* ShowAmenitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514691BFD6E9B003E0878 /* ShowAmenitiesTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		57168BE71BFBC97200C96AED /* MapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57168BE61BFBC97200C96AED /* MapSearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		27E0E9971BFE5F3D0065DBC2 /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0E9961BFE5F3D0065DBC2 /* MainMapViewController.m */; };
+		570514611BFD273C003E0878 /* EditAmenitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514601BFD273C003E0878 /* EditAmenitiesViewController.m */; };
+		570514641BFD279D003E0878 /* EditAmenitiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514631BFD279D003E0878 /* EditAmenitiesTableViewCell.m */; };
+		570514671BFD6E81003E0878 /* ShowAmenitiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514661BFD6E81003E0878 /* ShowAmenitiesTableViewCell.m */; };
+		5705146A1BFD6E9B003E0878 /* ShowAmenitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570514691BFD6E9B003E0878 /* ShowAmenitiesTableViewController.m */; };
+		57168BE71BFBC97200C96AED /* MapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57168BE61BFBC97200C96AED /* MapSearchViewController.m */; };
 		57168BE91BFBC9E100C96AED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57168BE81BFBC9E100C96AED /* MapKit.framework */; };
-		57168BEC1BFBCC7C00C96AED /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57168BEB1BFBCC7C00C96AED /* MapViewAnnotation.m */; settings = {ASSET_TAGS = (); }; };
+		57168BEC1BFBCC7C00C96AED /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57168BEB1BFBCC7C00C96AED /* MapViewAnnotation.m */; };
 		577889171BE9530B0062FF9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577889161BE9530B0062FF9B /* main.m */; };
 		5778891A1BE9530B0062FF9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 577889191BE9530B0062FF9B /* AppDelegate.m */; };
 		577889201BE9530B0062FF9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5778891E1BE9530B0062FF9B /* Main.storyboard */; };
@@ -59,6 +60,8 @@
 		27CF774F1BFA5F7D008EA6AC /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		27CF77511BFA7110008EA6AC /* PhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewController.h; sourceTree = "<group>"; };
 		27CF77521BFA7110008EA6AC /* PhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewController.m; sourceTree = "<group>"; };
+		27E0E9951BFE5F3D0065DBC2 /* MainMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMapViewController.h; sourceTree = "<group>"; };
+		27E0E9961BFE5F3D0065DBC2 /* MainMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMapViewController.m; sourceTree = "<group>"; };
 		5705145F1BFD273C003E0878 /* EditAmenitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAmenitiesViewController.h; sourceTree = "<group>"; };
 		570514601BFD273C003E0878 /* EditAmenitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAmenitiesViewController.m; sourceTree = "<group>"; };
 		570514621BFD279D003E0878 /* EditAmenitiesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAmenitiesTableViewCell.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				57168BE61BFBC97200C96AED /* MapSearchViewController.m */,
 				57168BEA1BFBCC7C00C96AED /* MapViewAnnotation.h */,
 				57168BEB1BFBCC7C00C96AED /* MapViewAnnotation.m */,
+				27E0E9951BFE5F3D0065DBC2 /* MainMapViewController.h */,
+				27E0E9961BFE5F3D0065DBC2 /* MainMapViewController.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -486,6 +491,7 @@
 				570514611BFD273C003E0878 /* EditAmenitiesViewController.m in Sources */,
 				570514671BFD6E81003E0878 /* ShowAmenitiesTableViewCell.m in Sources */,
 				5778891A1BE9530B0062FF9B /* AppDelegate.m in Sources */,
+				27E0E9971BFE5F3D0065DBC2 /* MainMapViewController.m in Sources */,
 				27CF77501BFA5F7D008EA6AC /* PhotosViewController.m in Sources */,
 				57168BE71BFBC97200C96AED /* MapSearchViewController.m in Sources */,
 				27CF77531BFA7110008EA6AC /* PhotosCollectionViewController.m in Sources */,
