@@ -12,6 +12,7 @@
 #import "PhotosCollectionViewController.h"
 #import "MapSearchViewController.h"
 #import "MapViewAnnotation.h"
+#import "EditAmenitiesViewController.h"
 
 
 
@@ -78,9 +79,40 @@
 }
 
 
-#pragma mark - Navigation 
+
+#pragma mark - segue to other views
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier]isEqualToString:@"Map"]){
+    //editAmenities
+    
+    
+    if ([[segue identifier]isEqualToString:@"editAmenities"]){
+        EditAmenitiesViewController *editAmenity = segue.destinationViewController;
+        //stop user from not setting a property name
+        
+        if ([self.proPertyName.text length] == 0) {
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No!" message:@"Make sure you name your property before continuing!" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alertView addAction:defaultAction];
+            [self presentViewController:alertView animated:YES completion:nil];
+            
+            
+        }//if no pfobject and user has created name, then save and pass on
+        else if ([self.proPertyName.text length] > 0 && (!self.fromSegue)) {
+            
+            // Call Save method
+            [self saveNewObject];
+            
+            //Pas new Pfobject
+            editAmenity.currentPFObject = self.fromSegue;
+        } else {
+            
+            editAmenity.currentPFObject = self.fromSegue;
+        }
+    }
+  
+    else if ([[segue identifier]isEqualToString:@"Map"]){
         MapSearchViewController *mapObject = segue.destinationViewController;
         //stop user from not setting a property name
         
