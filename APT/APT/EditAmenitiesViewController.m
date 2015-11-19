@@ -10,17 +10,28 @@
 
 @interface EditAmenitiesViewController (){
     NSArray *amenitiesArray;
+    
+    NSMutableArray *amenitiesForParse;
 }
+@property (nonatomic, strong)NSString *feature;
 
 @end
 
 @implementation EditAmenitiesViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self queryParseMethod];
 
 }
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    amenitiesForParse = [[NSMutableArray alloc]init];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -69,7 +80,12 @@
     NSString *amenityString = [amenityObject objectForKey:@"unitAmenities"];
     cell.amenityLabel.text = amenityString;
     
+    self.feature = amenityString;
+    cell.amenitySwitch.tag = indexPath.row;
+   
     
+    
+     [cell.amenitySwitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
     
     
     
@@ -77,11 +93,33 @@
 }
 
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // need to recognize switch   
+#pragma mark - switch Action
+
+-(IBAction)switchChanged:(UISwitch *)sender {
+    
+
+   PFObject *amenityObject = [amenitiesArray objectAtIndex:sender.tag];
+    
+    NSString *amenityString = [amenityObject objectForKey:@"unitAmenities"];
+    
+    if ([sender isOn]) {
+        NSLog(@"swhitch is on %@", amenityString);
+        
+        [amenitiesForParse addObject:amenityString];
+        
+        
+    } else {
+        NSLog(@"switch is off");
+        [amenitiesForParse removeObject:amenityString];
+    }
+    
+    
+    
     
     
 }
+
+
 
 
 
@@ -121,6 +159,18 @@
     
     [amenities setObject:bedroomNumber forKey:@"numberOfBedrooms"];
     [amenities setObject:bathRoomNumber forKey:@"numberOfBathrooms"];
+    
+    
+    // Create an array of amenities and save it to parse as an object
+    
+    NSArray *amenityList = [[NSArray alloc]init];
+    amenityList = amenitiesForParse;
+    
+    [amenities setObject:amenityList forKey:@"amenities"];
+    
+    
+    
+
     
     //Upload to Parse
     [amenities saveInBackground];

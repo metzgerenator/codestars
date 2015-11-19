@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *amenityLabel;
 
 
-- (IBAction)amenitySwitch:(id)sender;
+@property (weak, nonatomic) IBOutlet UISwitch *amenitySwitch;
+
 
 @end
